@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://d3s6dc4jav1bq"]
+
+[ext_resource type="Script" path="res://Area3D.gd" id="1_qqr3q"]
+[ext_resource type="Texture2D" uid="uid://bbe1secbxbtln" path="res://woman-playing-piano-her-room-1745186.jpg" id="2_s6tky"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_p1wph"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Area3D" type="Area3D" parent="Control"]
+script = ExtResource("1_qqr3q")
+
+[node name="Sprite3D" type="Sprite3D" parent="Control/Area3D"]
+texture = ExtResource("2_s6tky")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Control/Area3D"]
+shape = SubResource("BoxShape3D_p1wph")
+
+[node name="Timer" type="Timer" parent="Control/Area3D"]
