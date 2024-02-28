@@ -1,6 +1,5 @@
 res://node_3d.tscn
 res://char.tscn
-res://charmove.gd
 res://QTE.tscn
 res://looking_at.tscn
 res://looking_at_fragments.gd

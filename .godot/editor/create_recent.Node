@@ -1,5 +1,6 @@
-MeshInstance3D
+Area3D
 CollisionShape3D
+MeshInstance3D
 StaticBody3D
 Node3D
 Camera3D
