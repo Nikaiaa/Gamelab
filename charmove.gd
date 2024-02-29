@@ -15,7 +15,7 @@ func _ready():
 	camera = $Rotation_Helper/Camera3D
 	rotation_helper = $Rotation_Helper
 	#Le pointeur de la souris disparaît de l'affochage et ne peut plus quitter l'écran ou cliquer en dehors 
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
 	pass # Replace with function body.
 
 func _physics_process(delta):
@@ -43,7 +43,7 @@ func _physics_process(delta):
 
 func _input(event):
 	#si la souris bouge et qu'elle est capturée
-	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: 
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CONFINED_HIDDEN: 
 		rotation_helper.rotate_x(deg_to_rad(event.relative.y * -MOUSE_SENSITIVITY))#rotate la caméra en y d'abord
 		self.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * -1))#puis en x
 

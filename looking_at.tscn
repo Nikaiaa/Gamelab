@@ -3,6 +3,10 @@
 [ext_resource type="PackedScene" uid="uid://g1c7c2w34rua" path="res://char.tscn" id="1_bchdd"]
 [ext_resource type="Script" path="res://looking_at_fragments.gd" id="1_t2ssp"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_rwda6"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_wbtaf"]
+
 [sub_resource type="BoxShape3D" id="BoxShape3D_sbyvc"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_m237o"]
@@ -12,30 +16,8 @@ albedo_color = Color(0.0862745, 0.572549, 0.533333, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_02ud0"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_rwda6"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_wbtaf"]
-
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_t2ssp")
-
-[node name="fragment" type="StaticBody3D" parent="." groups=["fragments"]]
-transform = Transform3D(0.452435, 0, 0.891798, 0, 1, 0, -0.891798, 0, 0.452435, -7.75328, 0.747288, -6.77773)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="fragment"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.76837e-07)
-shape = SubResource("BoxShape3D_sbyvc")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="fragment/CollisionShape3D"]
-mesh = SubResource("BoxMesh_m237o")
-surface_material_override/0 = SubResource("StandardMaterial3D_1s686")
-
-[node name="collision_zone" type="Area3D" parent="fragment"]
-transform = Transform3D(0.452435, 0, -0.891797, 0, 1, 0, 0.891797, 0, 0.452435, -2.53651, -0.747288, 9.98083)
-
-[node name="collider" type="CollisionShape3D" parent="fragment/collision_zone"]
-transform = Transform3D(4.52435, 0, 8.91798, 0, 10, 0, -8.91798, 0, 4.52435, -7.75328, 0.747288, -6.77773)
-shape = SubResource("BoxShape3D_02ud0")
 
 [node name="char" parent="." instance=ExtResource("1_bchdd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.881065, 0)
@@ -47,4 +29,33 @@ transform = Transform3D(34.9406, 0, 0, 0, 0.244277, 0, 0, 0, 33.4725, 0, 0, 0)
 shape = SubResource("BoxShape3D_rwda6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+visible = false
 mesh = SubResource("BoxMesh_wbtaf")
+
+[node name="fragment" type="Node3D" parent="." groups=["fragments"]]
+transform = Transform3D(0.452435, 0, 0.891798, 0, 1, 0, -0.891798, 0, 0.452435, -7.75328, 0.747288, -6.77773)
+
+[node name="fragment_body" type="StaticBody3D" parent="fragment"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="fragment/fragment_body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.76837e-07)
+shape = SubResource("BoxShape3D_sbyvc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="fragment/fragment_body/CollisionShape3D"]
+mesh = SubResource("BoxMesh_m237o")
+surface_material_override/0 = SubResource("StandardMaterial3D_1s686")
+
+[node name="collision_zone" type="Area3D" parent="fragment/fragment_body"]
+transform = Transform3D(0.452435, 0, -0.891797, 0, 1, 0, 0.891797, 0, 0.452435, -2.53651, -0.747288, 9.98083)
+script = ExtResource("1_t2ssp")
+
+[node name="collider" type="CollisionShape3D" parent="fragment/fragment_body/collision_zone"]
+transform = Transform3D(4.52435, 0, 8.91798, 0, 10, 0, -8.91798, 0, 4.52435, -7.75328, 0.747288, -6.77773)
+shape = SubResource("BoxShape3D_02ud0")
+
+[node name="anxiete_timer" type="Timer" parent="fragment/fragment_body/collision_zone/collider"]
+
+[connection signal="mouse_entered" from="fragment/fragment_body/collision_zone" to="fragment/fragment_body/collision_zone" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="fragment/fragment_body/collision_zone" to="fragment/fragment_body/collision_zone" method="_on_mouse_exited"]
+[connection signal="timeout" from="fragment/fragment_body/collision_zone/collider/anxiete_timer" to="fragment/fragment_body/collision_zone" method="_on_anxiete_timer_timeout"]
