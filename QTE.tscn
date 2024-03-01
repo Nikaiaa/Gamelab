@@ -6,7 +6,7 @@
 [ext_resource type="Script" path="res://RigidBody3D.gd" id="4_4ikhr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_n1rxe"]
-size = Vector3(5.12378, 4.43457, 1)
+size = Vector3(5.12378, 4.43457, 4.53467)
 
 [sub_resource type="Animation" id="Animation_3o1mf"]
 resource_name = "Slid"
@@ -25,7 +25,7 @@ _data = {
 }
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhlmc"]
-size = Vector3(1, 4.59521, 1)
+size = Vector3(1.14844, 4.59521, 1.70905)
 
 [node name="Node3D" type="Node3D"]
 
@@ -36,35 +36,35 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.57546)
 layers = 512
 texture = ExtResource("2_s6tky")
 
-[node name="QTE" type="Sprite3D" parent="Fond"]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -4.30583, 0, 2.293)
+[node name="QTE" type="Sprite3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -0.26546, 0.197006, 4.82498)
 texture = ExtResource("2_f8okd")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Fond/QTE"]
+[node name="RigidBodyQTE3D" type="RigidBody3D" parent="QTE"]
 mass = 0.01
 gravity_scale = 0.0
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Fond/QTE/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.159061, 0.0307618, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="QTE/RigidBodyQTE3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.159061, 0.0307618, -0.204834)
 shape = SubResource("BoxShape3D_n1rxe")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Fond/QTE"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="QTE"]
 libraries = {
 "": SubResource("AnimationLibrary_1vus6")
 }
 
-[node name="Limite" type="Sprite3D" parent="Fond"]
+[node name="Limite" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.14422, 0.197006, 2.53198)
 texture = ExtResource("3_8hr5c")
 
-[node name="RigidBody3D" type="RigidBody3D" parent="Fond/Limite"]
+[node name="RigidBody3D" type="RigidBody3D" parent="Limite"]
 mass = 0.01
 gravity_scale = 0.0
 script = ExtResource("4_4ikhr")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Fond/Limite/RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.675049, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Limite/RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0742188, 0.675049, 0.0391541)
 shape = SubResource("BoxShape3D_lhlmc")
 
-[connection signal="body_entered" from="Fond/Limite/RigidBody3D" to="Fond/Limite/RigidBody3D" method="_on_body_entered"]
-[connection signal="body_exited" from="Fond/Limite/RigidBody3D" to="Fond/Limite/RigidBody3D" method="_on_body_exited"]
+[connection signal="body_entered" from="QTE/RigidBodyQTE3D" to="Limite/RigidBody3D" method="_on_rigid_body_qte_3d_body_entered"]
+[connection signal="body_exited" from="QTE/RigidBodyQTE3D" to="Limite/RigidBody3D" method="_on_rigid_body_qte_3d_body_exited"]

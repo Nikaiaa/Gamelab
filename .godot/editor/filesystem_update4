@@ -1,13 +1,2 @@
-<<<<<<< Updated upstream
-res://grab_object.tscn
-res://node_3d.tscn
-res://char.tscn
 res://QTE.tscn
-res://looking_at.tscn
-res://grab_object.gd
-res://bribe1.tscn
-=======
-res://QTE.tscn
-res://Area3D.gd
 res://RigidBody3D.gd
->>>>>>> Stashed changes
