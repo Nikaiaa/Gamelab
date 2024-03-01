@@ -1,6 +1,7 @@
-res://looking_at.tscn
-res://looking_at_fragments.gd
+res://grab_object.tscn
 res://node_3d.tscn
 res://char.tscn
 res://QTE.tscn
-res://charmove.gd
+res://looking_at.tscn
+res://grab_object.gd
+res://bribe1.tscn
