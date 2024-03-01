@@ -9,7 +9,7 @@
 [sub_resource type="BoxMesh" id="BoxMesh_at5m5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sqrfp"]
-size = Vector3(1.07629, 1.89209, 0.356628)
+size = Vector3(1.18451, 1.89209, 0.647141)
 
 [node name="Node3D" type="Node3D"]
 
@@ -25,10 +25,11 @@ mesh = SubResource("BoxMesh_at5m5")
 skeleton = NodePath("../../../frag1/CollisionShape3D")
 
 [node name="frag1" type="Area3D" parent="."]
+transform = Transform3D(0.403251, 0, 0, 0, 0.403251, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_xf1ff")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="frag1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0674438, 0.446045, -1.03432)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.121552, 0.446045, -0.889065)
 shape = SubResource("BoxShape3D_sqrfp")
 
 [node name="Sprite3D" type="Sprite3D" parent="frag1"]
