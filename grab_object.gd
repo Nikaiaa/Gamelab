@@ -1,6 +1,8 @@
 extends Area3D
 var mouse_in_zone_true
 var bribe1 = preload ("res://bribe1.tscn")
+var camera 
+var frag1
 
 func _ready():
 	mouse_in_zone_true = false
@@ -25,6 +27,10 @@ func _on_mouse_exited():
 	pass # Replace with function body.
 
 func _spawn_bribe():
+	camera = $"../char"
+	frag1 = $Sprite3D
 	var instance = bribe1.instantiate()
-	instance.position = Vector3(2,0,0)
+	print (camera)
+	instance.position.z = camera.position.z-2
 	add_child(instance)
+	frag1.queue_free()

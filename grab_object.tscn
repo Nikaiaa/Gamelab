@@ -22,20 +22,20 @@ shape = SubResource("BoxShape3D_lmrmy")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
 mesh = SubResource("BoxMesh_at5m5")
-skeleton = NodePath("../../../Area3D/CollisionShape3D")
+skeleton = NodePath("../../../frag1/CollisionShape3D")
 
-[node name="Area3D" type="Area3D" parent="."]
+[node name="frag1" type="Area3D" parent="."]
 script = ExtResource("1_xf1ff")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="frag1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0674438, 0.446045, -1.03432)
 shape = SubResource("BoxShape3D_sqrfp")
 
-[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+[node name="Sprite3D" type="Sprite3D" parent="frag1"]
 transform = Transform3D(0.595944, 0, 0, 0, 0.595944, 0, 0, 0, 1, 0, 0.387042, -0.927871)
 texture = ExtResource("1_tvy4u")
 
 [node name="char" parent="." instance=ExtResource("2_3bvit")]
 
-[connection signal="mouse_entered" from="Area3D" to="Area3D" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Area3D" to="Area3D" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="frag1" to="frag1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="frag1" to="frag1" method="_on_mouse_exited"]
