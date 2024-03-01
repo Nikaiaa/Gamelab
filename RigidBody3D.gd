@@ -6,6 +6,7 @@ func _ready():
 	$"../QTE/AnimationPlayer".play("Slid")
 
 func _on_rigid_body_qte_3d_body_entered(body):
+	print("bonsoir")
 	if body is RigidBody3D:
 		print("Appuie sur A !!")
 
@@ -14,6 +15,7 @@ func _on_rigid_body_qte_3d_body_entered(body):
 			print("C'est juste ! Score : ", score)
 
 func _on_rigid_body_qte_3d_body_exited(body):
+	print("bonsoir!!")
 	if !Input.is_key_pressed(KEY_A) and body is RigidBody3D:
 		print("Raté! Score : ", score)
 
