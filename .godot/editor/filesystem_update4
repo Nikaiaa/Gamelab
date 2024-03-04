@@ -1,7 +1,2 @@
-res://char.tscn
-res://Script/charmove.gd
-res://Script/grab_object.gd
-res://ui_grab_object.tscn
-res://grab_object.tscn
-res://Scène/bribe1.tscn
-res://Scène/QTE.tscn
+res://Scene/QTE.tscn
+res://Script/RigidBody3D.gd
