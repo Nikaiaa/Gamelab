@@ -28,3 +28,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pasvm")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Rotation_Helper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03754, 0)
+
+[connection signal="input_event" from="CharacterBody3D" to="CharacterBody3D" method="_on_input_event"]

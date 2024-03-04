@@ -1,4 +1,36 @@
 ea4bc82a6ad023ab7ee23ee620429895
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+::res://::1709565781
+char.tscn::PackedScene::7607926819849937110::1709565096::0::1::::<><>::res://Script/charmove.gd
+grab_object.tscn::PackedScene::5006239124687008563::1709564827::0::1::::<><>::uid://quo4kdxvac7e::::res://Image/2286300415a9ff54aada9ea75518021e.png<>res://Script/grab_object.gd<>uid://dgnlpclf740qk::::res://char.tscn
+ui_grab_object.tscn::PackedScene::8082070486187101078::1709564405::0::1::::<><>::uid://quo4kdxvac7e::::res://Image/2286300415a9ff54aada9ea75518021e.png
+::res://Image/::1709559010
+2286300415a9ff54aada9ea75518021e.png::CompressedTexture2D::1165211410152682044::1709558635::1709558635::1::::<><>::
+Carré_blanc.jpg::CompressedTexture2D::2012377483840947366::1709558635::1709558635::1::::<><>::
+icon.svg::CompressedTexture2D::5279882565854387095::1709558635::1709559010::1::::<><>::
+Vertical-Line-PNG-High-Quality-Image.png::CompressedTexture2D::8269458741663467208::1709558635::1709558635::1::::<><>::
+woman-playing-piano-her-room-1745186.jpg::CompressedTexture2D::2466478037708830951::1709558635::1709558635::1::::<><>::
+::res://Script/::1709565096
+Area3D.gd::GDScript::-1::1709558635::0::1::::<>Area3D<>::
+charmove.gd::GDScript::-1::1709564827::0::1::::<>CharacterBody3D<>::
+grab_object.gd::GDScript::-1::1709565096::0::1::::<>Area3D<>::
+looking_at_fragments.gd::GDScript::-1::1709558635::0::1::::<>Node3D<>::
+node_3d.gd::GDScript::-1::1709558635::0::1::::<>RefCounted<>::
+RigidBody3D.gd::GDScript::-1::1709560234::0::1::::<>Node3D<>::
+::res://Scène/::1709564405
+bribe1.tscn::PackedScene::503741885886829201::1709564405::0::1::::<><>::uid://quo4kdxvac7e::::res://Image/2286300415a9ff54aada9ea75518021e.png
+char.tscn::PackedScene::474985610618814484::1709558635::0::1::::<><>::res://Script/charmove.gd
+Container.gd::GDScript::-1::1709558635::0::1::::<>Container<>::
+grab_object.tscn::PackedScene::611152263639856675::1709558635::0::1::::<><>::uid://quo4kdxvac7e::::res://Image/2286300415a9ff54aada9ea75518021e.png<>res://Script/grab_object.gd<>uid://g1c7c2w34rua::::res://Scène/char.tscn
+looking_at.tscn::PackedScene::2446235756296416121::1709560234::0::1::::<><>::uid://g1c7c2w34rua::::res://Scène/char.tscn<>res://Script/looking_at_fragments.gd
+node_3d.tscn::PackedScene::3489065846716759036::1709558635::0::1::::<><>::
+QTE.tscn::PackedScene::9163596206930563618::1709564405::0::1::::<><>::uid://bbe1secbxbtln::::res://Image/woman-playing-piano-her-room-1745186.jpg<>uid://dp211osxqvffc::::res://Image/Vertical-Line-PNG-High-Quality-Image.png<>res://Script/RigidBody3D.gd<>uid://3w2te86nask1::::res://Image/Carré_blanc.jpg
+VoiceInput.gd::GDScript::-1::1709558635::0::1::::<>RefCounted<>::
+VoiceInput.tscn::PackedScene::647426680822934809::1709558635::0::1::::<><>::
+=======
+>>>>>>> Stashed changes
 ::res://::1709562914
 grab_object.tscn::PackedScene::5006239124687008563::1709561408::0::1::::<><>::uid://quo4kdxvac7e::::res://Image/2286300415a9ff54aada9ea75518021e.png<>res://Script/grab_object.gd<>uid://dgnlpclf740qk::::res://char.tscn
 ::res://Image/::1709563723
@@ -26,3 +58,7 @@ node_3d.gd::GDScript::-1::1709558436::0::1::::<>RefCounted<>::
 QTE.tscn::PackedScene::9163596206930563618::1709562062::0::1::::<><>::uid://bbe1secbxbtln::::res://Image/woman-playing-piano-her-room-1745186.jpg<>uid://dp211osxqvffc::::res://Image/Vertical-Line-PNG-High-Quality-Image.png<>res://Script/RigidBody3D.gd<>uid://3w2te86nask1::::res://Image/Carré_blanc.jpg
 RigidBody3D.gd::GDScript::-1::1709563638::0::1::::<>Node3D<>::
 VoiceInput.gd::GDScript::-1::1709561408::0::1::::<>RefCounted<>::
+<<<<<<< Updated upstream
+=======
+>>>>>>> b0b7ffbd8b1c9afeebcd4b1d3da5825310718b97
+>>>>>>> Stashed changes

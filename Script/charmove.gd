@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-
+var can_move = true 
 const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 var camera
@@ -24,7 +24,7 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 
 	# Handle jump.
-	if Input.is_action_just_pressed("ui_accept") and is_on_floor():
+	if Input.is_action_just_pressed("ui_accept") and is_on_floor() and can_move == true:
 		velocity.y = JUMP_VELOCITY
 
 	# Get the input direction and handle the movement/deceleration.
@@ -51,3 +51,5 @@ func _input(event):
 		var camera_rot = rotation_helper.rotation_degrees 
 		camera_rot.x = clamp(camera_rot.x, -50, 50)
 		rotation_helper.rotation_degrees = camera_rot
+
+
