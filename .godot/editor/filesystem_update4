@@ -1,10 +1,1 @@
-<<<<<<< Updated upstream
 res://default_bus_layout.tres
-res://Scène/VoiceInput.tscn
-res://Scène/Container.gd
-=======
-res://QTE.tscn
-res://RigidBody3D.gd
-res://looking_at.tscn
-res://char.tscn
->>>>>>> Stashed changes
