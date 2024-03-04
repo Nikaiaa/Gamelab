@@ -1,4 +1,5 @@
-<<<<<<< Updated upstream
+Container
+Control
 Sprite3D
 CollisionShape3D
 StaticBody3D
@@ -7,19 +8,8 @@ Area3D
 Timer
 Node3D
 Camera3D
-=======
 AnimationPlayer
 AnimationTree
 CollisionShape3D
 RigidBody3D
 CollisionShape2D
-RigidBody2D
-Sprite3D
-Camera3D
-Timer
-Node3D
-Area3D
-MeshInstance3D
-StaticBody3D
->>>>>>> Stashed changes
-CharacterBody3D
