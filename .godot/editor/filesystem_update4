@@ -1,7 +1,7 @@
-res://default_bus_layout.tres
 res://char.tscn
-res://grab_object.tscn
-res://ui_grab_object.tscn
-res://Scène/bribe1.tscn
+res://Script/charmove.gd
 res://Script/grab_object.gd
+res://ui_grab_object.tscn
+res://grab_object.tscn
+res://Scène/bribe1.tscn
 res://Scène/QTE.tscn

@@ -1,15 +1,22 @@
+<<<<<<< Updated upstream
 Container
 Control
 Sprite3D
+=======
+Node3D
+>>>>>>> Stashed changes
 CollisionShape3D
+Area3D
+Sprite3D
 StaticBody3D
 MeshInstance3D
-Area3D
 Timer
-Node3D
 Camera3D
 AnimationPlayer
 AnimationTree
-CollisionShape3D
 RigidBody3D
 CollisionShape2D
+<<<<<<< Updated upstream
+=======
+RigidBody2D
+>>>>>>> Stashed changes
