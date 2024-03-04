@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://quo4kdxvac7e"
-path.s3tc="res://.godot/imported/2286300415a9ff54aada9ea75518021e.png-5a818b36542c1148ba23283b38a988bb.s3tc.ctex"
+uid="uid://bbe1secbxbtln"
+path.s3tc="res://.godot/imported/woman-playing-piano-her-room-1745186.jpg-74fdea4f9b9a4a68fbbf0a046c5d4992.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://2286300415a9ff54aada9ea75518021e.png"
-dest_files=["res://.godot/imported/2286300415a9ff54aada9ea75518021e.png-5a818b36542c1148ba23283b38a988bb.s3tc.ctex"]
+source_file="res://Image/woman-playing-piano-her-room-1745186.jpg"
+dest_files=["res://.godot/imported/woman-playing-piano-her-room-1745186.jpg-74fdea4f9b9a4a68fbbf0a046c5d4992.s3tc.ctex"]
 
 [params]
 

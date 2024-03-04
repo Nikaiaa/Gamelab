@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://ba38e7g826y7r"]
 
-[ext_resource type="PackedScene" uid="uid://g1c7c2w34rua" path="res://char.tscn" id="1_bchdd"]
-[ext_resource type="Script" path="res://looking_at_fragments.gd" id="1_t2ssp"]
+[ext_resource type="PackedScene" uid="uid://g1c7c2w34rua" path="res://Scène/char.tscn" id="1_bchdd"]
+[ext_resource type="Script" path="res://Script/looking_at_fragments.gd" id="1_t2ssp"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_rwda6"]
 

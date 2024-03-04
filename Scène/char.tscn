@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://g1c7c2w34rua"]
 
-[ext_resource type="Script" path="res://charmove.gd" id="1_p1o10"]
+[ext_resource type="Script" path="res://Script/charmove.gd" id="1_p1o10"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxue6"]
 

@@ -1,2 +1,3 @@
-res://QTE.tscn
-res://RigidBody3D.gd
+res://default_bus_layout.tres
+res://Scène/VoiceInput.tscn
+res://Scène/Container.gd

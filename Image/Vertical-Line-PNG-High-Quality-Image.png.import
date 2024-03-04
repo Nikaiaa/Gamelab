@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3w2te86nask1"
-path.s3tc="res://.godot/imported/Carré_blanc.jpg-6509a9189d334232f1c94c2a58f7f929.s3tc.ctex"
+uid="uid://dp211osxqvffc"
+path.s3tc="res://.godot/imported/Vertical-Line-PNG-High-Quality-Image.png-635274d0785028c774ac2adc6b519647.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Carré_blanc.jpg"
-dest_files=["res://.godot/imported/Carré_blanc.jpg-6509a9189d334232f1c94c2a58f7f929.s3tc.ctex"]
+source_file="res://Image/Vertical-Line-PNG-High-Quality-Image.png"
+dest_files=["res://.godot/imported/Vertical-Line-PNG-High-Quality-Image.png-635274d0785028c774ac2adc6b519647.s3tc.ctex"]
 
 [params]
 
