@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnfarxidlfdgg"]
+
+[ext_resource type="Texture2D" uid="uid://quo4kdxvac7e" path="res://Image/2286300415a9ff54aada9ea75518021e.png" id="2_ckdre"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.667
+anchor_bottom = 1.667
+offset_right = -1880.38
+offset_bottom = -1040.22
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+own_world_3d = true
+transparent_bg = true
+handle_input_locally = false
+gui_disable_input = true
+gui_snap_controls_to_pixels = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="SubViewportContainer/SubViewport"]
+process_priority = 1
+transform = Transform3D(1, 0, 0, 0, 0.998712, -0.0507324, 0, 0.0507324, 0.998712, 0.213873, 0.291846, 1.27066)
+top_level = true
+cull_mask = 1047553
+current = true
+fov = 89.5
+near = 0.04
+
+[node name="Sprite3D" type="Sprite3D" parent="SubViewportContainer/SubViewport"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, 0, 0)
+texture = ExtResource("2_ckdre")
