@@ -1,7 +1,2 @@
-res://grab_object.tscn
-res://node_3d.tscn
-res://char.tscn
 res://QTE.tscn
-res://looking_at.tscn
-res://grab_object.gd
-res://bribe1.tscn
+res://RigidBody3D.gd
