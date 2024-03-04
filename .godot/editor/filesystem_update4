@@ -1,3 +1,7 @@
 res://default_bus_layout.tres
-res://Scène/VoiceInput.tscn
-res://Scène/Container.gd
+res://char.tscn
+res://grab_object.tscn
+res://ui_grab_object.tscn
+res://Scène/bribe1.tscn
+res://Script/grab_object.gd
+res://Scène/QTE.tscn

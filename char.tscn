@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://dgnlpclf740qk"]
+
+[ext_resource type="Script" path="res://Script/charmove.gd" id="1_p1o10"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxue6"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_5fexx"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pasvm"]
+albedo_color = Color(1, 0.152941, 0, 0.360784)
+roughness = 0.15
+
+[node name="char" type="Node3D"]
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00641918, 0.00824785, -0.00615251)
+script = ExtResource("1_p1o10")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("BoxShape3D_gxue6")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+mesh = SubResource("SphereMesh_5fexx")
+surface_material_override/0 = SubResource("StandardMaterial3D_pasvm")
+
+[node name="Rotation_Helper" type="Node3D" parent="CharacterBody3D"]
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Rotation_Helper"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03754, 0)
