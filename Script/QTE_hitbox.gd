@@ -6,14 +6,13 @@ var qtetimeframe
 var qte_status
 var qte_reussi
 
-
 #qte status
 #appuyé trop tot : miss
 #appuyé dans la limite : success
 #appuyé après la limite : miss
 
 func _ready():
-	$"../AreaQTE/CollisionShape3D/QTE/AnimationPlayer".play("Slid")
+	$"CollisionShape3D/Sprite3D/AnimationPlayer".play("QTE_slide_down")
 	qtetimeframe = false
 	qte_reussi = false
 	
@@ -55,16 +54,16 @@ func _process(_delta):
 #PENSER A STOCKER TOUCHES DANS VARIABLES POUR LA VARIATION FUTURE DES QTE !!!
 #single qte (touche qui bouge sur l'écran) = scène et on les instancie depuis celle-ci
 func _onQTEspawned():
-	if !qtetimeframe && Input.is_key_pressed(KEY_A) && !qte_reussi && $AreaQTE != null: #QTE hors range
+	if !qtetimeframe && Input.is_key_pressed(KEY_A) && !qte_reussi && $"../AreaQTE" != null: #QTE hors range
 		print("C'est raté ! ")
 		qte_reussi = false
-		$"AreaQTE".queue_free()
+		$"../AreaQTE".queue_free()
 	elif qtetimeframe && Input.is_key_pressed(KEY_A) && !qte_reussi:
 		score += 1
 		print("C'est réussi ! Score : ", score)
 		qte_reussi = true
 		qtetimeframe = false
-		$"AreaQTE".queue_free()
+		$"../AreaQTE".queue_free()
 	pass
 
 			#if score >= maxScore:

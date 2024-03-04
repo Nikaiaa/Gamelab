@@ -1,5 +1,7 @@
 <<<<<<< Updated upstream
 res://Scene/QTE.tscn
+res://Scene/QTE_note_2.tscn
+res://Script/QTE_hitbox.gd
 res://Script/RigidBody3D.gd
 =======
 <<<<<<< HEAD
