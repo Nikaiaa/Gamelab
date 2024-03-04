@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://d3s6dc4jav1bq"]
 
-[ext_resource type="Texture2D" uid="uid://3w2te86nask1" path="res://Carré_blanc.jpg" id="2_f8okd"]
-[ext_resource type="Texture2D" uid="uid://bbe1secbxbtln" path="res://woman-playing-piano-her-room-1745186.jpg" id="2_s6tky"]
-[ext_resource type="Texture2D" uid="uid://dp211osxqvffc" path="res://Vertical-Line-PNG-High-Quality-Image.png" id="3_8hr5c"]
-[ext_resource type="Script" path="res://RigidBody3D.gd" id="4_4ikhr"]
+[ext_resource type="Texture2D" uid="uid://bbe1secbxbtln" path="res://Image/woman-playing-piano-her-room-1745186.jpg" id="1_o6yib"]
+[ext_resource type="Texture2D" uid="uid://dp211osxqvffc" path="res://Image/Vertical-Line-PNG-High-Quality-Image.png" id="2_v2idl"]
+[ext_resource type="Script" path="res://Script/RigidBody3D.gd" id="3_reuuk"]
+[ext_resource type="Texture2D" uid="uid://3w2te86nask1" path="res://Image/Carré_blanc.jpg" id="4_5686v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhlmc"]
 size = Vector3(1.14844, 4.59521, 1.70905)
@@ -34,16 +34,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.57546)
 
 [node name="Fond" type="Sprite3D" parent="."]
 layers = 512
-texture = ExtResource("2_s6tky")
+texture = ExtResource("1_o6yib")
 
 [node name="Limite" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.144, 0.197, 2.33698)
-texture = ExtResource("3_8hr5c")
+texture = ExtResource("2_v2idl")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="Limite"]
 mass = 0.01
 gravity_scale = 0.0
-script = ExtResource("4_4ikhr")
+script = ExtResource("3_reuuk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Limite/RigidBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0742188, 0.675049, 0.0391541)
@@ -51,7 +51,7 @@ shape = SubResource("BoxShape3D_lhlmc")
 
 [node name="QTE" type="Sprite3D" parent="Limite"]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -12.5842, 0, 0)
-texture = ExtResource("2_f8okd")
+texture = ExtResource("4_5686v")
 
 [node name="RigidBodyQTE3D" type="RigidBody3D" parent="Limite/QTE"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.11273, 0, 0)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://iybuakcvifjn"]
 
-[ext_resource type="Texture2D" uid="uid://quo4kdxvac7e" path="res://2286300415a9ff54aada9ea75518021e.png" id="1_tvy4u"]
-[ext_resource type="Script" path="res://grab_object.gd" id="1_xf1ff"]
-[ext_resource type="PackedScene" uid="uid://g1c7c2w34rua" path="res://char.tscn" id="2_3bvit"]
+[ext_resource type="Texture2D" uid="uid://quo4kdxvac7e" path="res://Image/2286300415a9ff54aada9ea75518021e.png" id="1_tvy4u"]
+[ext_resource type="Script" path="res://Script/grab_object.gd" id="1_xf1ff"]
+[ext_resource type="PackedScene" uid="uid://g1c7c2w34rua" path="res://Scène/char.tscn" id="2_3bvit"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lmrmy"]
 
