@@ -29,7 +29,6 @@ transform = Transform3D(34.9406, 0, 0, 0, 0.244277, 0, 0, 0, 33.4725, 0, 0, 0)
 shape = SubResource("BoxShape3D_rwda6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
-visible = false
 mesh = SubResource("BoxMesh_wbtaf")
 
 [node name="fragment" type="Node3D" parent="." groups=["fragments"]]
