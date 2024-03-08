@@ -5,7 +5,7 @@
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxue6"]
 
-[sub_resource type="SphereMesh" id="SphereMesh_5fexx"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1viwg"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pasvm"]
 albedo_color = Color(1, 0.152941, 0, 0.360784)
@@ -23,7 +23,7 @@ shape = SubResource("BoxShape3D_gxue6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
-mesh = SubResource("SphereMesh_5fexx")
+mesh = SubResource("CapsuleMesh_1viwg")
 surface_material_override/0 = SubResource("StandardMaterial3D_pasvm")
 
 [node name="Rotation_Helper" type="Node3D" parent="CharacterBody3D"]
