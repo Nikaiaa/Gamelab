@@ -1,13 +1,14 @@
+Label
+Sprite2D
+ColorRect
+Container
 AnimationPlayer
 Sprite3D
 CollisionShape3D
 Area3D
 Node3D
-Container
 Control
 StaticBody3D
 MeshInstance3D
 Timer
 Camera3D
-AnimationTree
-RigidBody3D
