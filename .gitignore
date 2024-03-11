@@ -1,7 +1,15 @@
+Godot 4+ specific ignores
+.godot/
 
-.godot/editor/script_editor_cache.cfg
-*.cfg
-*.cfg
-*.cfg
-.godot/editor/editor_layout.cfg
-*.cfg
+Godot-specific ignores
+.import/
+export.cfg
+exportpresets.cfg
+
+Imported translations (automatically generated from CSV files)
+*.translation
+
+Mono-specific ignores
+.mono/
+data/
+mono_crash..json
