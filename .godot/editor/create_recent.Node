@@ -1,13 +1,13 @@
-AnimationPlayer
+Node3D
 Sprite3D
 CollisionShape3D
 Area3D
-Node3D
+Timer
+Camera3D
+AnimationPlayer
 Container
 Control
 StaticBody3D
 MeshInstance3D
-Timer
-Camera3D
 AnimationTree
 RigidBody3D

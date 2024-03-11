@@ -2,8 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://bbe1secbxbtln" path="res://Image/woman-playing-piano-her-room-1745186.jpg" id="1_o6yib"]
 [ext_resource type="Texture2D" uid="uid://dp211osxqvffc" path="res://Image/Vertical-Line-PNG-High-Quality-Image.png" id="2_v2idl"]
-[ext_resource type="Script" path="res://Script/RigidBody3D.gd" id="3_reuuk"]
-[ext_resource type="Texture2D" uid="uid://3w2te86nask1" path="res://Image/Carré_blanc.jpg" id="4_5686v"]
+[ext_resource type="Script" path="res://Script/QTESpawner.gd" id="3_reuuk"]
+[ext_resource type="Texture2D" path="res://Image/Carré_blanc.jpg" id="4_5686v"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhlmc"]
 size = Vector3(1.14844, 4.59521, 1.70905)

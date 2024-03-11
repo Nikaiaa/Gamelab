@@ -1,1 +1,7 @@
-res://Scene/looking_at.tscn
+res://Scene/QTE.tscn
+res://Script/Area3D.gd
+res://Script/QTE_hitbox_note2.gd
+res://Scene/QTE_note_2.tscn
+res://Scene/QTE_note_3.tscn
+res://Scene/QTE_note_4.tscn
+res://Script/QTESpawner.gd

@@ -1,43 +1,27 @@
-[gd_scene load_steps=6 format=3 uid="uid://d3aqhkaunfsg8"]
+[gd_scene load_steps=5 format=3 uid="uid://d3aqhkaunfsg8"]
 
 [ext_resource type="Script" path="res://Script/QTE_hitbox.gd" id="1_3garh"]
+[ext_resource type="Script" path="res://Scene/QTEhandler.gd" id="1_jsbpv"]
 [ext_resource type="Texture2D" uid="uid://cckw0t3e656xc" path="res://Image/QTE2.png" id="1_wqnyp"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mpv4d"]
 
-[sub_resource type="Animation" id="Animation_wba5o"]
-resource_name = "QTE_slide_down"
-length = 10.0
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../..")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0.0649714, 1, 0, 9.22835, 0, 4.99197, 1, 0, -1.60409, 0)
+[node name="Note_2" type="Node3D"]
+script = ExtResource("1_jsbpv")
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_6wht6"]
-_data = {
-"QTE_slide_down": SubResource("Animation_wba5o")
-}
-
-[node name="Node3D" type="Node3D"]
-
-[node name="AreaQTE" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.22835, 0)
+[node name="QTE_note_2" type="Area3D" parent="."]
 script = ExtResource("1_3garh")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaQTE"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="QTE_note_2"]
 shape = SubResource("SphereShape3D_mpv4d")
 
-[node name="Sprite3D" type="Sprite3D" parent="AreaQTE/CollisionShape3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+[node name="Sprite3D" type="Sprite3D" parent="QTE_note_2/CollisionShape3D"]
 texture = ExtResource("1_wqnyp")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AreaQTE/CollisionShape3D/Sprite3D"]
-libraries = {
-"": SubResource("AnimationLibrary_6wht6")
-}
+[node name="Destination_Position" type="Node3D" parent="QTE_note_2/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
 
-[connection signal="area_entered" from="AreaQTE" to="AreaQTE" method="_on_area_entered"]
-[connection signal="area_exited" from="AreaQTE" to="AreaQTE" method="_on_area_exited"]
+[connection signal="tree_entered" from="." to="." method="_on_tree_entered"]
+[connection signal="area_entered" from="QTE_note_2" to="QTE_note_2" method="_on_area_entered"]
+[connection signal="area_exited" from="QTE_note_2" to="QTE_note_2" method="_on_area_exited"]
+[connection signal="tree_entered" from="QTE_note_2" to="QTE_note_2" method="_on_tree_entered"]

@@ -1,72 +1,66 @@
-[gd_scene load_steps=9 format=3 uid="uid://d3s6dc4jav1bq"]
+[gd_scene load_steps=8 format=3 uid="uid://d3s6dc4jav1bq"]
 
 [ext_resource type="Texture2D" uid="uid://bbe1secbxbtln" path="res://Image/woman-playing-piano-her-room-1745186.jpg" id="1_o6yib"]
 [ext_resource type="Texture2D" uid="uid://dp211osxqvffc" path="res://Image/Vertical-Line-PNG-High-Quality-Image.png" id="2_v2idl"]
-[ext_resource type="Script" path="res://Script/RigidBody3D.gd" id="3_reuuk"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_n1rxe"]
-size = Vector3(5.12378, 4.43457, 4.53467)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1bcq7"]
-load_path = "res://.godot/imported/white square.png-4d56b453a5f7954f595f493a7d79291a.ctex"
-
-[sub_resource type="Animation" id="Animation_3o1mf"]
-resource_name = "Slid"
-length = 10.0
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, -8.53374, 0, 1.8158, 5, 1, 8.53613, 0, 1.8158)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_1vus6"]
-_data = {
-"Slid": SubResource("Animation_3o1mf")
-}
+[ext_resource type="Script" path="res://Script/QTESpawner.gd" id="3_reuuk"]
+[ext_resource type="Texture2D" uid="uid://c7d12hy6w6tvo" path="res://Image/QTEspawn2.png" id="4_cod2c"]
+[ext_resource type="Texture2D" uid="uid://tyv5i0n166d6" path="res://Image/QTEspawn3.png" id="5_8q85w"]
+[ext_resource type="Texture2D" uid="uid://bjk1gtdr3igrm" path="res://Image/QTEspawn4.png" id="6_uu7x2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhlmc"]
-size = Vector3(1.14844, 4.59521, 1.70905)
+size = Vector3(1.14844, 6.65891, 1.70905)
 
 [node name="Node3D" type="Node3D"]
-
-[node name="AreaQTE" type="Area3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.53374, 0, 1.8158)
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AreaQTE"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.27179, 0.0307619, -0.204835)
-shape = SubResource("BoxShape3D_n1rxe")
-
-[node name="QTE" type="Sprite3D" parent="AreaQTE/CollisionShape3D"]
-transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
-texture = SubResource("CompressedTexture2D_1bcq7")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AreaQTE/CollisionShape3D/QTE"]
-root_node = NodePath("../../..")
-libraries = {
-"": SubResource("AnimationLibrary_1vus6")
-}
+script = ExtResource("3_reuuk")
 
 [node name="Fond" type="Sprite3D" parent="."]
 layers = 512
+modulate = Color(1, 1, 1, 0.384314)
 texture = ExtResource("1_o6yib")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.3964)
 
 [node name="AreaLimite" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.144, 0.197, 2.33698)
-script = ExtResource("3_reuuk")
+transform = Transform3D(2.275, 0, 0, 0, 2.275, 0, 0, 0, 2.275, 7.44162, -0.209693, 2.33698)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaLimite"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0742188, 0.675049, 0.0391541)
+transform = Transform3D(0.999949, -3.55271e-15, 0, 3.55271e-15, 0.999949, 0, 0, 0, 0.999949, 0.160995, 0.0627431, -0.149771)
 shape = SubResource("BoxShape3D_lhlmc")
 
 [node name="Limite" type="Sprite3D" parent="AreaLimite/CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0742188, -0.675049, -0.0391541)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0867841, -0.141686, 0.110624)
 texture = ExtResource("2_v2idl")
 
-[connection signal="area_entered" from="AreaQTE" to="AreaLimite" method="_on_area_entered"]
-[connection signal="area_entered" from="AreaLimite" to="AreaLimite/CollisionShape3D/Limite" method="_on_area_entered"]
+[node name="TimerSpawnNote2" type="Timer" parent="AreaLimite"]
+
+[node name="TimerSpawnNote3" type="Timer" parent="AreaLimite"]
+
+[node name="TimerSpawnNote4" type="Timer" parent="AreaLimite"]
+
+[node name="SPN2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73146, 4.36866, 0)
+
+[node name="SpawnPosNote2" type="Sprite3D" parent="SPN2"]
+texture = ExtResource("4_cod2c")
+
+[node name="SPN3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.65263, 2.20735, 0)
+
+[node name="SpawnPosNote3" type="Sprite3D" parent="SPN3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112485, 0.196848, 0)
+texture = ExtResource("5_8q85w")
+
+[node name="SPN4" type="Node3D" parent="."]
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.70992, 0.290017, 0)
+
+[node name="SpawnPosNote4" type="Sprite3D" parent="SPN4"]
+transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 0, 0)
+texture = ExtResource("6_uu7x2")
+
+[connection signal="area_entered" from="AreaLimite" to="." method="_on_area_limite_area_entered"]
+[connection signal="area_exited" from="AreaLimite" to="." method="_on_area_limite_area_exited"]
 [connection signal="area_exited" from="AreaLimite" to="AreaLimite" method="_on_area_exited"]
+[connection signal="timeout" from="AreaLimite/TimerSpawnNote2" to="." method="_on_timer_spawn_note_2_timeout"]
+[connection signal="timeout" from="AreaLimite/TimerSpawnNote3" to="." method="_on_timer_spawn_note_3_timeout"]
+[connection signal="timeout" from="AreaLimite/TimerSpawnNote4" to="." method="_on_timer_spawn_note_4_timeout"]
