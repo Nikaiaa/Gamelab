@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dwoasdgu4lj7b"
-path.s3tc="res://.godot/imported/QTE4.png-139235e324f5c15a92cac17d9ac8234c.s3tc.ctex"
+uid="uid://tyv5i0n166d6"
+path.s3tc="res://.godot/imported/QTEspawn3.png-22b574c4b4f65ec4a3b7c73ae0c6df44.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Image/QTE4.png"
-dest_files=["res://.godot/imported/QTE4.png-139235e324f5c15a92cac17d9ac8234c.s3tc.ctex"]
+source_file="res://Image/QTEspawn3.png"
+dest_files=["res://.godot/imported/QTEspawn3.png-22b574c4b4f65ec4a3b7c73ae0c6df44.s3tc.ctex"]
 
 [params]
 

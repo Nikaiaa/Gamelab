@@ -6,6 +6,7 @@ var frag1
 signal cantMove
 var instance
 
+
 func _ready():
 	mouse_in_zone_true = false
 	#player.can_move = true 

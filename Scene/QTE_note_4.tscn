@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://40dmrjv0xoe4"]
+
+[ext_resource type="Script" path="res://Script/QTE_hitbox.gd" id="1_xbxtc"]
+[ext_resource type="Texture2D" uid="uid://dwoasdgu4lj7b" path="res://Image/QTE4.png" id="2_508pq"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mpv4d"]
+
+[node name="Note_4" type="Node3D"]
+
+[node name="QTE_note_4" type="Area3D" parent="."]
+script = ExtResource("1_xbxtc")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="QTE_note_4"]
+shape = SubResource("SphereShape3D_mpv4d")
+
+[node name="Sprite3D" type="Sprite3D" parent="QTE_note_4/CollisionShape3D"]
+texture = ExtResource("2_508pq")
+
+[node name="Destination_Position" type="Node3D" parent="QTE_note_4/CollisionShape3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[connection signal="area_entered" from="QTE_note_4" to="QTE_note_4" method="_on_area_entered"]
+[connection signal="area_exited" from="QTE_note_4" to="QTE_note_4" method="_on_area_exited"]
