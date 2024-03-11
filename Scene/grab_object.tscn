@@ -13,6 +13,8 @@ size = Vector3(1.18451, 1.89209, 0.647141)
 
 [node name="Node3D" type="Node3D"]
 
+[node name="char" parent="." instance=ExtResource("2_3bvit")]
+
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(2.94948, 0, 0, 0, 0.0687882, 0, 0, 0, 3.14253, 0, -0.291399, 0)
 
@@ -24,6 +26,7 @@ mesh = SubResource("BoxMesh_at5m5")
 skeleton = NodePath("../../../frag1/CollisionShape3D")
 
 [node name="frag1" type="Area3D" parent="."]
+unique_name_in_owner = true
 transform = Transform3D(0.403251, 0, 0, 0, 0.403251, 0, 0, 0, 1, 0, 0, 0)
 script = ExtResource("1_xf1ff")
 
@@ -35,7 +38,7 @@ shape = SubResource("BoxShape3D_sqrfp")
 transform = Transform3D(0.595944, 0, 0, 0, 0.595944, 0, 0, 0, 1, 0, 0.387042, -0.927871)
 texture = ExtResource("1_tvy4u")
 
-[node name="char" parent="." instance=ExtResource("2_3bvit")]
-
+[connection signal="cantMove" from="char" to="char" method="_on_cant_move"]
+[connection signal="cantMove" from="frag1" to="char" method="_on_cant_move"]
 [connection signal="mouse_entered" from="frag1" to="frag1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="frag1" to="frag1" method="_on_mouse_exited"]
