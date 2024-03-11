@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bjk1gtdr3igrm" path="res://Image/QTEspawn4.png" id="6_uu7x2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhlmc"]
-size = Vector3(1.14844, 6.65891, 1.70905)
+size = Vector3(1.43115, 6.65891, 1.70905)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("3_reuuk")
@@ -25,11 +25,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.3964)
 transform = Transform3D(2.275, 0, 0, 0, 2.275, 0, 0, 0, 2.275, 7.44162, -0.209693, 2.33698)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaLimite"]
-transform = Transform3D(0.999949, -3.55271e-15, 0, 3.55271e-15, 0.999949, 0, 0, 0, 0.999949, 0.160995, 0.0627431, -0.149771)
+transform = Transform3D(0.999928, -3.55264e-15, 0, 3.55264e-15, 0.999928, 0, 0, 0, 0.999928, 0.0196455, 0.0627431, -0.149771)
 shape = SubResource("BoxShape3D_lhlmc")
 
 [node name="Limite" type="Sprite3D" parent="AreaLimite/CollisionShape3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0867841, -0.141686, 0.110624)
+transform = Transform3D(1.44586, 4.23516e-22, 0, 0, 1, 0, 0, 0, 1, -0.0867841, -0.141686, 0.110624)
 texture = ExtResource("2_v2idl")
 
 [node name="TimerSpawnNote2" type="Timer" parent="AreaLimite"]
@@ -60,7 +60,6 @@ texture = ExtResource("6_uu7x2")
 
 [connection signal="area_entered" from="AreaLimite" to="." method="_on_area_limite_area_entered"]
 [connection signal="area_exited" from="AreaLimite" to="." method="_on_area_limite_area_exited"]
-[connection signal="area_exited" from="AreaLimite" to="AreaLimite" method="_on_area_exited"]
 [connection signal="timeout" from="AreaLimite/TimerSpawnNote2" to="." method="_on_timer_spawn_note_2_timeout"]
 [connection signal="timeout" from="AreaLimite/TimerSpawnNote3" to="." method="_on_timer_spawn_note_3_timeout"]
 [connection signal="timeout" from="AreaLimite/TimerSpawnNote4" to="." method="_on_timer_spawn_note_4_timeout"]

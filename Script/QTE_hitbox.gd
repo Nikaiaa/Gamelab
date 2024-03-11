@@ -33,12 +33,12 @@ func _ready():
 	#_chose_name()
 
 	
-func _on_area_entered(_area):
-	_qtetimeframe = true
-	
-func _on_area_exited(_area):
-	_qtetimeframe = false
-	pass # Replace with function body.
+#func _on_area_entered(_area):
+	#_qtetimeframe = true
+	#
+#func _on_area_exited(_area):
+	#_qtetimeframe = false
+	#pass # Replace with function body.
 
 #func _chose_name():
 	#notes2Array.push_front($"..")
@@ -124,6 +124,7 @@ func _slide_down(delta):
 		moving = false
 		$"..".queue_free()
 		print("missed!")
+		print("_______")
 		
 #func _bordel():
 	##func _on_rigid_body_qte_3d_body_entered(body):
