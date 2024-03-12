@@ -30,6 +30,7 @@ func _input(event):
 			cantMove.connect(_on_cant_move)
 			cantMove.emit(event)
 			
+			
 func _on_mouse_exited():
 	mouse_in_zone_true = false
 	pass # Replace with function body.
