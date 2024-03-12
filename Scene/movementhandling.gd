@@ -1,5 +1,6 @@
 extends Node3D
 
+var instance
 var can_move
 var mouse_in_zone_true
 var tampon =false
@@ -21,11 +22,28 @@ func _ready():
 			#cantMove.emit()
 
 func _on_cant_move(event):
+	instance = %frag1.instance
 	can_move = false 
+	$Timer.wait_time = 5
+	$Timer.start()
+	print_debug($Timer.time_left)
+	print ($Timer)
+	can_move = false
 	#print("movhandler")
 	#print(can_move)
 	if InputEventMouseButton and event.is_action_pressed("left_click") and tampon == true:
-		can_move = true 
-		tampon = false
+		tampon=false
 	tampon = true
+	
+func _on_timer_timeout():
+	print("timer stop")
+	can_move = true
+	instance.queue_free()
+		
+		
+	
 	pass # Replace with function body.
+
+
+
+	
