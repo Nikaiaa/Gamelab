@@ -20,6 +20,10 @@ buses/default_bus_layout=""
 general/text_to_speech=true
 driver/enable_input=true
 
+[display]
+
+window/size/mode=4
+
 [editor]
 
 movie_writer/movie_file="/Users/clementagathe/Desktop/appart.avi"
