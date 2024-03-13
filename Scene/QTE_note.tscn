@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3aqhkaunfsg8"]
+
+[ext_resource type="Script" path="res://Script/QTE_move_and_destroy.gd" id="1_tnqig"]
+[ext_resource type="Texture2D" uid="uid://cckw0t3e656xc" path="res://Image/QTE2.png" id="2_hqdme"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mpv4d"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8h7ty"]
+
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("destination", "apparence", "Note")]
+script = ExtResource("1_tnqig")
+destination = NodePath("Destination_Position")
+apparence = NodePath("QTE_note_area/CollisionShape3D/Sprite3D")
+Note = NodePath("QTE_note_area")
+
+[node name="QTE_note_area" type="Area3D" parent="."]
+collision_layer = 0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="QTE_note_area"]
+shape = SubResource("SphereShape3D_mpv4d")
+
+[node name="Sprite3D" type="Sprite3D" parent="QTE_note_area/CollisionShape3D"]
+texture = ExtResource("2_hqdme")
+
+[node name="ShapeCast3D" type="ShapeCast3D" parent="QTE_note_area"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+shape = SubResource("SphereShape3D_8h7ty")
+target_position = Vector3(0, 0, 0)
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="Destination_Position" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[connection signal="area_entered" from="QTE_note_area" to="." method="_on_qte_note_area_entered"]
+[connection signal="area_exited" from="QTE_note_area" to="." method="_on_qte_note_area_exited"]
+[connection signal="tree_entered" from="QTE_note_area" to="QTE_note_area" method="_on_tree_entered"]

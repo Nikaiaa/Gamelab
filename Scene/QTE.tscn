@@ -1,17 +1,27 @@
-[gd_scene load_steps=8 format=3 uid="uid://d3s6dc4jav1bq"]
+[gd_scene load_steps=12 format=3 uid="uid://d3s6dc4jav1bq"]
 
+[ext_resource type="Script" path="res://Script/QTEManager.gd" id="1_4uevv"]
 [ext_resource type="Texture2D" uid="uid://bbe1secbxbtln" path="res://Image/woman-playing-piano-her-room-1745186.jpg" id="1_o6yib"]
+[ext_resource type="PackedScene" uid="uid://d3aqhkaunfsg8" path="res://Scene/QTE_note.tscn" id="2_cp4ls"]
 [ext_resource type="Texture2D" uid="uid://dp211osxqvffc" path="res://Image/Vertical-Line-PNG-High-Quality-Image.png" id="2_v2idl"]
-[ext_resource type="Script" path="res://Script/QTESpawner.gd" id="3_reuuk"]
+[ext_resource type="Texture2D" uid="uid://cckw0t3e656xc" path="res://Image/QTE2.png" id="3_jrk5e"]
 [ext_resource type="Texture2D" uid="uid://c7d12hy6w6tvo" path="res://Image/QTEspawn2.png" id="4_cod2c"]
+[ext_resource type="Texture2D" uid="uid://tnqq74l4hh44" path="res://Image/QTE3.png" id="4_lu24d"]
 [ext_resource type="Texture2D" uid="uid://tyv5i0n166d6" path="res://Image/QTEspawn3.png" id="5_8q85w"]
+[ext_resource type="Texture2D" uid="uid://dwoasdgu4lj7b" path="res://Image/QTE4.png" id="5_uyobb"]
 [ext_resource type="Texture2D" uid="uid://bjk1gtdr3igrm" path="res://Image/QTEspawn4.png" id="6_uu7x2"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhlmc"]
 size = Vector3(1.43115, 6.65891, 1.70905)
 
-[node name="Node3D" type="Node3D"]
-script = ExtResource("3_reuuk")
+[node name="Node3D" type="Node3D" node_paths=PackedStringArray("arrayStartPos", "timer2", "timer3", "timer4")]
+script = ExtResource("1_4uevv")
+Note = ExtResource("2_cp4ls")
+arrayTextures = Array[CompressedTexture2D]([null, null, ExtResource("3_jrk5e"), ExtResource("4_lu24d"), ExtResource("5_uyobb")])
+arrayStartPos = [null, null, NodePath("SPN2"), NodePath("SPN3"), NodePath("SPN4")]
+timer2 = NodePath("AreaLimite/TimerSpawnNote2")
+timer3 = NodePath("AreaLimite/TimerSpawnNote3")
+timer4 = NodePath("AreaLimite/TimerSpawnNote4")
 
 [node name="Fond" type="Sprite3D" parent="."]
 layers = 512
@@ -23,6 +33,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.3964)
 
 [node name="AreaLimite" type="Area3D" parent="."]
 transform = Transform3D(2.275, 0, 0, 0, 2.275, 0, 0, 0, 2.275, 7.44162, -0.209693, 2.33698)
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaLimite"]
 transform = Transform3D(0.999928, -3.55264e-15, 0, 3.55264e-15, 0.999928, 0, 0, 0, 0.999928, 0.0196455, 0.0627431, -0.149771)
