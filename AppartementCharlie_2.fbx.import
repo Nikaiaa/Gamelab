@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://di2gbvmcoqmos"
-path="res://.godot/imported/AppartementCharlie.fbx-e71878a214b927f111fbc2a6007f72cb.scn"
+uid="uid://f6u8urvqd76o"
+path="res://.godot/imported/AppartementCharlie_2.fbx-c5c9adf372ba486ef922f6b4d2860881.scn"
 
 [deps]
 
-source_file="res://AppartementCharlie.fbx"
-dest_files=["res://.godot/imported/AppartementCharlie.fbx-e71878a214b927f111fbc2a6007f72cb.scn"]
+source_file="res://AppartementCharlie_2.fbx"
+dest_files=["res://.godot/imported/AppartementCharlie_2.fbx-c5c9adf372ba486ef922f6b4d2860881.scn"]
 
 [params]
 

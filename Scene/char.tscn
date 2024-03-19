@@ -33,7 +33,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pasvm")
 [node name="Rotation_Helper" type="Node3D" parent="CharacterBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Rotation_Helper"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.47822, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85434, 0)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
