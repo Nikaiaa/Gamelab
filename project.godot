@@ -28,6 +28,13 @@ window/size/mode=4
 
 movie_writer/movie_file="/Users/clementagathe/Desktop/appart.avi"
 
+[filesystem]
+
+import/blender/enabled.android=true
+import/blender/enabled.web=true
+import/fbx/enabled.android=true
+import/fbx/enabled.web=true
+
 [input]
 
 move_forward={
@@ -75,3 +82,7 @@ press_key_4={
 
 3d_physics/layer_1="zone_rate"
 3d_physics/layer_2="zone_reussi"
+
+[xr]
+
+shaders/enabled=true
