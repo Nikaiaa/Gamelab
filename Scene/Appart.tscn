@@ -1,8 +1,9 @@
-[gd_scene load_steps=65 format=3 uid="uid://c8w6epx6u3mn5"]
+[gd_scene load_steps=66 format=3 uid="uid://c8w6epx6u3mn5"]
 
 [ext_resource type="PackedScene" uid="uid://f6u8urvqd76o" path="res://AppartementCharlie_2.fbx" id="1_5exqp"]
-[ext_resource type="PackedScene" uid="uid://c6dqqlfrkjrmy" path="res://porte_2.glb" id="2_unfek"]
+[ext_resource type="Script" path="res://Scene/Appart.gd" id="1_bf123"]
 [ext_resource type="PackedScene" uid="uid://dgnlpclf740qk" path="res://Scene/char.tscn" id="2_vq61q"]
+[ext_resource type="PackedScene" uid="uid://bdf82ktaumgq1" path="res://untitled.glb" id="3_hsuc1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_b00lx"]
 size = Vector3(3.58806, 2.2262, 2.4906)
@@ -193,6 +194,7 @@ radius = 2.73055
 size = Vector3(1.92529, 1.70114, 2.49011)
 
 [node name="Appart" type="Node3D"]
+script = ExtResource("1_bf123")
 
 [node name="Appart_Blend" parent="." instance=ExtResource("1_5exqp")]
 transform = Transform3D(0.999993, 0, -0.003735, 0, 1, 0, 0.003735, 0, 0.999993, 0, 0, 0)
@@ -475,17 +477,17 @@ shape = SubResource("CylinderShape3D_uk10h")
 transform = Transform3D(0.862496, 0, 0.506064, 0, 1, 0, -0.506064, 0, 0.862496, 36.4482, 0.554611, 21.0985)
 shape = SubResource("BoxShape3D_i564u")
 
-[node name="porte_3" parent="Appart_Blend" instance=ExtResource("2_unfek")]
-transform = Transform3D(0.997047, 0, 0.0767887, 0, 1, 0, -0.0767887, 0, 0.997047, -14.6222, 0, 20.1616)
-
-[node name="porte_5" parent="Appart_Blend" instance=ExtResource("2_unfek")]
-transform = Transform3D(0.00209441, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00209441, 3.62099, 0.0281506, 15.8025)
-
-[node name="porte_4" parent="Appart_Blend" instance=ExtResource("2_unfek")]
-transform = Transform3D(0.00209442, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00209442, -18.1284, 0, -6.95426)
-
-[node name="porte_2" parent="Appart_Blend" instance=ExtResource("2_unfek")]
-transform = Transform3D(0.00209442, 0, -0.999997, 0, 1, 0, 0.999997, 0, 0.00209442, -18.5266, 0, 1.53159)
-
 [node name="char" parent="." instance=ExtResource("2_vq61q")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.3044, 1.23473, -15.678)
+
+[node name="Porte_Cuisine" parent="." instance=ExtResource("3_hsuc1")]
+transform = Transform3D(0.0204363, 0, 0.999791, 0, 1, 0, -0.999791, 0, 0.0204363, 4.11251, 0.0728829, 19.0546)
+
+[node name="Porte_SDB" parent="." instance=ExtResource("3_hsuc1")]
+transform = Transform3D(-0.999989, 0, 0.00462502, 0, 1, 0, -0.00462502, 0, -0.999989, -11.5269, -0.0137527, 19.913)
+
+[node name="Porte_Chambre" parent="." instance=ExtResource("3_hsuc1")]
+transform = Transform3D(0.03005, 0, -0.999548, 0, 1, 0, 0.999548, 0, 0.03005, -17.9302, 0.0412481, 0.406078)
+
+[node name="Porte_bureau" parent="." instance=ExtResource("3_hsuc1")]
+transform = Transform3D(0.03005, 0, -0.999548, 0, 1, 0, 0.999548, 0, 0.03005, -17.8953, 0.0456421, -8.46646)
