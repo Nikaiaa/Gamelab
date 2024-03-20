@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://dgnlpclf740qk"]
+[gd_scene load_steps=8 format=3 uid="uid://dgnlpclf740qk"]
 
 [ext_resource type="Script" path="res://Script/charmove.gd" id="1_p1o10"]
 [ext_resource type="Script" path="res://Scene/movementhandling.gd" id="1_yf6yi"]
+[ext_resource type="Shader" path="res://Scene/char.gdshader" id="3_qo102"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxue6"]
 
@@ -12,6 +13,19 @@ height = 2.5
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pasvm"]
 albedo_color = Color(1, 0.152941, 0, 0.360784)
 roughness = 0.15
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hkeef"]
+shader = ExtResource("3_qo102")
+shader_parameter/aspect = 1.0
+shader_parameter/distortion = 1.0
+shader_parameter/radius = 1.0
+shader_parameter/alpha = 1.0
+shader_parameter/crop = 1.0
+shader_parameter/crop_color = Color(0, 0, 0, 1)
+shader_parameter/crop_feathering = 0.1
+shader_parameter/shader_enabled = true
+shader_parameter/channel_offset = 0.01
+shader_parameter/noise_strength = 0.5
 
 [node name="char" type="Node3D"]
 script = ExtResource("1_yf6yi")
@@ -34,6 +48,17 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pasvm")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Rotation_Helper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85434, 0)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D/Rotation_Helper/Camera3D"]
+follow_viewport_enabled = true
+
+[node name="ColorRect" type="ColorRect" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer"]
+material = SubResource("ShaderMaterial_hkeef")
+anchors_preset = -1
+anchor_right = 1.01
+anchor_bottom = 1.0
+offset_right = 0.800049
+offset_bottom = 9.0
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 
