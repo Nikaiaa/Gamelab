@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cokf3ls3o0pks"
-path="res://.godot/imported/bouton_rose.png-cc8367b960b55256c37cfba4192faa04.ctex"
+uid="uid://043k1xeqsq2i"
+path="res://.godot/imported/bouton_rose.png-1ffa6809a76f47e07a53b1a98490bf9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Image/menu/bouton_rose.png"
-dest_files=["res://.godot/imported/bouton_rose.png-cc8367b960b55256c37cfba4192faa04.ctex"]
+source_file="res://Image/bouton_rose.png"
+dest_files=["res://.godot/imported/bouton_rose.png-1ffa6809a76f47e07a53b1a98490bf9f.ctex"]
 
 [params]
 

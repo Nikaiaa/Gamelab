@@ -1,5 +1,0 @@
-[gd_scene format=3 uid="uid://jhva1n23ka8h"]
-
-[node name="VoiceInput" type="Control"]
-layout_mode = 3
-anchors_preset = 0
