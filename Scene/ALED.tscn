@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://bj5ag4ivrl4dt"]
+
+[ext_resource type="Script" path="res://Scene/ALED.gd" id="1_6dugd"]
+[ext_resource type="PackedScene" uid="uid://dgnlpclf740qk" path="res://Scene/char.tscn" id="1_7v5sx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_welct"]
+size = Vector3(3, 3, 2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g2122"]
+size = Vector3(3.32666, 2.02844, 2.29742)
+
+[sub_resource type="BoxMesh" id="BoxMesh_0fidb"]
+size = Vector3(10, 0.5, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_k6ag0"]
+size = Vector3(9.32361, 1, 9.48096)
+
+[node name="Aled" type="Node3D"]
+script = ExtResource("1_6dugd")
+
+[node name="char" parent="." instance=ExtResource("1_7v5sx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3149, 1.09626)
+
+[node name="Objet" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.79241, -2.17721)
+mesh = SubResource("BoxMesh_welct")
+skeleton = NodePath("../MeshInstance3D")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Objet"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Objet/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00366211, 0.514221, -0.0401917)
+shape = SubResource("BoxShape3D_g2122")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_0fidb")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D"]
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.352722, 0, 0.0905762)
+shape = SubResource("BoxShape3D_k6ag0")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.44869, 0)
+spot_angle = 84.375
+
+[connection signal="mouse_entered" from="Objet/StaticBody3D" to="." method="_on_static_body_3d_mouse_entered"]
+[connection signal="mouse_exited" from="Objet/StaticBody3D" to="." method="_on_static_body_3d_mouse_exited"]

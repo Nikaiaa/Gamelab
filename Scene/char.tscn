@@ -16,6 +16,7 @@ roughness = 0.15
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hkeef"]
 shader = ExtResource("3_qo102")
+shader_parameter/active = false
 shader_parameter/aspect = 1.0
 shader_parameter/distortion = 1.0
 shader_parameter/radius = 1.0
@@ -23,17 +24,18 @@ shader_parameter/alpha = 1.0
 shader_parameter/crop = 1.0
 shader_parameter/crop_color = Color(0, 0, 0, 1)
 shader_parameter/crop_feathering = 0.1
-shader_parameter/shader_enabled = true
 shader_parameter/channel_offset = 0.01
 shader_parameter/noise_strength = 0.5
 
-[node name="char" type="Node3D"]
+[node name="char" type="Node3D" node_paths=PackedStringArray("Fisheye")]
 script = ExtResource("1_yf6yi")
+Fisheye = NodePath("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/ColorRect")
 
 [node name="Timer" type="Timer" parent="."]
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00641918, 0.00824785, -0.00615251)
+input_ray_pickable = false
 script = ExtResource("1_p1o10")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
@@ -47,7 +49,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pasvm")
 [node name="Rotation_Helper" type="Node3D" parent="CharacterBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Rotation_Helper"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.85434, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.21305, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D/Rotation_Helper/Camera3D"]
 follow_viewport_enabled = true
@@ -59,6 +61,7 @@ anchor_right = 1.01
 anchor_bottom = 1.0
 offset_right = 0.800049
 offset_bottom = 9.0
+mouse_filter = 2
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 

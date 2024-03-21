@@ -4,6 +4,7 @@ var instance
 var can_move
 var mouse_in_zone_true
 var tampon =false
+@export var Fisheye: CanvasItem
 signal cantMove
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -31,19 +32,15 @@ func _on_cant_move(event):
 	can_move = false
 	#print("movhandler")
 	#print(can_move)
-	if InputEventMouseButton and event.is_action_pressed("left_click") and tampon == true:
-		tampon=false
+	#if InputEventMouseButton and event.is_action_pressed("left_click") and tampon == true:
+		#tampon=false
 	tampon = true
 	
 func _on_timer_timeout():
 	print("timer stop")
 	can_move = true
 	instance.queue_free()
-		
-		
-	
 	pass # Replace with function body.
 
-
-
-	
+func activeShader(b : bool):
+	Fisheye.material.set("shader_param/active",b)

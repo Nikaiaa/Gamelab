@@ -25,29 +25,35 @@ vec2 distort(vec2 p)
 
 void fragment()
 {
-    vec2 xy = (SCREEN_UV * 2.0 - 1.0); 
-    xy = vec2(xy.x * aspect, xy.y); 
-    float d = length(xy);
-    vec4 tex;
-    if (d < radius)
-    {
-        vec2 distorted_uv_r = distort(xy * (base_distortion + 0.0 * channel_offset)); 
-        vec2 distorted_uv_g = distort(xy * (base_distortion + 1.0 * channel_offset)); 
-        vec2 distorted_uv_b = distort(xy * (base_distortion + 2.0 * channel_offset)); 
-        
-        tex.r = texture(SCREEN_TEXTURE, distorted_uv_r).r;
-        tex.g = texture(SCREEN_TEXTURE, distorted_uv_g).g;
-        tex.b = texture(SCREEN_TEXTURE, distorted_uv_b).b;
-    	float x = (UV.x + 4.0 ) * (UV.y + 4.0 ) * (TIME * 10.0);
-		tex = tex+vec4(mod((mod(x, 13.0) ) * (mod(x, 123.0) ), 0.01)-0.005) * noise_strength;
-        COLOR = tex;
-        COLOR.a = alpha;
-    }
+    if (active) {
+        vec2 xy = (SCREEN_UV * 2.0 - 1.0); 
+        xy = vec2(xy.x * aspect, xy.y); 
+        float d = length(xy);
+        vec4 tex;
+        if (d < radius)
+        {
+            vec2 distorted_uv_r = distort(xy * (base_distortion + 0.0 * channel_offset)); 
+            vec2 distorted_uv_g = distort(xy * (base_distortion + 1.0 * channel_offset)); 
+            vec2 distorted_uv_b = distort(xy * (base_distortion + 2.0 * channel_offset)); 
+            
+            tex.r = texture(SCREEN_TEXTURE, distorted_uv_r).r;
+            tex.g = texture(SCREEN_TEXTURE, distorted_uv_g).g;
+            tex.b = texture(SCREEN_TEXTURE, distorted_uv_b).b;
+            
+            float x = (UV.x + 4.0 ) * (UV.y + 4.0 ) * (TIME * 10.0);
+            tex = tex + vec4(mod((mod(x, 13.0) ) * (mod(x, 123.0) ), 0.01)-0.005) * noise_strength;
+            COLOR = tex;
+            COLOR.a = alpha;
+        }
 
-    if (d > crop)
-    {
-        float softness = smoothstep(crop, crop + crop_feathering, d);
-        COLOR = mix(tex, crop_color, softness);
-        COLOR.a = alpha;
+        if (d > crop)
+        {
+            float softness = smoothstep(crop, crop + crop_feathering, d);
+            COLOR = mix(tex, crop_color, softness);
+            COLOR.a = alpha;
+        }
+    } else {
+        // Si le shader n'est pas actif, utilisez simplement la couleur d'arrière-plan
+        COLOR = vec4(0.0, 0.0, 0.0, 0.0);
     }
 }

@@ -3,7 +3,7 @@ var mouse_in_fragment_collider
 var timer
 var stress_amount
 var timer_amount
-
+#@onready var target_object: ColorRect = $char/CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/ColorRect
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	timer_amount = 1
@@ -31,7 +31,8 @@ func _on_anxiete_timer_timeout():
 func gestion_anxiete():
 	timer = get_node("collider/anxiete_timer")
 	timer.stop()
-	timer.start(timer_amount)		
+	timer.start(timer_amount)
+	#target_object.visible = true
 	
 #	func _bordel():
 		#collision_layer = 1
