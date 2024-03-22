@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="bribeResource" load_steps=2 format=3 uid="uid://df5jym78qkvo5"]
+
+[ext_resource type="Script" path="res://Script/bribe_resource.gd" id="1_303y6"]
+
+[resource]
+script = ExtResource("1_303y6")
+name = ""
+isImportant = false
+dialogue = ""

@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwphjpy5hxkxh"]
+
+[ext_resource type="Script" path="res://Scene/bribe.gd" id="1_qw6sy"]
+[ext_resource type="PackedScene" uid="uid://bknqvgtvp75vo" path="res://Image/porte_2.glb" id="2_wt678"]
+[ext_resource type="Script" path="res://Script/bribe_resource.gd" id="3_7f4kp"]
+
+[sub_resource type="Resource" id="Resource_y3pco"]
+script = ExtResource("3_7f4kp")
+objetSprite = ExtResource("2_wt678")
+name = ""
+isImportant = false
+dialogue = ""
+
+[node name="Bribe" type="Node3D"]
+script = ExtResource("1_qw6sy")
+bribe_data = SubResource("Resource_y3pco")

@@ -1,11 +1,13 @@
 extends Area3D
-var mouse_in_zone_true
+var mouse_in_zone_true 
 var zoomObjet = preload ("res://Scene/ui_grab_object.tscn")
 var frag1
 #@onready var player = CharacterBody3D.new()
 signal cantMove
 var instance
-
+#@onready var shader_node = $porte_2
+signal enableOutline
+signal disableOutline
 
 func _ready():
 	mouse_in_zone_true = false
@@ -15,6 +17,8 @@ func _ready():
 func _on_mouse_entered(): 
 	print ("jsuis dans la zone")
 	mouse_in_zone_true = true
+	enableOutline.emit()
+	#$porte_2.set_instance_shader_parameter("enable", true)
 	pass # Replace with function body.
 
 func _on_cant_move(_event):
@@ -32,6 +36,8 @@ func _input(event):
 			
 func _on_mouse_exited():
 	mouse_in_zone_true = false
+	disableOutline.emit()
+	#$porte_2.set_instance_shader_parameter("enable", false)
 	pass # Replace with function body.
 
 func _spawn_bribe():
@@ -51,4 +57,4 @@ func _spawn_bribe():
 	frag1.queue_free()
 
 
-
+#FUNCTION RECUP DATA

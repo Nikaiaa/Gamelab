@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://iybuakcvifjn"]
+[gd_scene load_steps=9 format=3 uid="uid://iybuakcvifjn"]
 
+[ext_resource type="Script" path="res://Script/bribe_resource.gd" id="1_jpk7p"]
 [ext_resource type="Texture2D" uid="uid://quo4kdxvac7e" path="res://Image/2286300415a9ff54aada9ea75518021e.png" id="1_tvy4u"]
+[ext_resource type="Script" path="res://Script/grab_object.gd" id="1_xf1ff"]
 [ext_resource type="PackedScene" uid="uid://dgnlpclf740qk" path="res://Scene/char.tscn" id="2_3bvit"]
-[ext_resource type="Script" path="res://Script/grab_object.gd" id="2_fc5mh"]
 [ext_resource type="PackedScene" uid="uid://b0bsuxqfw15we" path="res://Scene/porte_2.tscn" id="4_lhbsi"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lmrmy"]
@@ -10,15 +11,15 @@
 [sub_resource type="BoxMesh" id="BoxMesh_at5m5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_sqrfp"]
-size = Vector3(4.75779, 7.00644, 0.415349)
+size = Vector3(1.50256, 3.53333, 0.20339)
 
 [node name="Node3D" type="Node3D"]
+script = ExtResource("1_jpk7p")
 
 [node name="char" parent="." instance=ExtResource("2_3bvit")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(2.94948, 0, 0, 0, 0.0687882, 0, 0, 0, 3.14253, 0, -0.291399, 0)
-input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("BoxShape3D_lmrmy")
@@ -30,10 +31,10 @@ skeleton = NodePath("../../../frag1/CollisionShape3D")
 [node name="frag1" type="Area3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(0.403251, 0, 0, 0, 0.403251, 0, 0, 0, 1, 0, 0, 0)
-script = ExtResource("2_fc5mh")
+script = ExtResource("1_xf1ff")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="frag1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05336, 3.00322, -1.44806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.177288, 1.26666, -0.975956)
 shape = SubResource("BoxShape3D_sqrfp")
 
 [node name="Sprite3D" type="Sprite3D" parent="frag1"]

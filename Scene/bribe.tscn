@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=3 uid="uid://rnloud2x4hmt"]
+
+[ext_resource type="Script" path="res://Scene/bribe.gd" id="1_voxes"]
+[ext_resource type="PackedScene" path="res://Image/porte_2.glb" id="2_vjoi6"]
+[ext_resource type="Script" path="res://Script/bribe_resource.gd" id="3_cuufd"]
+
+[sub_resource type="Resource" id="Resource_y3pco"]
+script = ExtResource("3_cuufd")
+objetSprite = ExtResource("2_vjoi6")
+name = ""
+isImportant = false
+dialogue = ""
+
+[node name="Bribe" type="Node3D"]
+script = ExtResource("1_voxes")
+bribe_data = SubResource("Resource_y3pco")
