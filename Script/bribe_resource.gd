@@ -2,11 +2,13 @@ extends Resource
 
 class_name bribeResource
 
-@export var objetSprite : PackedScene
+@export var objetSpriteBroken : PackedScene
+@export var objetSpriteFixed : PackedScene 
 @export var objetAudio : AudioStream
 @export var name : String
 @export var isImportant : bool
 @export_multiline var dialogue : String
+@export var emplacement : Vector3
 
 #var spriteObjet1 = load ("res://Image/2286300415a9ff54aada9ea75518021e.png")
 #objets.append(spriteObjet1)

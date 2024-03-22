@@ -3,6 +3,11 @@ extends Node3D
 var outline = false
 
 
+#func _ready():
+	#%frag1.enableOutline.connect(_on_enable_outline)
+	#%frag1.disableOutline.connect(_on_disable_outline)
+
+
 func _on_enable_outline():
 	outline = true
 	print ("hesbeguigtj")

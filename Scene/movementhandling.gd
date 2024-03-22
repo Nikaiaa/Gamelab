@@ -22,7 +22,7 @@ func _ready():
 			#_on_cant_move(event)
 			#cantMove.emit()
 
-func _on_cant_move(event):
+func _on_cant_move(_event):
 	instance = %frag1.instance
 	can_move = false 
 	$Timer.wait_time = 5
