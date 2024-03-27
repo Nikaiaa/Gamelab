@@ -1,11 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://iybuakcvifjn"]
+[gd_scene load_steps=9 format=3 uid="uid://iybuakcvifjn"]
 
 [ext_resource type="Texture2D" uid="uid://quo4kdxvac7e" path="res://Image/2286300415a9ff54aada9ea75518021e.png" id="1_tvy4u"]
 [ext_resource type="PackedScene" uid="uid://rnloud2x4hmt" path="res://Scene/bribe.tscn" id="1_vxlxu"]
 [ext_resource type="Script" path="res://Script/grab_object.gd" id="1_xf1ff"]
 [ext_resource type="PackedScene" uid="uid://dgnlpclf740qk" path="res://Scene/char.tscn" id="2_3bvit"]
-[ext_resource type="Resource" uid="uid://la6xihdtcohn" path="res://Bribes/telephone.tres" id="2_jevub"]
-[ext_resource type="Resource" uid="uid://df5jym78qkvo5" path="res://Bribes/chien.tres" id="3_sdtv7"]
 [ext_resource type="PackedScene" uid="uid://bgiqj8krdiv7m" path="res://Scene/porte_2.tscn" id="4_dvj16"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lmrmy"]
@@ -16,16 +14,13 @@
 size = Vector3(4.54198, 6.61389, 0.458232)
 
 [node name="Node3D" type="Node3D"]
-script = ExtResource("1_xf1ff")
 
 [node name="Bribe" parent="." instance=ExtResource("1_vxlxu")]
-bribeTelephone = ExtResource("2_jevub")
-bribeChien = ExtResource("3_sdtv7")
 
 [node name="char" parent="." instance=ExtResource("2_3bvit")]
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
-transform = Transform3D(7.29691, 0, 0, 0, 0.0687882, 0, 0, 0, 7.77451, 0, -0.291399, 0)
+transform = Transform3D(2.94948, 0, 0, 0, 0.0687882, 0, 0, 0, 3.14253, 0, -0.291399, 0)
 input_ray_pickable = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -38,7 +33,7 @@ skeleton = NodePath("../../../frag1/CollisionShape3D")
 [node name="frag1" type="Area3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(0.403251, 0, 0, 0, 0.403251, 0, 0, 0, 1, 0, 0, 0)
-visible = false
+script = ExtResource("1_xf1ff")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="frag1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.983849, 3.11615, -1.19041)
@@ -53,5 +48,8 @@ texture = ExtResource("1_tvy4u")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.750495)
 
 [connection signal="cantMove" from="char" to="char" method="_on_cant_move"]
+[connection signal="cantMove" from="frag1" to="char" method="_on_cant_move"]
+[connection signal="disableOutline" from="frag1" to="frag1/porte_2" method="_on_disable_outline"]
+[connection signal="enableOutline" from="frag1" to="frag1/porte_2" method="_on_enable_outline"]
 [connection signal="mouse_entered" from="frag1" to="frag1" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="frag1" to="frag1" method="_on_mouse_exited"]

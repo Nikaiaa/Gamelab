@@ -20,7 +20,7 @@ func _ready():
 	#var mesh = bribe_data.objetSprite.instantiate()
 	#add_child(mesh)
 	
-	
+
 
 	
 	

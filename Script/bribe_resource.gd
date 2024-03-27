@@ -10,6 +10,7 @@ class_name bribeResource
 @export_multiline var dialogue : String
 @export var emplacement : Vector3
 
+
 #var spriteObjet1 = load ("res://Image/2286300415a9ff54aada9ea75518021e.png")
 #objets.append(spriteObjet1)
 #

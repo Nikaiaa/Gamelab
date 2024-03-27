@@ -3,14 +3,16 @@ extends Node3D
 var instance
 var can_move
 var mouse_in_zone_true
-var tampon =false
 @export var Fisheye: CanvasItem
 signal cantMove
+var collisionBribeScript = preload ("res://Script/collisionBribe.gd")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	can_move = true
-	print("can move de mh = ")
+	print("can move")
 	print(can_move)
+	#collisionBribeScript.cantMove.connect(_on_cant_move)
 	pass # Replace with function body.
 
 
@@ -29,12 +31,11 @@ func _on_cant_move(_event):
 	$Timer.start()
 	print_debug($Timer.time_left)
 	print ($Timer)
-	can_move = false
 	#print("movhandler")
 	#print(can_move)
 	#if InputEventMouseButton and event.is_action_pressed("left_click") and tampon == true:
 		#tampon=false
-	tampon = true
+
 	
 func _on_timer_timeout():
 	print("timer stop")

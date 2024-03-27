@@ -1,7 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bgiqj8krdiv7m"]
+[gd_scene load_steps=7 format=3 uid="uid://bgiqj8krdiv7m"]
 
 [ext_resource type="PackedScene" uid="uid://bknqvgtvp75vo" path="res://Image/porte_2.glb" id="1_ev2do"]
-[ext_resource type="Script" path="res://Scene/outline_manager.gd" id="2_6caff"]
+[ext_resource type="Script" path="res://Script/collisionBribe.gd" id="2_4tpbf"]
 [ext_resource type="Shader" path="res://Scene/porte_2.gdshader" id="3_tbqou"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cxxsm"]
@@ -16,8 +16,27 @@ next_pass = SubResource("ShaderMaterial_cxxsm")
 albedo_color = Color(0.772549, 0, 0.776471, 1)
 grow_amount = -0.363
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_0ndpf"]
+size = Vector3(4.52954, 6.6164, 0.9729)
+
 [node name="porte_2" instance=ExtResource("1_ev2do")]
-script = ExtResource("2_6caff")
+script = ExtResource("2_4tpbf")
 
 [node name="porte_001" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_03uv2")
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(0.999986, -0.00534068, 0, 0.00534068, 0.999986, 0, 0, 0, 1, 1.08533, 3.19698, -0.337524)
+shape = SubResource("BoxShape3D_0ndpf")
+
+[node name="Timer" type="Timer" parent="." index="2"]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="disableOutline" from="." to="." method="_on_disable_outline"]
+[connection signal="enableOutline" from="." to="." method="_on_enable_outline"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
