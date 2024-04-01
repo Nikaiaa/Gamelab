@@ -1,7 +1,7 @@
 shader_type canvas_item;
 
 uniform bool active = false;
-uniform float aspect = 1.0;
+uniform float aspect;
 uniform float distortion = 1.0;
 uniform float radius = 1.0;
 uniform float alpha = 1.0;
