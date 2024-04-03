@@ -7,6 +7,16 @@
 [ext_resource type="Script" path="res://Scene/Button.gd" id="5_6ai3k"]
 [ext_resource type="AudioStream" uid="uid://bg6pkhs4yxgc4" path="res://Musique/Anxiete.wav" id="6_wjvov"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_gxue6"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1viwg"]
+radius = 0.2
+height = 2.5
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pasvm"]
+albedo_color = Color(1, 0.152941, 0, 0.360784)
+roughness = 0.15
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_hkeef"]
 shader = ExtResource("3_qo102")
 shader_parameter/active = false
@@ -88,27 +98,11 @@ _data = {
 "bouton": SubResource("Animation_sixb0")
 }
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_gxue6"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_1viwg"]
-radius = 0.2
-height = 2.5
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pasvm"]
-albedo_color = Color(1, 0.152941, 0, 0.360784)
-roughness = 0.15
-
 [node name="char" type="Node3D" node_paths=PackedStringArray("Fisheye")]
 script = ExtResource("1_yf6yi")
 Fisheye = NodePath("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/ColorRect")
 
 [node name="Timer" type="Timer" parent="."]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/ColorRect")
-libraries = {
-"": SubResource("AnimationLibrary_82sjf")
-}
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00641918, 0.00824785, -0.00615251)
@@ -141,10 +135,17 @@ offset_right = 0.800049
 offset_bottom = 9.0
 mouse_filter = 2
 
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer"]
+root_node = NodePath("../ColorRect")
+libraries = {
+"": SubResource("AnimationLibrary_82sjf")
+}
+
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer"]
 visible = false
 
 [node name="Label" type="Label" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer"]
+visible = false
 offset_left = 311.0
 offset_top = 268.0
 offset_right = 422.0
@@ -153,6 +154,7 @@ rotation = -0.349689
 text = "A laide"
 
 [node name="Label2" type="Label" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer"]
+visible = false
 offset_left = 458.0
 offset_top = 319.0
 offset_right = 618.0
@@ -161,6 +163,7 @@ rotation = 0.256115
 text = "Olala j'ai de l'anxiété"
 
 [node name="Button" type="Button" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer"]
+visible = false
 offset_left = 616.5
 offset_top = 511.0
 offset_right = 1273.5
@@ -171,6 +174,7 @@ alignment = 0
 script = ExtResource("5_6ai3k")
 
 [node name="Label" type="Label" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer/Button"]
+visible = false
 layout_mode = 0
 offset_left = 108.0
 offset_top = 76.0
@@ -183,6 +187,7 @@ text = "Tu as de l'anxiété ? Arrête."
 stream = ExtResource("6_wjvov")
 
 [node name="Control" type="Control" parent="CharacterBody3D/Rotation_Helper/Camera3D"]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0

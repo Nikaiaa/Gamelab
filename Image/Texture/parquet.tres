@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c6j2s2cbnen3j"]
+
+[ext_resource type="Texture2D" uid="uid://bdb5i0torq6dm" path="res://Image/Texture/salon.parquet.png" id="1_v261e"]
+
+[resource]
+albedo_texture = ExtResource("1_v261e")

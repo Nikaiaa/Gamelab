@@ -1,7 +1,10 @@
 extends Area3D
+@export var Texte: Label
+@export var meuble: CollisionShape3D
 
-var textes_objets = {
-	$Cadre: "Il faut toujours avoir un ou deux noms d'oiseaux sous la main. Self-defense",
+
+@export var textes_objets = {
+	"Cadre": "Il faut toujours avoir un ou deux noms d'oiseaux sous la main. Self-defense",
 	#"Rideau": "Le soleil ? Non, je m'en passerais.",
 	#"TV": "...(ne fonctionne plus)",
 	#"Plantes": "La vie ne peut pas germer avec toi Charlie.. toujours à avoir le dernier mot.",
@@ -13,15 +16,14 @@ var textes_objets = {
 	#"Talons": "Conseil à tout les jeunes drag : ne vous entrainez pas à marcher en talon près d'une étagère bon marché...",
 	#"Etagère": "Les conséquences de l'apprentissage..Pardon pour l'étagère, David."
 }
+@export var TABLEAUDETAMERE= [
+	meuble
+]
 
-var label : Label
-
-func _ready():
-	label = $Label
 
 func _on_mouse_entered():
 	print("jsusidanslazone")
-	var nom_objet = name
-	if nom_objet in textes_objets:
-		label.text = textes_objets[nom_objet]
-		print(nom_objet)
+	for i in textes_objets:
+		print("aled aled")
+		Texte.text = textes_objets[TABLEAUDETAMERE[meuble].name]
+		print(Texte)
