@@ -17,6 +17,7 @@ size = Vector3(4.54198, 6.61389, 0.458232)
 script = ExtResource("1_xf1ff")
 
 [node name="Bribe" parent="." instance=ExtResource("1_vxlxu")]
+tableauObjets = []
 
 [node name="char" parent="." instance=ExtResource("2_3bvit")]
 

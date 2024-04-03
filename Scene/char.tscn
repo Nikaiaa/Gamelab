@@ -132,6 +132,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.21305, 0)
 follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer"]
+visible = false
 material = SubResource("ShaderMaterial_hkeef")
 anchors_preset = -1
 anchor_right = 1.01

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://b2v3e2a2su8j7"]
+
+[ext_resource type="Script" path="res://Script/collisionBribe.gd" id="1_1kvtx"]
+[ext_resource type="Shader" path="res://Scene/porte_2.gdshader" id="2_wqcqp"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_tolvn"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l4nt2"]
+render_priority = 0
+shader = ExtResource("2_wqcqp")
+shader_parameter/enable = false
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(0, 0, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wjjo8"]
+next_pass = SubResource("ShaderMaterial_l4nt2")
+albedo_color = Color(0.529412, 0.576471, 1, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_odrbs"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_1kvtx")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_tolvn")
+skeleton = NodePath("../Area3D")
+surface_material_override/0 = SubResource("StandardMaterial3D_wjjo8")
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("CylinderShape3D_odrbs")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="disableOutline" from="." to="." method="_on_disable_outline"]
+[connection signal="enableOutline" from="." to="." method="_on_enable_outline"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

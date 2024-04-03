@@ -1,7 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://rnloud2x4hmt"]
+[gd_scene load_steps=7 format=3 uid="uid://rnloud2x4hmt"]
 
 [ext_resource type="Script" path="res://Scene/bribe.gd" id="1_voxes"]
 [ext_resource type="Script" path="res://Script/bribe_resource.gd" id="3_cuufd"]
+[ext_resource type="Resource" uid="uid://la6xihdtcohn" path="res://Bribes/telephone.tres" id="3_k4tpr"]
+[ext_resource type="Resource" uid="uid://df5jym78qkvo5" path="res://Bribes/chien.tres" id="4_lwr4c"]
 
 [sub_resource type="Resource" id="Resource_y3pco"]
 script = ExtResource("3_cuufd")
@@ -13,12 +15,46 @@ emplacement = Vector3(0, 0, 0)
 [sub_resource type="BoxShape3D" id="BoxShape3D_nma8v"]
 size = Vector3(5.26318, 1, 8.47266)
 
-[node name="Bribe" type="Node3D"]
+[node name="Bribe" type="Node3D" node_paths=PackedStringArray("text")]
 script = ExtResource("1_voxes")
 bribe_data = SubResource("Resource_y3pco")
+bribeTelephone = ExtResource("3_k4tpr")
+bribeChien = ExtResource("4_lwr4c")
+text = NodePath("Label")
+
+[node name="Label" type="Label" parent="."]
+visibility_layer = 1048575
+z_index = 50
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -171.0
+offset_bottom = -87.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 61
+text = "LALALALALALALALLAL"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Area3D" type="Area3D" parent="."]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.292236, 0, -1.24707)
 shape = SubResource("BoxShape3D_nma8v")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Control"]
+follow_viewport_enabled = true

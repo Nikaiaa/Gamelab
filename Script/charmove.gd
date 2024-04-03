@@ -6,7 +6,7 @@ const SPEED = 10.0
 const JUMP_VELOCITY = 4.5
 var camera
 var rotation_helper
-var MOUSE_SENSITIVITY = 0.5
+var MOUSE_SENSITIVITY = 0.3
 signal cantMove
 var mouse_in_zone_true
 var player
