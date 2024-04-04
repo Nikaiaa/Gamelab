@@ -1,7 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://bgiqj8krdiv7m"]
+[gd_scene load_steps=6 format=3 uid="uid://bgiqj8krdiv7m"]
 
 [ext_resource type="PackedScene" uid="uid://bknqvgtvp75vo" path="res://Image/porte_2.glb" id="1_ev2do"]
-[ext_resource type="Script" path="res://Script/collisionBribe.gd" id="2_4tpbf"]
 [ext_resource type="Shader" path="res://Scene/porte_2.gdshader" id="3_tbqou"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_cxxsm"]
@@ -20,7 +19,6 @@ grow_amount = -0.363
 size = Vector3(4.52954, 6.6164, 0.9729)
 
 [node name="porte_2" instance=ExtResource("1_ev2do")]
-script = ExtResource("2_4tpbf")
 
 [node name="porte_001" parent="." index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_03uv2")
@@ -36,8 +34,6 @@ shape = SubResource("BoxShape3D_0ndpf")
 wait_time = 3.0
 one_shot = true
 
-[connection signal="disableOutline" from="." to="." method="_on_disable_outline"]
-[connection signal="enableOutline" from="." to="." method="_on_enable_outline"]
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area3D" to="." method="_on_mouse_exited"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

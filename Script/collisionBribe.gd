@@ -15,9 +15,19 @@ signal grabObject(instance : bribe_instance)
 var all_children
 var instance_clicked
 
+@export var audio_stream : AudioStreamPlayer3D
+
 func _ready():
 	#get_all($".")
 	_on_mouse_exited()
+	print(self.name)
+	print($AudioStreamPlayer3D)
+	audio_stream.play()
+
+#func _play_audio():
+	#var AudioPlayer = $AudioStreamPlayer3D
+	#AudioPlayer.play()
+	
 	
 
 func _on_mouse_entered(): 

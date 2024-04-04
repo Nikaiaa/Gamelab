@@ -1,8 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://c7by7bpugrwbw"]
+[gd_scene load_steps=18 format=3 uid="uid://c7by7bpugrwbw"]
 
 [ext_resource type="PackedScene" uid="uid://caqt8kjf8e0rv" path="res://Bribes/Lettre Fragment.blend" id="1_8sm18"]
 [ext_resource type="Script" path="res://Script/collisionBribe.gd" id="2_j5l7v"]
 [ext_resource type="Shader" path="res://Scene/porte_2.gdshader" id="2_oyb5p"]
+[ext_resource type="AudioStream" uid="uid://dscq1t7v25plc" path="res://Musique/Bribes/Bribe_cursed3.mp3" id="4_wqkse"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c5sru"]
 render_priority = 0
@@ -67,28 +68,35 @@ next_pass = SubResource("ShaderMaterial_tlmnn")
 [sub_resource type="BoxShape3D" id="BoxShape3D_iiu2y"]
 size = Vector3(1.51563, 0.0622559, 1.12805)
 
-[node name="Lettre Fragment" instance=ExtResource("1_8sm18")]
+[node name="Lettre Fragment" node_paths=PackedStringArray("audio_stream") instance=ExtResource("1_8sm18")]
 script = ExtResource("2_j5l7v")
+audio_stream = NodePath("AudioStreamPlayer3D")
 
-[node name="Lettre_cell_005" parent="." index="0"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="0"]
+stream = ExtResource("4_wqkse")
+autoplay = true
+max_distance = 5.0
+emission_angle_enabled = true
+
+[node name="Lettre_cell_005" parent="." index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_0rdao")
 
-[node name="Lettre_cell_004" parent="." index="1"]
+[node name="Lettre_cell_004" parent="." index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_s1q71")
 
-[node name="Lettre_cell_003" parent="." index="2"]
+[node name="Lettre_cell_003" parent="." index="3"]
 surface_material_override/0 = SubResource("StandardMaterial3D_of0q8")
 
-[node name="Lettre_cell_002" parent="." index="3"]
+[node name="Lettre_cell_002" parent="." index="4"]
 surface_material_override/0 = SubResource("StandardMaterial3D_mpuao")
 
-[node name="Lettre_cell_001" parent="." index="4"]
+[node name="Lettre_cell_001" parent="." index="5"]
 surface_material_override/0 = SubResource("StandardMaterial3D_tnoju")
 
-[node name="Lettre_cell" parent="." index="5"]
+[node name="Lettre_cell" parent="." index="6"]
 surface_material_override/0 = SubResource("StandardMaterial3D_q2tto")
 
-[node name="Area3D" type="Area3D" parent="." index="6"]
+[node name="Area3D" type="Area3D" parent="." index="7"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 transform = Transform3D(0.999867, -0.0106867, 0.0122967, 0.0106301, 0.999933, 0.00466698, -0.0123458, -0.00453566, 0.999914, -0.259305, 0.0517653, -0.0763407)

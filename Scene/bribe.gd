@@ -46,10 +46,8 @@ func _on_grab_object(instanceBribe : bribe_instance):
 		#for string in tableauNarra :
 			#print ("JE VAIS SAUTER")
 			
-func _process(delta):
-	var AudioPlay = $AudioStreamPlayer3D
-	AudioPlay.stream = resource_data.objetAudio
-	AudioPlay.play()
+
+
 	#var mesh = bribe_data.objetSprite.instantiate()
 	#add_child(mesh)
 

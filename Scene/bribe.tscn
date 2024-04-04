@@ -37,6 +37,3 @@ theme_override_font_sizes/font_size = 61
 text = "LALALALALALALALLAL"
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
-emission_angle_enabled = true

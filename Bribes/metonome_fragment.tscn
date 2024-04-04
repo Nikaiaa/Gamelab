@@ -1,8 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://bcco5cmj1x6de"]
+[gd_scene load_steps=40 format=3 uid="uid://bcco5cmj1x6de"]
 
 [ext_resource type="PackedScene" uid="uid://d3tshua8i36rw" path="res://Bribes/Metonome Fragment.blend" id="1_7cupm"]
 [ext_resource type="Script" path="res://Script/collisionBribe.gd" id="2_klqu5"]
 [ext_resource type="Shader" path="res://Scene/porte_2.gdshader" id="2_qmx83"]
+[ext_resource type="AudioStream" uid="uid://dtjr4mfsb17mb" path="res://Musique/Bribes/Bribe_cursed4.mp3" id="4_uebft"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bios"]
 render_priority = 0
@@ -193,43 +194,50 @@ albedo_color = Color(0.596078, 0.596078, 0.596078, 1)
 [sub_resource type="BoxShape3D" id="BoxShape3D_64sc0"]
 size = Vector3(0.3573, 0.599487, 0.504028)
 
-[node name="Metonome Fragment" instance=ExtResource("1_7cupm")]
+[node name="Metonome Fragment" node_paths=PackedStringArray("audio_stream") instance=ExtResource("1_7cupm")]
 script = ExtResource("2_klqu5")
+audio_stream = NodePath("AudioStreamPlayer3D")
 
-[node name="Metronome_cell_007" parent="." index="0"]
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="0"]
+stream = ExtResource("4_uebft")
+autoplay = true
+max_distance = 5.0
+emission_angle_enabled = true
+
+[node name="Metronome_cell_007" parent="." index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_v5ra7")
 surface_material_override/1 = SubResource("StandardMaterial3D_2wagy")
 surface_material_override/2 = SubResource("StandardMaterial3D_ssdbl")
 
-[node name="Metronome_cell_006" parent="." index="1"]
+[node name="Metronome_cell_006" parent="." index="2"]
 surface_material_override/0 = SubResource("StandardMaterial3D_asfc0")
 surface_material_override/1 = SubResource("StandardMaterial3D_7py35")
 
-[node name="Metronome_cell_005" parent="." index="2"]
+[node name="Metronome_cell_005" parent="." index="3"]
 surface_material_override/0 = SubResource("StandardMaterial3D_amfej")
 
-[node name="Metronome_cell_004" parent="." index="3"]
+[node name="Metronome_cell_004" parent="." index="4"]
 surface_material_override/0 = SubResource("StandardMaterial3D_bojtg")
 
-[node name="Metronome_cell_003" parent="." index="4"]
+[node name="Metronome_cell_003" parent="." index="5"]
 surface_material_override/0 = SubResource("StandardMaterial3D_504o4")
 surface_material_override/1 = SubResource("StandardMaterial3D_mjv2d")
 
-[node name="Metronome_cell_002" parent="." index="5"]
+[node name="Metronome_cell_002" parent="." index="6"]
 surface_material_override/0 = SubResource("StandardMaterial3D_7hicx")
 surface_material_override/1 = SubResource("StandardMaterial3D_ep4qx")
 surface_material_override/2 = SubResource("StandardMaterial3D_6vj5i")
 
-[node name="Metronome_cell_001" parent="." index="6"]
+[node name="Metronome_cell_001" parent="." index="7"]
 surface_material_override/0 = SubResource("StandardMaterial3D_xuqet")
 surface_material_override/1 = SubResource("StandardMaterial3D_2w1st")
 surface_material_override/2 = SubResource("StandardMaterial3D_hvbt4")
 
-[node name="Metronome_cell" parent="." index="7"]
+[node name="Metronome_cell" parent="." index="8"]
 surface_material_override/0 = SubResource("StandardMaterial3D_to81a")
 surface_material_override/1 = SubResource("StandardMaterial3D_rrj6o")
 
-[node name="Area3D" type="Area3D" parent="." index="8"]
+[node name="Area3D" type="Area3D" parent="." index="9"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0138658, 0.358588, -0.106884)
