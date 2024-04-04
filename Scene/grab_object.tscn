@@ -17,8 +17,10 @@ size = Vector3(4.54198, 6.61389, 0.458232)
 script = ExtResource("1_xf1ff")
 
 [node name="Bribe" parent="." instance=ExtResource("1_vxlxu")]
+transform = Transform3D(-0.842593, 0, -0.53855, 0, 1, 0, 0.53855, 0, -0.842593, 0, 0, 0)
 
 [node name="char" parent="." instance=ExtResource("2_3bvit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.94966)
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(7.29691, 0, 0, 0, 0.0687882, 0, 0, 0, 7.77451, 0, -0.291399, 0)

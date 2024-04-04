@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://dm5tl55248now"]
+
+[ext_resource type="PackedScene" uid="uid://d1cb3ln7bc2hq" path="res://Bribes/Lettre.blend" id="1_ifapw"]
+[ext_resource type="Script" path="res://Scene/boutonUI.gd" id="2_7j8fm"]
+
+[node name="Lettre2" node_paths=PackedStringArray("narra") instance=ExtResource("1_ifapw")]
+script = ExtResource("2_7j8fm")
+narra = NodePath("Control/Label")
+
+[node name="Control" type="Control" parent="." index="1"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Camera3D" type="Camera3D" parent="Control" index="0"]
+transform = Transform3D(0.0386594, 0.99707, -0.0660017, 0.0523333, 0.0639401, 0.996581, 0.997881, -0.0419813, -0.0497081, -0.118812, 1.30624, -0.0438387)
+top_level = true
+current = true
+
+[node name="Label" type="Label" parent="Control" index="1"]
+layout_mode = 0
+offset_left = 1365.0
+offset_top = 880.0
+offset_right = 1920.0
+offset_bottom = 1060.0
+theme_override_font_sizes/font_size = 20
+text = "Appuyez sur Echap"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,66 @@
+[gd_scene load_steps=12 format=3 uid="uid://clj44lrt40djg"]
+
+[ext_resource type="PackedScene" uid="uid://dyt0dblt100fl" path="res://Bribes/Telephone.blend" id="1_08gr3"]
+[ext_resource type="Script" path="res://Script/collisionBribe.gd" id="2_j0gc6"]
+[ext_resource type="Shader" path="res://Scene/porte_2.gdshader" id="3_yxd31"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l50ii"]
+render_priority = 0
+shader = ExtResource("3_yxd31")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.03
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5eba7"]
+next_pass = SubResource("ShaderMaterial_l50ii")
+albedo_color = Color(0.556863, 0.0627451, 0.0627451, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ns6fv"]
+render_priority = 0
+shader = ExtResource("3_yxd31")
+shader_parameter/enable = false
+shader_parameter/outline_thickness = 0.03
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6xry1"]
+next_pass = SubResource("ShaderMaterial_ns6fv")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m5kts"]
+render_priority = 0
+shader = ExtResource("3_yxd31")
+shader_parameter/enable = false
+shader_parameter/outline_thickness = 0.03
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r74tp"]
+next_pass = SubResource("ShaderMaterial_m5kts")
+albedo_color = Color(0.596078, 0.596078, 0.596078, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_4nwb5"]
+size = Vector3(2.31518, 1.29101, 2.43832)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_oh6kb"]
+size = Vector3(3.60115, 0.880125, 1.23213)
+
+[node name="Telephone" instance=ExtResource("1_08gr3")]
+script = ExtResource("2_j0gc6")
+
+[node name="Cylinder" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_5eba7")
+surface_material_override/1 = SubResource("StandardMaterial3D_6xry1")
+surface_material_override/2 = SubResource("StandardMaterial3D_r74tp")
+
+[node name="Area3D" type="Area3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.134541, 0.205736, -0.349625)
+shape = SubResource("BoxShape3D_4nwb5")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.065321, 0.885672, 0.521847)
+shape = SubResource("BoxShape3D_oh6kb")
+
+[connection signal="disableOutline" from="." to="." method="_on_disable_outline"]
+[connection signal="enableOutline" from="." to="." method="_on_enable_outline"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_mouse_exited"]

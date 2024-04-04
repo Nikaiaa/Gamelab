@@ -1,55 +1,63 @@
 extends Node
 
 @export var bribe_data : bribeResource
-@export var bribeTelephone : Resource = load("res://Bribes/telephone.tres")
-@export var bribeChien : Resource = load("res://Bribes/chien.tres")
-var instance
+#@export var bribeTelephone : Resource = load("res://Bribes/telephone.tres")
+@export var bribeMetronome : Resource = load("res://Bribes/metronome.tres")
+@export var bribeLettre : Resource = load("res://Bribes/lettre.tres")
+#var instance
 @export var tableauObjets : Array = []
 var loadScene
 @export var tableauNarra : Array = []
 @export var text : Label
-@export var resource_data : Dictionary = {}
+var resource_data  #: Dictionary = {}
 
 
 func _ready():
 	text.visible = false 
-	tableauObjets = [bribeTelephone,bribeChien]
+	tableauObjets = [bribeMetronome, bribeLettre]
 	tableauNarra = ["je suis un téléphone dring dring", "je suis un chien bark bark"]
 	print (tableauObjets[0])
 	for resource in tableauObjets : 
 		print ("hbhb")		
-		instance = resource.objetSpriteBroken.instantiate()
+		var instance = resource.objetSpriteBroken.instantiate()
 		instance.position = resource.emplacement
+		instance.bribe_data = resource
 		add_child (instance)
 		instance.grabObject.connect(_on_grab_object)
-		resource_data = {"resource": resource} #créer un dictionnaire pour stocker la référence à la resource
-		instance.set_meta("resource_data", resource_data) #stocker le dictionnaire dans l'instance
+		#resource_data = {"resource": resource} #créer un dictionnaire pour stocker la référence à la resource
+		#instance.set_meta("resource_data", resource_data) #stocker le dictionnaire dans l'instance
 
-func _on_grab_object():
+func _on_grab_object(instanceBribe : bribe_instance):
 	print ("befifb")
-	var resource_data = instance.get_meta("resource_data") #on va chercher les données de la ressource
-	if resource_data and resource_data.resource.isImportant : #si l'objet cliqué est important
-		loadScene = resource_data.resource.objetSpriteFixed.instantiate() #on load la version non pété de l'objet
+	#var clicked_instance = collider
+	#var resource_data = instance.get_meta("resource_data") #on va chercher les données de la ressource
+	resource_data = instanceBribe.bribe_data
+	if resource_data and resource_data.isImportant : #si l'objet cliqué est important
+		loadScene = resource_data.objetSpriteFixed.instantiate() #on load la version non pété de l'objet
+		loadScene.onSelfDestroy.connect(onSpriteFixedDestroyed)
 		add_child(loadScene)
+		
+		instanceBribe.queue_free()
+		text.text = resource_data.dialogue
+		text.visible = true
+		#clicked_instance.queue_free()
 		#text.visible = true
 		#text.text = resource_data.resource.dialogue
-		for string in tableauNarra :
-			print ("JE VAIS SAUTER")
-			text.text = resource_data.resource.dialogue
-			text.visible = true
+		#for string in tableauNarra :
+			#print ("JE VAIS SAUTER")
 			
-	elif resource_data and resource_data.resource.isImportant == false: #si l'objet est pas important
-		var loadScene1 = resource_data.resource.objetSpriteFixed.instantiate()
-		add_child(loadScene1)
-	
+func _process(delta):
+	var AudioPlay = $AudioStreamPlayer3D
+	AudioPlay.stream = resource_data.objetAudio
+	AudioPlay.play()
 	#var mesh = bribe_data.objetSprite.instantiate()
 	#add_child(mesh)
-	
-func _on_timer_timeout():
-	loadScene.queue_free()
-	pass # Replace with function body.
 
+
+func onSpriteFixedDestroyed():
+	text.visible = false
 	
+
 	
 	#
 ## ARRAY AVEC LES OBJETS

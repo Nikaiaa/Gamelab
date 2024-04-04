@@ -1,0 +1,241 @@
+[gd_scene load_steps=39 format=3 uid="uid://bcco5cmj1x6de"]
+
+[ext_resource type="PackedScene" uid="uid://d3tshua8i36rw" path="res://Bribes/Metonome Fragment.blend" id="1_7cupm"]
+[ext_resource type="Script" path="res://Script/collisionBribe.gd" id="2_klqu5"]
+[ext_resource type="Shader" path="res://Scene/porte_2.gdshader" id="2_qmx83"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bios"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_v5ra7"]
+next_pass = SubResource("ShaderMaterial_1bios")
+albedo_color = Color(0.529412, 0.835294, 0.807843, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eyyvs"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2wagy"]
+next_pass = SubResource("ShaderMaterial_eyyvs")
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_66dxk"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ssdbl"]
+next_pass = SubResource("ShaderMaterial_66dxk")
+albedo_color = Color(0.905882, 0.905882, 0.905882, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sg26p"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_asfc0"]
+next_pass = SubResource("ShaderMaterial_sg26p")
+albedo_color = Color(0.596078, 0.596078, 0.596078, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e7ri3"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7py35"]
+next_pass = SubResource("ShaderMaterial_e7ri3")
+albedo_color = Color(0.596078, 0.596078, 0.596078, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rmea1"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_amfej"]
+next_pass = SubResource("ShaderMaterial_rmea1")
+albedo_color = Color(0.564706, 0.905882, 0.878431, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bnxkm"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bojtg"]
+next_pass = SubResource("ShaderMaterial_bnxkm")
+albedo_color = Color(0.564706, 0.905882, 0.878431, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i6dkw"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_504o4"]
+next_pass = SubResource("ShaderMaterial_i6dkw")
+albedo_color = Color(0.564706, 0.905882, 0.878431, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2hem4"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mjv2d"]
+next_pass = SubResource("ShaderMaterial_2hem4")
+albedo_color = Color(0.596078, 0.596078, 0.596078, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jmrh0"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7hicx"]
+next_pass = SubResource("ShaderMaterial_jmrh0")
+albedo_color = Color(0.564706, 0.905882, 0.878431, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7doed"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ep4qx"]
+next_pass = SubResource("ShaderMaterial_7doed")
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3bhfs"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6vj5i"]
+next_pass = SubResource("ShaderMaterial_3bhfs")
+albedo_color = Color(0.905882, 0.905882, 0.905882, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pve6x"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xuqet"]
+next_pass = SubResource("ShaderMaterial_pve6x")
+albedo_color = Color(0.564706, 0.905882, 0.878431, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_n00ga"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2w1st"]
+next_pass = SubResource("ShaderMaterial_n00ga")
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pbo66"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hvbt4"]
+next_pass = SubResource("ShaderMaterial_pbo66")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_22w07"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_to81a"]
+next_pass = SubResource("ShaderMaterial_22w07")
+albedo_color = Color(0.564706, 0.905882, 0.878431, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cuiqp"]
+render_priority = 0
+shader = ExtResource("2_qmx83")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rrj6o"]
+next_pass = SubResource("ShaderMaterial_cuiqp")
+albedo_color = Color(0.596078, 0.596078, 0.596078, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_64sc0"]
+size = Vector3(0.3573, 0.599487, 0.504028)
+
+[node name="Metonome Fragment" instance=ExtResource("1_7cupm")]
+script = ExtResource("2_klqu5")
+
+[node name="Metronome_cell_007" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_v5ra7")
+surface_material_override/1 = SubResource("StandardMaterial3D_2wagy")
+surface_material_override/2 = SubResource("StandardMaterial3D_ssdbl")
+
+[node name="Metronome_cell_006" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_asfc0")
+surface_material_override/1 = SubResource("StandardMaterial3D_7py35")
+
+[node name="Metronome_cell_005" parent="." index="2"]
+surface_material_override/0 = SubResource("StandardMaterial3D_amfej")
+
+[node name="Metronome_cell_004" parent="." index="3"]
+surface_material_override/0 = SubResource("StandardMaterial3D_bojtg")
+
+[node name="Metronome_cell_003" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_504o4")
+surface_material_override/1 = SubResource("StandardMaterial3D_mjv2d")
+
+[node name="Metronome_cell_002" parent="." index="5"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7hicx")
+surface_material_override/1 = SubResource("StandardMaterial3D_ep4qx")
+surface_material_override/2 = SubResource("StandardMaterial3D_6vj5i")
+
+[node name="Metronome_cell_001" parent="." index="6"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xuqet")
+surface_material_override/1 = SubResource("StandardMaterial3D_2w1st")
+surface_material_override/2 = SubResource("StandardMaterial3D_hvbt4")
+
+[node name="Metronome_cell" parent="." index="7"]
+surface_material_override/0 = SubResource("StandardMaterial3D_to81a")
+surface_material_override/1 = SubResource("StandardMaterial3D_rrj6o")
+
+[node name="Area3D" type="Area3D" parent="." index="8"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0138658, 0.358588, -0.106884)
+shape = SubResource("BoxShape3D_64sc0")
+
+[connection signal="disableOutline" from="." to="." method="_on_disable_outline"]
+[connection signal="enableOutline" from="." to="." method="_on_enable_outline"]
+[connection signal="mouse_entered" from="Area3D" to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Area3D" to="." method="_on_mouse_exited"]

@@ -1,8 +1,11 @@
-extends Control
+extends Node
+
+signal onSelfDestroy
 @onready var scene = $"."
 @export var narra : Label
 
 func _ready():
+	narra.visible = true
 	var sceneBribe = get_node("root/Node3D/Bribe")
 	set_process_input(true)
 	#narra.visible = true
@@ -11,8 +14,10 @@ func _ready():
 func _unhandled_input(event):
 	if event is InputEventKey:
 		if event.pressed and event.keycode == (KEY_ESCAPE):
-			scene.queue_free()
 			narra.visible = false 
+			onSelfDestroy.emit()
+			scene.queue_free()
+			
 			
 			
 

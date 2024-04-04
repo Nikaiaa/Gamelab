@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="bribeResource" load_steps=5 format=3 uid="uid://df5jym78qkvo5"]
+
+[ext_resource type="AudioStream" uid="uid://dtjr4mfsb17mb" path="res://Musique/Bribes/Bribe_cursed4.mp3" id="1_6woha"]
+[ext_resource type="PackedScene" uid="uid://bcco5cmj1x6de" path="res://Bribes/metonome_fragment.tscn" id="1_oo5bl"]
+[ext_resource type="PackedScene" uid="uid://bqdxfbk8qc805" path="res://Bribes/metonome.tscn" id="2_3k5fe"]
+[ext_resource type="Script" path="res://Script/bribe_resource.gd" id="3_lxycx"]
+
+[resource]
+script = ExtResource("3_lxycx")
+objetSpriteBroken = ExtResource("1_oo5bl")
+objetSpriteFixed = ExtResource("2_3k5fe")
+objetAudio = ExtResource("1_6woha")
+name = "Métronome"
+isImportant = true
+dialogue = "GOUGOUGAGAK"
+emplacement = Vector3(0, 0, 1)

@@ -1,4 +1,7 @@
 extends Node
+
+class_name bribe_instance
+
 var mouse_in_zone_true
 signal enableOutline
 signal disableOutline
@@ -7,9 +10,15 @@ signal cantMove
 var outline = false
 @onready var bribe = $"."
 var instance
-var bribe_data = bribeResource
-signal grabObject
+var bribe_data# = bribeResource
+signal grabObject(instance : bribe_instance)
+var all_children
+var instance_clicked
 
+func _ready():
+	#get_all($".")
+	_on_mouse_exited()
+	
 
 func _on_mouse_entered(): 
 	print ("jsuis dans la zone")
@@ -28,9 +37,11 @@ func _input(event):
 	if event is InputEventMouseButton && mouse_in_zone_true == true :
 		if event.is_action_pressed("left_click"):
 			print ("object cliqué")
-			grabObject.emit()
+			#var collider = $Area3D.get_collider()
+			grabObject.emit(self)
 			#_spawn_bribe()
 			#cantMove.connect(_on_cant_move)
+			#bribe.queue_free()
 			cantMove.emit(event)
 			
 			
@@ -49,17 +60,28 @@ func _input(event):
 	#print ($Timer)
 	
 	
+func get_all(node:Node):
+	all_children = []
+	for child in node.get_children():
+		all_children.append(child)
+	return all_children
 
 func _on_enable_outline():
 	outline = true
 	print ("outline visible")
-	print ($".".get_child(0).name)
-	$".".get_child(0).get_surface_override_material(0).next_pass.set("shader_param/enable", true)
+	for child in get_children():
+		if child is MeshInstance3D:
+			for surface in range(0, child.get_surface_override_material_count() ):
+				child.get_surface_override_material(surface).next_pass.set("shader_param/enable", true)
+	#$".".get_child(0).get_surface_override_material(0).next_pass.set("shader_param/enable", true)
 	pass # Replace with function body.
 	
 func _on_disable_outline():
 	outline = false 
-	$".".get_child(0).get_surface_override_material(0).next_pass.set("shader_param/enable", false)
+	for child in get_children():
+		if child is MeshInstance3D:
+			for surface in range(0, child.get_surface_override_material_count() ):
+				child.get_surface_override_material(surface).next_pass.set("shader_param/enable", false)
 	pass # Replace with function body.
 
 	
