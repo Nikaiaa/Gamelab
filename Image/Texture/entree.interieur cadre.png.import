@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be3botqg0jc1l"
-path.s3tc="res://.godot/imported/note_croche.png-3c7bf8e26c6199ebfdc465b9a767e35c.s3tc.ctex"
+uid="uid://df3ql5priamy0"
+path.s3tc="res://.godot/imported/entree.interieur cadre.png-af7d4acd26b38d60cd065f34f375fd2b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Image/QTE/note_croche.png"
-dest_files=["res://.godot/imported/note_croche.png-3c7bf8e26c6199ebfdc465b9a767e35c.s3tc.ctex"]
+source_file="res://Image/Texture/entree.interieur cadre.png"
+dest_files=["res://.godot/imported/entree.interieur cadre.png-af7d4acd26b38d60cd065f34f375fd2b.s3tc.ctex"]
 
 [params]
 

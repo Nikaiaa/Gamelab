@@ -189,15 +189,14 @@ text = "Quitter"
 
 [node name="tITRE" type="Label" parent="."]
 layout_mode = 0
-offset_left = 418.0
-offset_top = 9.0
-offset_right = 1131.0
-offset_bottom = 278.0
+offset_left = 400.0
+offset_top = 3.296
+offset_right = 1158.0
+offset_bottom = 272.296
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_pxu2b")
-theme_override_font_sizes/font_size = 100
-text = "Omori si Sunny était David
-Bowie le sang"
+theme_override_font_sizes/font_size = 180
+text = "Echdysis Disco"
 horizontal_alignment = 1
 
 [node name="Audio" type="Control" parent="."]

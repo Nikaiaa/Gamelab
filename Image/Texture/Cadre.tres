@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cnjiqcg470rh4"]
+
+[ext_resource type="Texture2D" uid="uid://df3ql5priamy0" path="res://Image/Texture/entree.interieur cadre.png" id="1_c4cic"]
+
+[resource]
+albedo_texture = ExtResource("1_c4cic")
+uv1_scale = Vector3(2.8, 2, 5)

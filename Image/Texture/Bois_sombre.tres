@@ -1,0 +1,10 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dfcfg3qxr1woc"]
+
+[ext_resource type="Texture2D" uid="uid://d0qcmqapxoeom" path="res://Image/Texture/chambre.bois sombre.png" id="1_03osh"]
+
+[resource]
+albedo_texture = ExtResource("1_03osh")
+heightmap_enabled = true
+heightmap_scale = 4.7
+heightmap_flip_texture = true
+uv1_scale = Vector3(3, 2, 1)
