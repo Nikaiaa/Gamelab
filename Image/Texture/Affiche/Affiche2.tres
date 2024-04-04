@@ -6,4 +6,4 @@
 albedo_texture = ExtResource("1_jglfg")
 normal_enabled = true
 normal_scale = -2.67
-uv1_scale = Vector3(3.4, 3.99, 3)
+uv1_scale = Vector3(1, 1, 3)

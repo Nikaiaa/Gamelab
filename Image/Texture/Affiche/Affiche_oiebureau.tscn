@@ -1,0 +1,110 @@
+[gd_scene load_steps=14 format=3 uid="uid://cyrxax2q3xj84"]
+
+[ext_resource type="PackedScene" uid="uid://dxw6xemjkoqlm" path="res://Image/AppartementCharlieLeVrai.fbx" id="1_1q3gc"]
+[ext_resource type="Material" uid="uid://c6j2s2cbnen3j" path="res://Image/Texture/parquet.tres" id="2_3yubc"]
+[ext_resource type="Material" uid="uid://dfcfg3qxr1woc" path="res://Image/Texture/Bois_sombre.tres" id="3_028bb"]
+[ext_resource type="Material" uid="uid://cnjiqcg470rh4" path="res://Image/Texture/Cadre.tres" id="4_gjisp"]
+[ext_resource type="Material" uid="uid://bby2y2as06a6d" path="res://Image/Texture/Rideaux.tres" id="5_7wqgm"]
+[ext_resource type="Material" uid="uid://b66v2c47ccrwt" path="res://Image/Texture/Tapis_Salon.tres" id="6_7tnph"]
+[ext_resource type="Material" uid="uid://1wj50yy4jst2" path="res://Image/Texture/Affiche/Affiche2.tres" id="7_cdbrt"]
+[ext_resource type="Material" uid="uid://dyccu8smxqeft" path="res://Image/Texture/Affiche/Affiche_oie1.tres" id="8_7ajap"]
+[ext_resource type="Texture2D" uid="uid://cip4w3a8j7x5a" path="res://Image/Texture/salon.interieur cadre 3.jpg" id="9_i0wfg"]
+[ext_resource type="Material" uid="uid://de0av0p2y1ewr" path="res://Image/Texture/Affiche/Affiche3.tres" id="10_qmls8"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cop8p"]
+albedo_texture = ExtResource("9_i0wfg")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_gcr3q"]
+albedo_color = Color(1, 1, 0.27451, 1)
+rim_enabled = true
+rim = 0.78
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qbvu2"]
+
+[node name="Root Scene" instance=ExtResource("1_1q3gc")]
+
+[node name="salon_entree_mur plain 1" parent="RootNode" index="0"]
+transform = Transform3D(100.301, 0, 0, 0, -1.19209e-05, 100, 0, -100, -1.19209e-05, -6.03612, 3.57909, -2.36742)
+
+[node name="salon_parquet" parent="RootNode" index="2"]
+surface_material_override/0 = ExtResource("2_3yubc")
+
+[node name="entree_parquet" parent="RootNode" index="6"]
+surface_material_override/0 = ExtResource("2_3yubc")
+
+[node name="entree_meuble" parent="RootNode" index="8"]
+surface_material_override/0 = ExtResource("3_028bb")
+
+[node name="entree_cadre" parent="RootNode" index="11"]
+surface_material_override/0 = ExtResource("4_gjisp")
+
+[node name="entree_porte manteau" parent="RootNode" index="12"]
+surface_material_override/0 = ExtResource("3_028bb")
+
+[node name="salon_rideaux 1" parent="RootNode" index="16"]
+surface_material_override/0 = ExtResource("5_7wqgm")
+
+[node name="salon_rideaux 2" parent="RootNode" index="17"]
+surface_material_override/0 = ExtResource("5_7wqgm")
+
+[node name="salon_table appoint canape" parent="RootNode" index="18"]
+surface_material_override/0 = ExtResource("3_028bb")
+
+[node name="salon_tapis" parent="RootNode" index="28"]
+transform = Transform3D(221.544, 0, 0, 0, -2.32634e-05, 195.148, 0, -195.148, -2.32634e-05, -6.68106, -0.00370359, 10.8747)
+surface_material_override/0 = ExtResource("6_7tnph")
+
+[node name="salon_cadre 1" parent="RootNode" index="29"]
+surface_material_override/0 = ExtResource("7_cdbrt")
+
+[node name="salon_cadre 2" parent="RootNode" index="30"]
+surface_material_override/0 = ExtResource("8_7ajap")
+
+[node name="salon_cadre 3" parent="RootNode" index="31"]
+surface_material_override/0 = SubResource("StandardMaterial3D_cop8p")
+
+[node name="salon_lampe boule" parent="RootNode" index="48"]
+surface_material_override/0 = SubResource("StandardMaterial3D_gcr3q")
+
+[node name="studio_sol et mur incurvé" parent="RootNode" index="123"]
+transform = Transform3D(3.04705e-05, 526.281, 1.56844e-05, -1.52352e-05, 0, 526.281, 511.209, -1.56844e-05, 3.13688e-05, -24.1964, -0.013211, -11.4867)
+surface_material_override/0 = ExtResource("3_028bb")
+
+[node name="studio_etagere 1" parent="RootNode" index="145"]
+surface_material_override/0 = ExtResource("3_028bb")
+
+[node name="studio_etagere 2" parent="RootNode" index="146"]
+surface_material_override/0 = ExtResource("3_028bb")
+
+[node name="studio_table" parent="RootNode" index="147"]
+surface_material_override/0 = ExtResource("3_028bb")
+
+[node name="studio_cadre 3" parent="RootNode" index="154"]
+surface_material_override/0 = ExtResource("10_qmls8")
+
+[node name="studio_pochettes albums" parent="RootNode" index="156"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qbvu2")
+
+[node name="Light" parent="RootNode" index="224"]
+light_energy = 1.778
+
+[node name="Light_001" parent="RootNode" index="225"]
+light_energy = 2.667
+
+[node name="Light_003" parent="RootNode" index="226"]
+light_energy = 3.0
+
+[node name="Light_004" parent="RootNode" index="227"]
+light_energy = 2.0
+
+[node name="Point_001" parent="RootNode" index="228"]
+light_energy = 3.111
+
+[node name="Point_003" parent="RootNode" index="229"]
+light_energy = 2.222
+
+[node name="Light_002" parent="RootNode" index="230"]
+light_energy = 2.667
+
+[node name="porte entrée" parent="RootNode" index="232"]
+transform = Transform3D(-173.997, -2.73324e-05, 4.81733e-05, 2.62728e-05, 2.73324e-05, 319.037, -3.11131e-05, 152.854, -3.80322e-05, -14.992, 3.19508, -17.261)
