@@ -1,8 +1,9 @@
-[gd_scene load_steps=18 format=3 uid="uid://c7by7bpugrwbw"]
+[gd_scene load_steps=19 format=3 uid="uid://c7by7bpugrwbw"]
 
 [ext_resource type="PackedScene" uid="uid://caqt8kjf8e0rv" path="res://Bribes/Lettre Fragment.blend" id="1_8sm18"]
 [ext_resource type="Script" path="res://Script/collisionBribe.gd" id="2_j5l7v"]
 [ext_resource type="Shader" path="res://Scene/porte_2.gdshader" id="2_oyb5p"]
+[ext_resource type="Texture2D" uid="uid://8fuu35wb3u0q" path="res://Bribes/Dossier-Magazine-Lettre.png" id="4_vmbk6"]
 [ext_resource type="AudioStream" uid="uid://dscq1t7v25plc" path="res://Musique/Bribes/Bribe_cursed3.mp3" id="4_wqkse"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c5sru"]
@@ -14,6 +15,7 @@ shader_parameter/color = Color(0, 0, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rdao"]
 next_pass = SubResource("ShaderMaterial_c5sru")
+albedo_texture = ExtResource("4_vmbk6")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0e03t"]
 render_priority = 0
@@ -24,6 +26,7 @@ shader_parameter/color = Color(0, 0, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1q71"]
 next_pass = SubResource("ShaderMaterial_0e03t")
+albedo_texture = ExtResource("4_vmbk6")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_10er6"]
 render_priority = 0
@@ -34,6 +37,7 @@ shader_parameter/color = Color(0, 0, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_of0q8"]
 next_pass = SubResource("ShaderMaterial_10er6")
+albedo_texture = ExtResource("4_vmbk6")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_i7tae"]
 render_priority = 0
@@ -44,6 +48,7 @@ shader_parameter/color = Color(0, 0, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpuao"]
 next_pass = SubResource("ShaderMaterial_i7tae")
+albedo_texture = ExtResource("4_vmbk6")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_xfjs3"]
 render_priority = 0
@@ -54,6 +59,7 @@ shader_parameter/color = Color(0, 0, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tnoju"]
 next_pass = SubResource("ShaderMaterial_xfjs3")
+albedo_texture = ExtResource("4_vmbk6")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_tlmnn"]
 render_priority = 0
@@ -64,6 +70,7 @@ shader_parameter/color = Color(0, 0, 0, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2tto"]
 next_pass = SubResource("ShaderMaterial_tlmnn")
+albedo_texture = ExtResource("4_vmbk6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iiu2y"]
 size = Vector3(1.51563, 0.0622559, 1.12805)

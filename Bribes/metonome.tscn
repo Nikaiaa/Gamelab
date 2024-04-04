@@ -1,15 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://bqdxfbk8qc805"]
+[gd_scene load_steps=3 format=3 uid="uid://cxj0jt0xn7ioh"]
 
 [ext_resource type="PackedScene" uid="uid://byoofgqleb808" path="res://Bribes/Metonome.blend" id="1_lja5k"]
-[ext_resource type="Script" path="res://Scene/boutonUI.gd" id="2_afxd4"]
+[ext_resource type="ArrayMesh" uid="uid://bss4lehck7fs4" path="res://Bribes/bribesUI/UI_metronome.tres" id="3_xy44g"]
 
-[node name="Metonome" node_paths=PackedStringArray("narra") instance=ExtResource("1_lja5k")]
+[node name="Metonome" instance=ExtResource("1_lja5k")]
 transform = Transform3D(0.99331, 0, -0.115475, 0, 1, 0, 0.115475, 0, 0.99331, 0, 0, 0)
-script = ExtResource("2_afxd4")
-narra = NodePath("Control/Label")
+
+[node name="Metronome_cell_005" parent="." index="0"]
+visible = false
 
 [node name="Metronome" parent="." index="1"]
 transform = Transform3D(-0.062859, 0.0202944, 0.00622955, -0.0199009, -0.0646452, -1.89865e-10, 0.00578673, -0.00186828, 0.0676692, 0.0319834, 0.369921, -0.317929)
+mesh = ExtResource("3_xy44g")
 
 [node name="Control" type="Control" parent="." index="2"]
 layout_mode = 3
@@ -18,7 +20,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Camera3D" type="Camera3D" parent="Control" index="0"]
-transform = Transform3D(-0.998624, -2.97054e-08, 0.0524406, -2.97226e-08, 1, 4.5219e-10, -0.0524406, -1.10711e-09, -0.998624, 0.117861, 0.273747, -0.960762)
+transform = Transform3D(-0.999874, -2.97117e-08, -0.0158643, -2.97226e-08, 1, 4.52183e-10, 0.0158643, 9.23653e-10, -0.999874, 0.0686625, 0.291619, -0.956339)
 top_level = true
 current = true
 
@@ -32,3 +34,10 @@ theme_override_font_sizes/font_size = 20
 text = "Appuyez sur Echap"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." index="3"]
+
+[node name="SubViewport" type="SubViewport" parent="." index="4"]
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 4

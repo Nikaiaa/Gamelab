@@ -1,0 +1,43 @@
+[gd_scene load_steps=3 format=3 uid="uid://bjb7d5aouiutt"]
+
+[ext_resource type="Script" path="res://Scene/boutonUI.gd" id="1_u4glp"]
+[ext_resource type="Texture2D" uid="uid://dqo8vq0afyv2u" path="res://Bribes/bribesUI/lettre 2d.png" id="2_tl1cv"]
+
+[node name="Control" type="Control" node_paths=PackedStringArray("narra")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u4glp")
+narra = NodePath("Label")
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1295.0
+offset_bottom = 741.0
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(50, 0)
+scale = Vector2(0.92, 0.92)
+texture = ExtResource("2_tl1cv")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1365.0
+offset_top = 880.0
+offset_right = 1920.0
+offset_bottom = 1060.0
+theme_override_font_sizes/font_size = 20
+text = "Appuyez sur Echap"
+horizontal_alignment = 1
+vertical_alignment = 1

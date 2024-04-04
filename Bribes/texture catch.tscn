@@ -1,0 +1,38 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx5j7h3fjagv"]
+
+[ext_resource type="Script" path="res://Scene/boutonUI.gd" id="1_rn3kx"]
+[ext_resource type="ArrayMesh" uid="uid://bss4lehck7fs4" path="res://Bribes/bribesUI/UI_metronome.tres" id="2_5p0gi"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_r5qfb"]
+viewport_path = NodePath("SubViewport")
+
+[node name="texture catcher" type="Node3D"]
+script = ExtResource("1_rn3kx")
+mesh_to_snapshot = ExtResource("2_5p0gi")
+snapshot_name = "Metronome"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("ViewportTexture_r5qfb")
+
+[node name="SubViewport" type="SubViewport" parent="."]
+transparent_bg = true
+
+[node name="Node3D" type="Node3D" parent="SubViewport"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="SubViewport/Node3D"]
+transform = Transform3D(-0.955206, 0.295941, 0, -0.295941, -0.955206, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("2_5p0gi")
+
+[node name="Camera3D" type="Camera3D" parent="SubViewport/Node3D"]
+transform = Transform3D(-0.999997, 0, -0.0024609, 0, 1, 0, 0.0024609, 0, -0.999997, -0.242448, -0.816931, -9.00976)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="SubViewport/Node3D"]
+transform = Transform3D(-0.999997, 0, -0.0024609, 0, 1, 0, 0.0024609, 0, -0.999997, 0.17987, 2.55314, -1.95707)
+light_energy = 1.197
+omni_range = 6.575
+omni_attenuation = 1.03526
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="SubViewport/Node3D"]
+transform = Transform3D(1, 0, -2.32831e-10, 0, 1, 0, 2.32831e-10, 0, 1, 0.262354, -2.5466, -5.38124)
+light_energy = 2.0
+omni_range = 6.733
