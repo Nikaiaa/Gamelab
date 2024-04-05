@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://dtuk2i774gc6s"]
+
+[ext_resource type="Texture2D" uid="uid://dj26v7fdyw3x7" path="res://Image/Texture/studio.tourne disque bois clair.jpg" id="1_8i4y1"]
+
+[resource]
+albedo_texture = ExtResource("1_8i4y1")

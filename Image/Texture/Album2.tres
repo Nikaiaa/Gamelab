@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c5sx3kdf63clf"]
+
+[ext_resource type="Texture2D" uid="uid://bgmvt3n5822b5" path="res://Image/Texture/studio.pochettes albums 2.png" id="1_4vf02"]
+
+[resource]
+albedo_texture = ExtResource("1_4vf02")

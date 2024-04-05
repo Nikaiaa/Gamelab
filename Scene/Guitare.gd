@@ -19,7 +19,6 @@ var textes_objets = {
 
 
 func _on_mouse_entered():
-	Texte.show()
 	print("jsusidanslazone")
 	for i in textes_objets:
 		print("aled aled")
@@ -27,7 +26,3 @@ func _on_mouse_entered():
 		Texte.text = textes_objets[Narration]
 		
 		print(Texte)
-
-
-func _on_mouse_exited():
-	Texte.hide()
