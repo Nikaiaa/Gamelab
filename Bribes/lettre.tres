@@ -10,5 +10,5 @@ objetSpriteBroken = ExtResource("1_cgu8i")
 objetSpriteFixed = ExtResource("2_3t8i6")
 name = "Lettre"
 isImportant = true
-dialogue = "Encore un truc dont je dois me débarasser..."
-emplacement = Vector3(-7.7, 1.33, 0.5)
+dialogue = "JE SUIS UNE LETTRE OMG ???"
+emplacement = Vector3(0, 0, 0)

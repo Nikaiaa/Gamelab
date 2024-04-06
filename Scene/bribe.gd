@@ -9,12 +9,10 @@ extends Node
 var loadScene
 @export var tableauNarra : Array = []
 @export var text : Label
-var animation : AnimationPlayer
 var resource_data  #: Dictionary = {}
 
+
 func _ready():
-	var char =  $char
-	animation = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
 	text.visible = false 
 	tableauObjets = [bribeMetronome, bribeLettre]
 	tableauNarra = ["je suis un téléphone dring dring", "je suis un chien bark bark"]
@@ -28,11 +26,9 @@ func _ready():
 		instance.grabObject.connect(_on_grab_object)
 		#resource_data = {"resource": resource} #créer un dictionnaire pour stocker la référence à la resource
 		#instance.set_meta("resource_data", resource_data) #stocker le dictionnaire dans l'instance
-	
+
 func _on_grab_object(instanceBribe : bribe_instance):
 	print ("befifb")
-	$char.activeShader(true)
-	animation.play("Anxiety")
 	#var clicked_instance = collider
 	#var resource_data = instance.get_meta("resource_data") #on va chercher les données de la ressource
 	resource_data = instanceBribe.bribe_data

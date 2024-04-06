@@ -1,10 +1,55 @@
-[gd_scene load_steps=3 format=3 uid="uid://iybuakcvifjn"]
+[gd_scene load_steps=9 format=3 uid="uid://iybuakcvifjn"]
 
+[ext_resource type="Texture2D" uid="uid://quo4kdxvac7e" path="res://Image/2286300415a9ff54aada9ea75518021e.png" id="1_tvy4u"]
 [ext_resource type="PackedScene" uid="uid://rnloud2x4hmt" path="res://Scene/bribe.tscn" id="1_vxlxu"]
 [ext_resource type="Script" path="res://Script/grab_object.gd" id="1_xf1ff"]
+[ext_resource type="PackedScene" uid="uid://dgnlpclf740qk" path="res://Scene/char.tscn" id="2_3bvit"]
+[ext_resource type="PackedScene" uid="uid://bgiqj8krdiv7m" path="res://Scene/porte_2.tscn" id="4_dvj16"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lmrmy"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_at5m5"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_sqrfp"]
+size = Vector3(4.54198, 6.61389, 0.458232)
 
 [node name="Node3D" type="Node3D"]
 script = ExtResource("1_xf1ff")
 
 [node name="Bribe" parent="." instance=ExtResource("1_vxlxu")]
-transform = Transform3D(-0.842593, 0, -0.53855, 0, 1, 0, 0.53855, 0, -0.842593, -7.7, 1.33, 0.5)
+transform = Transform3D(-0.842593, 0, -0.53855, 0, 1, 0, 0.53855, 0, -0.842593, 0, 0, 0)
+
+[node name="char" parent="." instance=ExtResource("2_3bvit")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.94966)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(7.29691, 0, 0, 0, 0.0687882, 0, 0, 0, 7.77451, 0, -0.291399, 0)
+input_ray_pickable = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_lmrmy")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_at5m5")
+skeleton = NodePath("../../../frag1/CollisionShape3D")
+
+[node name="frag1" type="Area3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(0.403251, 0, 0, 0, 0.403251, 0, 0, 0, 1, 0, 0, 0)
+visible = false
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="frag1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.983849, 3.11615, -1.19041)
+shape = SubResource("BoxShape3D_sqrfp")
+
+[node name="Sprite3D" type="Sprite3D" parent="frag1"]
+transform = Transform3D(0.595944, 0, 0, 0, 0.595944, 0, 0, 0, 1, 0, 0.387042, -0.927871)
+visible = false
+texture = ExtResource("1_tvy4u")
+
+[node name="porte_2" parent="frag1" instance=ExtResource("4_dvj16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.750495)
+
+[connection signal="cantMove" from="char" to="char" method="_on_cant_move"]
+[connection signal="mouse_entered" from="frag1" to="frag1" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="frag1" to="frag1" method="_on_mouse_exited"]
