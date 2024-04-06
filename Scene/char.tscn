@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://bg6pkhs4yxgc4" path="res://Musique/Anxiete.wav" id="6_wjvov"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_gxue6"]
+size = Vector3(0.318848, 1, 1)
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1viwg"]
 radius = 0.2
@@ -110,6 +111,7 @@ input_ray_pickable = false
 script = ExtResource("1_p1o10")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.340576, 0, 0)
 shape = SubResource("BoxShape3D_gxue6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
@@ -120,7 +122,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pasvm")
 [node name="Rotation_Helper" type="Node3D" parent="CharacterBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Rotation_Helper"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92409, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.56436, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D/Rotation_Helper/Camera3D"]
 follow_viewport_enabled = true

@@ -76,13 +76,14 @@ albedo_texture = ExtResource("4_vmbk6")
 size = Vector3(1.51563, 0.0622559, 1.12805)
 
 [node name="Lettre Fragment" node_paths=PackedStringArray("audio_stream") instance=ExtResource("1_8sm18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.7, 1.33, -0.5)
 script = ExtResource("2_j5l7v")
 audio_stream = NodePath("AudioStreamPlayer3D")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="0"]
 stream = ExtResource("4_wqkse")
 autoplay = true
-max_distance = 5.0
+max_distance = 10.0
 emission_angle_enabled = true
 
 [node name="Lettre_cell_005" parent="." index="1"]

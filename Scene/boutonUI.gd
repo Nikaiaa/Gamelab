@@ -3,8 +3,6 @@ extends Node
 signal onSelfDestroy
 @onready var scene = $"."
 @export var narra : Label
-@onready var sub_viewport = $SubViewport
-@onready var mesh_instance_3d = $SubViewport/Node3D/MeshInstance3D
 @export var mesh_to_snapshot : ArrayMesh
 @export var snapshot_name : String
 
