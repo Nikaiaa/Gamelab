@@ -10,9 +10,11 @@ var loadScene
 @export var tableauNarra : Array = []
 @export var text : Label
 var resource_data  #: Dictionary = {}
-
+@onready var char = $char
+var animation
 
 func _ready():
+	animation = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
 	text.visible = false 
 	tableauObjets = [bribeMetronome, bribeLettre]
 	tableauNarra = ["je suis un téléphone dring dring", "je suis un chien bark bark"]
@@ -36,7 +38,8 @@ func _on_grab_object(instanceBribe : bribe_instance):
 		loadScene = resource_data.objetSpriteFixed.instantiate() #on load la version non pété de l'objet
 		loadScene.onSelfDestroy.connect(onSpriteFixedDestroyed)
 		add_child(loadScene)
-		
+		char.activeShader(true)
+		animation.play("Anxiety")
 		instanceBribe.queue_free()
 		text.text = resource_data.dialogue
 		text.visible = true

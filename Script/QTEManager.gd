@@ -31,9 +31,10 @@ func _on_timer_spawn_note_4_timeout():
 
 func _ready():
 	#On peut manipuler les timer pour spawner les notes selon des patterns réguliers
-	timer2.start(0.8)
-	timer3.start(1)
-	timer4.start(3)
+	#timer2.start(0.8)
+	#timer3.start(1)
+	#timer4.start(3)
+	pass
 
 func _spawn_note(note : int): 
 	note_instance = Note.instantiate() 
@@ -72,24 +73,28 @@ func _checkinput():
 	match noteChecked.myetat: #on check l'état (déclaré dans QTE_note)
 		QTE.etat.rate:
 			print(noteChecked.noteName + " est ratée")
+			noteChecked._play_animation_missed()
 		QTE.etat.reussi:
 			print (noteChecked.noteName + " est réussie")
+			noteChecked._play_animation_reussi()
 		QTE.etat.missed:	
 			print (noteChecked.noteName + " missed")
+			noteChecked._play_animation_missed()
 	print("_______")
-	noteChecked.destroy()
+	#noteChecked.destroy()
 	
 func _end_of_course(note : QTE): #Trigger quand l'objet de classe QTE arrive au bout de son parcours 
 	#(Destination_position dans QTE_Note)
 	match note.noteName: #On supprime la bonne note en fonction de son nom
 		"2":
 			notes2Array.erase(note) #On erase dans le tableau d'abord
-			note.destroy() #On détruit le node ensuite
+			#note.destroy() #On détruit le node ensuite
 		"3":
 			notes3Array.erase(note)
-			note.destroy()
+			#note.destroy()
 		"4":
 			notes4Array.erase(note)
-			note.destroy()
+			#note.destroy()
+	note._play_animation_missed()
 	print (note.noteName + " missed")
 	print("_______")

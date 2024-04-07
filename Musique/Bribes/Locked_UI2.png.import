@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb40lyr53201e"
-path.s3tc="res://.godot/imported/cuisine.salon.interieur cadre 4.jpg-a9c0a982edae2be748abeaf34c8907eb.s3tc.ctex"
+uid="uid://d38c5oj0l0xiw"
+path.s3tc="res://.godot/imported/Locked_UI2.png-2014b439d631c8840f7726b63df015e8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Image/Texture/cuisine.salon.interieur cadre 4.jpg"
-dest_files=["res://.godot/imported/cuisine.salon.interieur cadre 4.jpg-a9c0a982edae2be748abeaf34c8907eb.s3tc.ctex"]
+source_file="res://Musique/Bribes/Locked_UI2.png"
+dest_files=["res://.godot/imported/Locked_UI2.png-2014b439d631c8840f7726b63df015e8.s3tc.ctex"]
 
 [params]
 

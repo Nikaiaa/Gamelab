@@ -14,8 +14,11 @@ var bribe_data# = bribeResource
 signal grabObject(instance : bribe_instance)
 var all_children
 var instance_clicked
-
 @export var audio_stream : AudioStreamPlayer3D
+var char : PackedScene
+var animation_player : AnimationPlayer
+#var anxiete_in : AudioStreamPlayerMP3
+#var anxiete_stop : Button
 
 func _ready():
 	#get_all($".")
@@ -35,7 +38,6 @@ func _on_mouse_entered():
 	mouse_in_zone_true = true
 	enableOutline.emit()
 	
-
 func _on_mouse_exited():
 	mouse_in_zone_true = false
 	print ("jsuis plus dans la zone")

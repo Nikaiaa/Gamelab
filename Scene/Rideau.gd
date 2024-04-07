@@ -26,3 +26,6 @@ func _on_mouse_entered():
 		Texte.text = textes_objets[Narration]
 		
 		print(Texte)
+		
+func _on_mouse_exited():
+	Texte.hide()

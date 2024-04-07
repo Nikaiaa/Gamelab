@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Scene/boutonUI.gd" id="1_t0hd3"]
 [ext_resource type="Texture2D" uid="uid://quo4kdxvac7e" path="res://Image/2286300415a9ff54aada9ea75518021e.png" id="2_ckdre"]
 
-[node name="Control" type="Control" node_paths=PackedStringArray("narra")]
+[node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_t0hd3")
-narra = NodePath("")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="bribeResource" load_steps=5 format=3 uid="uid://df5jym78qkvo5"]
 
-[ext_resource type="AudioStream" uid="uid://dtjr4mfsb17mb" path="res://Musique/Bribes/Bribe_cursed4.mp3" id="1_6woha"]
+[ext_resource type="AudioStream" uid="uid://btadde4vaf4um" path="res://Musique/Bribes/Bribe_cursed4.wav" id="1_ce4g0"]
 [ext_resource type="PackedScene" uid="uid://bcco5cmj1x6de" path="res://Bribes/metonome_fragment.tscn" id="1_oo5bl"]
 [ext_resource type="PackedScene" uid="uid://dp17hnu475eta" path="res://Bribes/metronomeFixed.tscn" id="3_cx63e"]
 [ext_resource type="Script" path="res://Script/bribe_resource.gd" id="3_lxycx"]
@@ -9,8 +9,8 @@
 script = ExtResource("3_lxycx")
 objetSpriteBroken = ExtResource("1_oo5bl")
 objetSpriteFixed = ExtResource("3_cx63e")
-objetAudio = ExtResource("1_6woha")
+objetAudio = ExtResource("1_ce4g0")
 name = "Métronome"
 isImportant = true
-dialogue = "GOUGOUGAGAK"
-emplacement = Vector3(0, 0, 1)
+dialogue = "J'aurais dû me douter que c'était impossible de changer le rythme."
+emplacement = Vector3(-7.546, 1.382, 10)

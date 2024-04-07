@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bb40lyr53201e"
-path.s3tc="res://.godot/imported/cuisine.salon.interieur cadre 4.jpg-a9c0a982edae2be748abeaf34c8907eb.s3tc.ctex"
+uid="uid://denbcml3nuojm"
+path.s3tc="res://.godot/imported/FOND_piano.png-2541c4208f05781934aa41fe0f91114e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Image/Texture/cuisine.salon.interieur cadre 4.jpg"
-dest_files=["res://.godot/imported/cuisine.salon.interieur cadre 4.jpg-a9c0a982edae2be748abeaf34c8907eb.s3tc.ctex"]
+source_file="res://FOND_piano.png"
+dest_files=["res://.godot/imported/FOND_piano.png-2541c4208f05781934aa41fe0f91114e.s3tc.ctex"]
 
 [params]
 

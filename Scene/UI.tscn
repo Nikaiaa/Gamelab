@@ -11,18 +11,11 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hqlyi")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="Bribe" type="Label" parent="."]
 layout_mode = 0
-offset_left = 884.0
-offset_top = 4.0
-offset_right = 1153.0
-offset_bottom = 195.0
-
-[node name="Bribe" type="Label" parent="ColorRect"]
-layout_mode = 0
-offset_left = 86.0
+offset_left = 1290.0
 offset_top = 1.0
-offset_right = 199.0
+offset_right = 1403.0
 offset_bottom = 97.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 70

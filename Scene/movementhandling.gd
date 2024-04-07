@@ -6,15 +6,15 @@ var mouse_in_zone_true
 @export var Fisheye: CanvasItem
 signal cantMove
 var collisionBribeScript = preload ("res://Script/collisionBribe.gd")
-
 # Called when the node enters the scene tree for the first time.
+signal Anxieux
+
 func _ready():
 	can_move = true
 	print("can move")
 	print(can_move)
 	#collisionBribeScript.cantMove.connect(_on_cant_move)
 	pass # Replace with function body.
-
 
 #func _input(event):
 	#if event is InputEventMouseButton && mouse_in_zone_true == true :

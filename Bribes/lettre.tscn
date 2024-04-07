@@ -1,11 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dm5tl55248now"]
+[gd_scene load_steps=5 format=3 uid="uid://dm5tl55248now"]
 
 [ext_resource type="PackedScene" uid="uid://d1cb3ln7bc2hq" path="res://Bribes/Lettre.blend" id="1_ifapw"]
 [ext_resource type="Script" path="res://Scene/boutonUI.gd" id="2_7j8fm"]
+[ext_resource type="Texture2D" uid="uid://8fuu35wb3u0q" path="res://Bribes/Dossier-Magazine-Lettre.png" id="3_vvwky"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6csc2"]
+albedo_texture = ExtResource("3_vvwky")
 
 [node name="Lettre2" node_paths=PackedStringArray("narra") instance=ExtResource("1_ifapw")]
 script = ExtResource("2_7j8fm")
 narra = NodePath("Control/Label")
+
+[node name="Lettre" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6csc2")
 
 [node name="Control" type="Control" parent="." index="1"]
 layout_mode = 3

@@ -1,17 +1,172 @@
-[gd_scene load_steps=5 format=3 uid="uid://d3aqhkaunfsg8"]
+[gd_scene load_steps=9 format=3 uid="uid://d3aqhkaunfsg8"]
 
 [ext_resource type="Script" path="res://Script/QTE_move_and_destroy.gd" id="1_tnqig"]
-[ext_resource type="Texture2D" uid="uid://cckw0t3e656xc" path="res://Image/QTE2.png" id="2_hqdme"]
+[ext_resource type="Texture2D" uid="uid://be3botqg0jc1l" path="res://Image/QTE/note_croche.png" id="2_r6h5h"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_mpv4d"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_8h7ty"]
 
-[node name="Node3D" type="Node3D" node_paths=PackedStringArray("destination", "apparence", "Note")]
+[sub_resource type="Animation" id="Animation_3digw"]
+resource_name = "Note_Etat"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QTE_note_area/CollisionShape3D/Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, -4.30468, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QTE_note_area/CollisionShape3D/Sprite3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.481973)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"destroy"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:hit")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_xrpqy"]
+resource_name = "Note_Reussi"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QTE_note_area/CollisionShape3D/Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 4.305, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QTE_note_area/CollisionShape3D/Sprite3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.481973)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"destroy"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:hit")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_v6mh3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("QTE_note_area/CollisionShape3D/Sprite3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("QTE_note_area/CollisionShape3D/Sprite3D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:hit")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_h8aii"]
+_data = {
+"Note_Missed": SubResource("Animation_3digw"),
+"Note_Reussi": SubResource("Animation_xrpqy"),
+"RESET": SubResource("Animation_v6mh3")
+}
+
+[node name="Note" type="Node3D" node_paths=PackedStringArray("destination", "apparence", "Note", "ap")]
 script = ExtResource("1_tnqig")
 destination = NodePath("Destination_Position")
 apparence = NodePath("QTE_note_area/CollisionShape3D/Sprite3D")
 Note = NodePath("QTE_note_area")
+ap = NodePath("AnimationPlayer")
 
 [node name="QTE_note_area" type="Area3D" parent="."]
 collision_layer = 0
@@ -20,7 +175,8 @@ collision_layer = 0
 shape = SubResource("SphereShape3D_mpv4d")
 
 [node name="Sprite3D" type="Sprite3D" parent="QTE_note_area/CollisionShape3D"]
-texture = ExtResource("2_hqdme")
+transform = Transform3D(0.449632, 0, 0, 0, 0.476293, 0, 0, 0, 1, 0, 0, 0)
+texture = ExtResource("2_r6h5h")
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="QTE_note_area"]
 transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
@@ -31,6 +187,11 @@ collide_with_bodies = false
 
 [node name="Destination_Position" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_h8aii")
+}
 
 [connection signal="area_entered" from="QTE_note_area" to="." method="_on_qte_note_area_entered"]
 [connection signal="area_exited" from="QTE_note_area" to="." method="_on_qte_note_area_exited"]

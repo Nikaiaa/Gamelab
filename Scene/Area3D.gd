@@ -20,9 +20,9 @@ var textes_objets = {
 
 func _on_mouse_entered():
 	Texte.show()
-	print("jsusidanslazone")
+	print("zone narra")
 	for i in textes_objets:
-		print("aled aled")
+		print("texte narra")
 		#Texte.text = textes_objets[TABLEAUDETAMERE[meuble].name]
 		Texte.text = textes_objets[Narration]
 		

@@ -1,35 +1,84 @@
 [gd_scene load_steps=12 format=3 uid="uid://d3s6dc4jav1bq"]
 
 [ext_resource type="Script" path="res://Script/QTEManager.gd" id="1_4uevv"]
-[ext_resource type="Texture2D" uid="uid://bbe1secbxbtln" path="res://Image/woman-playing-piano-her-room-1745186.jpg" id="1_o6yib"]
 [ext_resource type="PackedScene" uid="uid://d3aqhkaunfsg8" path="res://Scene/QTE_note.tscn" id="2_cp4ls"]
 [ext_resource type="Texture2D" uid="uid://dp211osxqvffc" path="res://Image/Vertical-Line-PNG-High-Quality-Image.png" id="2_v2idl"]
-[ext_resource type="Texture2D" uid="uid://cckw0t3e656xc" path="res://Image/QTE2.png" id="3_jrk5e"]
-[ext_resource type="Texture2D" uid="uid://c7d12hy6w6tvo" path="res://Image/QTEspawn2.png" id="4_cod2c"]
-[ext_resource type="Texture2D" uid="uid://tnqq74l4hh44" path="res://Image/QTE3.png" id="4_lu24d"]
-[ext_resource type="Texture2D" uid="uid://tyv5i0n166d6" path="res://Image/QTEspawn3.png" id="5_8q85w"]
-[ext_resource type="Texture2D" uid="uid://dwoasdgu4lj7b" path="res://Image/QTE4.png" id="5_uyobb"]
-[ext_resource type="Texture2D" uid="uid://bjk1gtdr3igrm" path="res://Image/QTEspawn4.png" id="6_uu7x2"]
+[ext_resource type="Texture2D" uid="uid://denbcml3nuojm" path="res://FOND_piano.png" id="6_t570g"]
+[ext_resource type="Texture2D" uid="uid://be3botqg0jc1l" path="res://Image/QTE/note_croche.png" id="8_hcwi4"]
+[ext_resource type="AudioStream" uid="uid://cebu1yj6gy6kh" path="res://Scene/QTE1.mp3" id="8_yg3yb"]
+[ext_resource type="Texture2D" uid="uid://bm0m138siejou" path="res://Image/QTE/note_double_croche.png" id="9_ytlli"]
+[ext_resource type="Texture2D" uid="uid://ctenpqhq1gpl7" path="res://Image/QTE/note_noire.png" id="10_pmg5w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhlmc"]
 size = Vector3(1.43115, 6.65891, 1.70905)
 
+[sub_resource type="Animation" id="Animation_dkqdn"]
+resource_name = "Musique"
+length = 10.0
+loop_mode = 1
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(-0.1, 0.2, 0.6, 1.2, 2.2, 5.1, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [2],
+"method": &"_spawn_note"
+}, {
+"args": [2],
+"method": &"_spawn_note"
+}, {
+"args": [2],
+"method": &"_spawn_note"
+}, {
+"args": [3],
+"method": &"_spawn_note"
+}, {
+"args": [2],
+"method": &"_spawn_note"
+}, {
+"args": [2],
+"method": &"_spawn_note"
+}, {
+"args": [3],
+"method": &"_spawn_note"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.7),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [3],
+"method": &"_spawn_note"
+}, {
+"args": [3],
+"method": &"_spawn_note"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r2lo0"]
+_data = {
+"Musique": SubResource("Animation_dkqdn")
+}
+
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("arrayStartPos", "timer2", "timer3", "timer4")]
 script = ExtResource("1_4uevv")
 Note = ExtResource("2_cp4ls")
-arrayTextures = Array[CompressedTexture2D]([null, null, ExtResource("3_jrk5e"), ExtResource("4_lu24d"), ExtResource("5_uyobb")])
+arrayTextures = Array[CompressedTexture2D]([null, null, ExtResource("10_pmg5w"), ExtResource("8_hcwi4"), ExtResource("9_ytlli")])
 arrayStartPos = [null, null, NodePath("SPN2"), NodePath("SPN3"), NodePath("SPN4")]
 timer2 = NodePath("AreaLimite/TimerSpawnNote2")
 timer3 = NodePath("AreaLimite/TimerSpawnNote3")
 timer4 = NodePath("AreaLimite/TimerSpawnNote4")
-
-[node name="Fond" type="Sprite3D" parent="."]
-layers = 512
-modulate = Color(1, 1, 1, 0.384314)
-texture = ExtResource("1_o6yib")
-
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.3964)
 
 [node name="AreaLimite" type="Area3D" parent="."]
 transform = Transform3D(2.275, 0, 0, 0, 2.275, 0, 0, 0, 2.275, 7.44162, -0.209693, 2.33698)
@@ -40,7 +89,7 @@ transform = Transform3D(0.999928, -3.55264e-15, 0, 3.55264e-15, 0.999928, 0, 0, 
 shape = SubResource("BoxShape3D_lhlmc")
 
 [node name="Limite" type="Sprite3D" parent="AreaLimite/CollisionShape3D"]
-transform = Transform3D(1.44586, 4.23516e-22, 0, 0, 1, 0, 0, 0, 1, -0.0867841, -0.141686, 0.110624)
+transform = Transform3D(1.44586, 4.23516e-22, 0, 0, 1, 0, 0, 0, 1, -0.087, -0.142, 0)
 texture = ExtResource("2_v2idl")
 
 [node name="TimerSpawnNote2" type="Timer" parent="AreaLimite"]
@@ -49,25 +98,47 @@ texture = ExtResource("2_v2idl")
 
 [node name="TimerSpawnNote4" type="Timer" parent="AreaLimite"]
 
+[node name="Fond" type="Sprite3D" parent="."]
+transform = Transform3D(2.36293, 0, 0, 0, 2.56921, 0, 0, 0, 1, 0, 0, 0)
+layers = 512
+modulate = Color(1, 1, 1, 0.384314)
+texture = ExtResource("6_t570g")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.3964)
+
 [node name="SPN2" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73146, 4.36866, 0)
 
 [node name="SpawnPosNote2" type="Sprite3D" parent="SPN2"]
-texture = ExtResource("4_cod2c")
+transform = Transform3D(0.43985, 0, 0, 0, 0.407252, 0, 0, 0, 0.854334, 0, 0, 0)
+texture = ExtResource("10_pmg5w")
 
 [node name="SPN3" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.65263, 2.20735, 0)
 
 [node name="SpawnPosNote3" type="Sprite3D" parent="SPN3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.112485, 0.196848, 0)
-texture = ExtResource("5_8q85w")
+transform = Transform3D(0.310268, 0, 0, 0, 0.329534, 0, 0, 0, 1, -0.112485, 0.196848, 0)
+texture = ExtResource("8_hcwi4")
 
 [node name="SPN4" type="Node3D" parent="."]
 transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.70992, 0.290017, 0)
 
 [node name="SpawnPosNote4" type="Sprite3D" parent="SPN4"]
-transform = Transform3D(3.33333, 0, 0, 0, 3.33333, 0, 0, 0, 3.33333, 0, 0, 0)
-texture = ExtResource("6_uu7x2")
+transform = Transform3D(1.24547, 0, 0, 0, 1.29227, 0, 0, 0, 3.35209, 0, 0, 0)
+texture = ExtResource("9_ytlli")
+
+[node name="MusiqueAP" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_r2lo0")
+}
+autoplay = "Musique"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Timer"]
+stream = ExtResource("8_yg3yb")
+autoplay = true
 
 [connection signal="area_entered" from="AreaLimite" to="." method="_on_area_limite_area_entered"]
 [connection signal="area_exited" from="AreaLimite" to="." method="_on_area_limite_area_exited"]

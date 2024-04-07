@@ -57,6 +57,18 @@ tracks/1/keys = {
 "update": 0,
 "values": [0.7, 1.2, 0.9, 0.75, 0.42, 1.5, 0.66, 1.0, 1.8]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:material:shader_parameter/alpha")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.7, 3.1, 3.4, 3.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.7, 0.5, 0.4, 0.0]
+}
 
 [sub_resource type="Animation" id="Animation_8joae"]
 length = 0.001
@@ -71,6 +83,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:material:shader_parameter/alpha")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.7]
 }
 
 [sub_resource type="Animation" id="Animation_sixb0"]
@@ -99,6 +123,7 @@ _data = {
 }
 
 [node name="char" type="Node3D" node_paths=PackedStringArray("Fisheye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.02723, 0)
 script = ExtResource("1_yf6yi")
 Fisheye = NodePath("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/ColorRect")
 
@@ -113,20 +138,18 @@ script = ExtResource("1_p1o10")
 shape = SubResource("BoxShape3D_gxue6")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
-transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_1viwg")
 surface_material_override/0 = SubResource("StandardMaterial3D_pasvm")
 
 [node name="Rotation_Helper" type="Node3D" parent="CharacterBody3D"]
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Rotation_Helper"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.92409, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.63344, 0)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D/Rotation_Helper/Camera3D"]
 follow_viewport_enabled = true
 
 [node name="ColorRect" type="ColorRect" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer"]
-visible = false
 material = SubResource("ShaderMaterial_hkeef")
 anchors_preset = -1
 anchor_right = 1.01
@@ -142,7 +165,6 @@ libraries = {
 }
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer"]
-visible = false
 
 [node name="Label" type="Label" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer"]
 visible = false
@@ -185,13 +207,6 @@ text = "Tu as de l'anxiété ? Arrête."
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer"]
 stream = ExtResource("6_wjvov")
-
-[node name="Control" type="Control" parent="CharacterBody3D/Rotation_Helper/Camera3D"]
-visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [node name="Anxiete" type="Timer" parent="."]
 
