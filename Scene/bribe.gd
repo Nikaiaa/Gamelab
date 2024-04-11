@@ -12,8 +12,10 @@ var loadScene
 var resource_data  #: Dictionary = {}
 @onready var char = $char
 var animation
+var anxieux : AudioStreamPlayer
 
 func _ready():
+	anxieux = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
 	animation = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
 	text.visible = false 
 	tableauObjets = [bribeMetronome, bribeLettre]
@@ -40,6 +42,7 @@ func _on_grab_object(instanceBribe : bribe_instance):
 		add_child(loadScene)
 		char.activeShader(true)
 		animation.play("Anxiety")
+		anxieux.play()
 		instanceBribe.queue_free()
 		text.text = resource_data.dialogue
 		text.visible = true

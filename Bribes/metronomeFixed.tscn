@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp17hnu475eta"]
+[gd_scene load_steps=4 format=3 uid="uid://dp17hnu475eta"]
 
 [ext_resource type="Texture2D" uid="uid://bhkyb0ni0fkwj" path="res://Bribes/bribesUI/metronome 2d.png" id="1_2cqiw"]
 [ext_resource type="Script" path="res://Scene/boutonUI.gd" id="1_raitf"]
+[ext_resource type="FontFile" uid="uid://c65bekjtrp4pi" path="res://Luckybones-Bold.ttf" id="3_w6dww"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("narra")]
 layout_mode = 3
@@ -37,6 +38,7 @@ offset_left = 1365.0
 offset_top = 880.0
 offset_right = 1920.0
 offset_bottom = 1060.0
+theme_override_fonts/font = ExtResource("3_w6dww")
 theme_override_font_sizes/font_size = 20
 text = "Appuyez sur Echap"
 horizontal_alignment = 1

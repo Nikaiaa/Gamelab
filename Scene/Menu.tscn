@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dtpv55wgdft7q"]
+[gd_scene load_steps=7 format=3 uid="uid://dtpv55wgdft7q"]
 
 [ext_resource type="Script" path="res://Scene/Menu.gd" id="1_warpf"]
 [ext_resource type="Texture2D" uid="uid://dvv0sonha7tpo" path="res://Image/menu/menu_disque_fond.png" id="2_0kv3u"]
@@ -6,118 +6,6 @@
 [ext_resource type="FontFile" uid="uid://cw3qxsjau27xq" path="res://Ashington.ttf" id="4_pxu2b"]
 [ext_resource type="Texture2D" uid="uid://043k1xeqsq2i" path="res://Image/bouton_rose.png" id="5_urln4"]
 [ext_resource type="Texture2D" uid="uid://mwuaxj3bghta" path="res://Image/bouton_bleu.png" id="6_172o3"]
-
-[sub_resource type="Animation" id="Animation_mkteb"]
-resource_name = "Slide"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-333.88, 135), Vector2(-100, 135)]
-}
-
-[sub_resource type="Animation" id="Animation_emmq2"]
-resource_name = "new_animation"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Credit:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-327.88, 340), Vector2(-97, 340)]
-}
-
-[sub_resource type="Animation" id="Animation_b74l2"]
-resource_name = "Slide_Quitter"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../quitter:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-331.88, 438), Vector2(-97, 438)]
-}
-
-[sub_resource type="Animation" id="Animation_x22yk"]
-resource_name = "Slide_option"
-length = 0.4
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Options:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(-324.88, 234), Vector2(-97, 234)]
-}
-
-[sub_resource type="Animation" id="Animation_mtuoo"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-333.88, 135)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../quitter:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-318.88, 438)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Credit:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(-327.88, 340)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_mcpf7"]
-_data = {
-"RESET": SubResource("Animation_mtuoo"),
-"Slide": SubResource("Animation_mkteb"),
-"Slide_Credit": SubResource("Animation_emmq2"),
-"Slide_Quitter": SubResource("Animation_b74l2"),
-"Slide_option": SubResource("Animation_x22yk")
-}
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -132,27 +20,130 @@ offset_bottom = -2.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_warpf")
+metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(648.12, 515.296)
+position = Vector2(582.12, 539.296)
 
-[node name="MenuDisqueFond" type="Sprite2D" parent="."]
-position = Vector2(637.62, 545.296)
-scale = Vector2(0.733203, 0.7875)
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -320.88
+offset_top = 0.296
+offset_right = 519.12
+offset_bottom = 0.296021
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="MenuDisqueFond" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+scale = Vector2(0.75, 0.783)
 texture = ExtResource("2_0kv3u")
+centered = false
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("../Jouer")
-libraries = {
-"": SubResource("AnimationLibrary_mcpf7")
-}
+[node name="tITRE" type="Label" parent="SubViewportContainer/SubViewport/MenuDisqueFond"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -600.0
+offset_right = -600.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1.5, 1.5)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_pxu2b")
+theme_override_font_sizes/font_size = 230
+text = "Ecdysis Disco"
+horizontal_alignment = 1
+
+[node name="Audio" type="Control" parent="SubViewportContainer/SubViewport/MenuDisqueFond"]
+visible = false
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1667.52
+offset_top = -900.935
+offset_right = -1645.61
+offset_bottom = -891.623
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -33.5
+offset_top = -38.5
+offset_right = 33.5
+offset_bottom = 38.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Slider" type="VBoxContainer" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Main music" type="HSlider" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Slider"]
+layout_mode = 2
+
+[node name="SFX" type="HSlider" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Slider"]
+layout_mode = 2
+
+[node name="Music" type="HSlider" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Slider"]
+layout_mode = 2
+
+[node name="Label" type="VBoxContainer" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Music" type="Label" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Label"]
+layout_mode = 2
+text = "Music"
+
+[node name="Master" type="Label" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Label"]
+layout_mode = 2
+text = "Master"
+
+[node name="SFX" type="Label" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Label"]
+layout_mode = 2
+text = "SFX"
+
+[node name="Button" type="Button" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio"]
+layout_mode = 0
+offset_left = 396.451
+offset_top = 239.656
+offset_right = 508.451
+offset_bottom = 281.656
+
+[node name="Video" type="Control" parent="SubViewportContainer/SubViewport/MenuDisqueFond"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -943.381
+offset_top = -720.298
+offset_right = -903.381
+offset_bottom = -680.298
 
 [node name="Jouer" type="Button" parent="."]
 layout_mode = 0
-offset_left = -333.88
-offset_top = 135.0
-offset_right = 335.12
-offset_bottom = 326.0
+offset_left = -338.88
+offset_top = 301.296
+offset_right = 330.12
+offset_bottom = 492.296
 scale = Vector2(0.67, 0.6)
 icon = ExtResource("3_mq4y8")
 flat = true
@@ -169,10 +160,10 @@ text = "Jouer"
 
 [node name="Options" type="Button" parent="."]
 layout_mode = 0
-offset_left = -324.88
-offset_top = 234.0
-offset_right = 339.12
-offset_bottom = 437.0
+offset_left = -331.88
+offset_top = 401.296
+offset_right = 332.12
+offset_bottom = 604.296
 scale = Vector2(0.67, 0.6)
 icon = ExtResource("5_urln4")
 flat = true
@@ -189,10 +180,10 @@ text = "Options"
 
 [node name="Credit" type="Button" parent="."]
 layout_mode = 0
-offset_left = -327.88
-offset_top = 340.0
-offset_right = 338.12
-offset_bottom = 524.0
+offset_left = -337.88
+offset_top = 506.296
+offset_right = 328.12
+offset_bottom = 690.296
 scale = Vector2(0.67, 0.6)
 icon = ExtResource("6_172o3")
 flat = true
@@ -209,10 +200,10 @@ text = "Credits"
 
 [node name="quitter" type="Button" parent="."]
 layout_mode = 0
-offset_left = -318.88
-offset_top = 438.0
-offset_right = 350.12
-offset_bottom = 629.0
+offset_left = -341.88
+offset_top = 604.296
+offset_right = 327.12
+offset_bottom = 795.296
 scale = Vector2(0.67, 0.6)
 icon = ExtResource("3_mq4y8")
 flat = true
@@ -226,91 +217,6 @@ offset_bottom = 194.333
 theme_override_fonts/font = ExtResource("4_pxu2b")
 theme_override_font_sizes/font_size = 125
 text = "Quitter"
-
-[node name="tITRE" type="Label" parent="."]
-layout_mode = 0
-offset_left = 433.12
-offset_top = -2.704
-offset_right = 1247.12
-offset_bottom = 300.296
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_fonts/font = ExtResource("4_pxu2b")
-theme_override_font_sizes/font_size = 230
-text = "Ecdysis Disco"
-horizontal_alignment = 1
-
-[node name="Audio" type="Control" parent="."]
-visible = false
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -10.9515
-offset_top = -4.65598
-offset_right = 10.9515
-offset_bottom = 4.65598
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="Audio"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -33.5
-offset_top = -38.5
-offset_right = 33.5
-offset_bottom = 38.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Slider" type="VBoxContainer" parent="Audio/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Main music" type="HSlider" parent="Audio/HBoxContainer/Slider"]
-layout_mode = 2
-
-[node name="SFX" type="HSlider" parent="Audio/HBoxContainer/Slider"]
-layout_mode = 2
-
-[node name="Music" type="HSlider" parent="Audio/HBoxContainer/Slider"]
-layout_mode = 2
-
-[node name="Label" type="VBoxContainer" parent="Audio/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-
-[node name="Music" type="Label" parent="Audio/HBoxContainer/Label"]
-layout_mode = 2
-text = "Music"
-
-[node name="Master" type="Label" parent="Audio/HBoxContainer/Label"]
-layout_mode = 2
-text = "Master"
-
-[node name="SFX" type="Label" parent="Audio/HBoxContainer/Label"]
-layout_mode = 2
-text = "SFX"
-
-[node name="Button" type="Button" parent="Audio"]
-layout_mode = 0
-offset_left = 396.451
-offset_top = 239.656
-offset_right = 508.451
-offset_bottom = 281.656
-
-[node name="Video" type="Control" parent="."]
-visible = false
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 
 [connection signal="mouse_entered" from="Jouer" to="." method="_on_jouer_mouse_entered"]
 [connection signal="mouse_exited" from="Jouer" to="." method="_on_jouer_mouse_exited"]
