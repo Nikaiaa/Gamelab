@@ -17,13 +17,12 @@ var char : PackedScene
 var animation_player : AnimationPlayer
 #var anxiete_in : AudioStreamPlayerMP3
 #var anxiete_stop : Button
-signal envoiData(instance2 : bribe_instance)
+#signal envoiData(instance2 : bribe_instance)
 
 func _ready():
-	#var bribe = $".".get_parent()
+	#var bribe = ("/root/Bribe")
 	#bribe.enableOutline.connect(_on_enable_outline)
 	#bribe.disableOutline.connect(_on_disable_outline)
-	#var scriptBribe = get_node(".")
 	#scriptBribe.recupData.connect(_on_recup_data)
 	_on_mouse_exited()
 	print(self.name)
@@ -77,22 +76,22 @@ func _on_mouse_exited():
 	#print ($Timer)
 	
 
-#func _on_enable_outline():
-	#outline = true
-	#print ("outline visible")
-	#for child in get_children():
-		#if child is MeshInstance3D:
-			#for surface in range(0, child.get_surface_override_material_count() ):
-				#child.get_surface_override_material(surface).next_pass.set("shader_param/enable", true)
-	##$".".get_child(0).get_surface_override_material(0).next_pass.set("shader_param/enable", true)
-	#pass # Replace with function body.
-	#
-#func _on_disable_outline():
-	#outline = false 
-	#for child in get_children():
-		#if child is MeshInstance3D:
-			#for surface in range(0, child.get_surface_override_material_count() ):
-				#child.get_surface_override_material(surface).next_pass.set("shader_param/enable", false)
-	#pass # Replace with function body.
+func _on_enable_outline():
+	outline = true
+	print ("outline visible")
+	for child in get_children():
+		if child is MeshInstance3D:
+			for surface in range(0, child.get_surface_override_material_count() ):
+				child.get_surface_override_material(surface).next_pass.set("shader_param/enable", true)
+	#$".".get_child(0).get_surface_override_material(0).next_pass.set("shader_param/enable", true)
+	pass # Replace with function body.
+	
+func _on_disable_outline():
+	outline = false 
+	for child in get_children():
+		if child is MeshInstance3D:
+			for surface in range(0, child.get_surface_override_material_count() ):
+				child.get_surface_override_material(surface).next_pass.set("shader_param/enable", false)
+	pass # Replace with function body.
 
 	

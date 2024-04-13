@@ -89,36 +89,27 @@ func _on_grab_object(): #instanceBribe : bribe_instance
 		#for string in tableauNarra :
 			#print ("JE VAIS SAUTER")
 			
-func _on_enable_outline():
-	outline = true
-	print ("outline visible")
-	for child in get_resource.get_children():
-		if child is MeshInstance3D:
-			for surface in range(0, child.get_surface_override_material_count() ):
-				child.get_surface_override_material(surface).next_pass.set("shader_param/enable", true)
-	#$".".get_child(0).get_surface_override_material(0).next_pass.set("shader_param/enable", true)
-	pass # Replace with function body.
-	
-func _on_disable_outline():
-	outline = false 
-	print ("outline invisible")
-	for child in get_resource.get_children():
-		if child is MeshInstance3D:
-			for surface in range(0, child.get_surface_override_material_count() ):
-				child.get_surface_override_material(surface).next_pass.set("shader_param/enable", false)
-	pass # Replace with function body.
+#func _on_enable_outline():
+	#outline = true
+	#print ("outline visible")
+	#for child in get_resource.get_children():
+		#if child is MeshInstance3D:
+			#for surface in range(0, child.get_surface_override_material_count() ):
+				#child.get_surface_override_material(surface).next_pass.set("shader_param/enable", true)
+	##$".".get_child(0).get_surface_override_material(0).next_pass.set("shader_param/enable", true)
+	#pass # Replace with function body.
+	#
+#func _on_disable_outline():
+	#outline = false 
+	#print ("outline invisible")
+	#for child in get_resource.get_children():
+		#if child is MeshInstance3D:
+			#for surface in range(0, child.get_surface_override_material_count() ):
+				#child.get_surface_override_material(surface).next_pass.set("shader_param/enable", false)
+	#pass # Replace with function body.
 
 func onSpriteFixedDestroyed():
 	text.visible = false
 	
-
-	
-	#
-## ARRAY AVEC LES OBJETS
-##dans le ready objet[nomObjet] = recupdata
-##DECLARER TEXTE
-##DECLARER SPRITE 3D
-##DECLARE BOOLEENENEZRKJBEZTUOERN
-
 
 
