@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bjna6d7b1hym4" path="res://Image/Texture/cuisine.mur papier fleur.png" id="12_w8a7y"]
 [ext_resource type="Texture2D" uid="uid://cr6y0sy3rnxem" path="res://Image/Texture/cuisine.sol.png" id="13_6he46"]
 [ext_resource type="Texture2D" uid="uid://e43xy2be4n3y" path="res://Image/Texture/studio.interieur cadre 1.jpg" id="13_b58lh"]
-[ext_resource type="Texture2D" uid="uid://syqn4hwrpey7" path="res://Image/Texture/chambre.interieur cadre 2.jpg" id="13_eu6y1"]
+[ext_resource type="Texture2D" uid="uid://dsw3o2vgxfboh" path="res://Image/Texture/chambre.interieur cadre 2.png" id="13_mrier"]
 [ext_resource type="Texture2D" uid="uid://b8011ku55diaj" path="res://Image/Texture/Affiche/Affiche 3.png" id="14_3omhh"]
 [ext_resource type="Texture2D" uid="uid://bug5m1iip4ic5" path="res://Image/Texture/studio.interieur cadre 2.png" id="15_20ico"]
 [ext_resource type="Texture2D" uid="uid://cow3dm0c8ikg8" path="res://Image/Texture/chambre.tapis.png" id="15_nsfx5"]
@@ -53,7 +53,7 @@ rim = 0.6
 albedo_texture = ExtResource("12_p1pcu")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itxii"]
-albedo_texture = ExtResource("13_eu6y1")
+albedo_texture = ExtResource("13_mrier")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sf57x"]
 albedo_texture = ExtResource("15_nsfx5")

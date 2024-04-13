@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dtpv55wgdft7q"]
+[gd_scene load_steps=10 format=3 uid="uid://dtpv55wgdft7q"]
 
 [ext_resource type="Script" path="res://Scene/Menu.gd" id="1_warpf"]
 [ext_resource type="Texture2D" uid="uid://dvv0sonha7tpo" path="res://Image/menu/menu_disque_fond.png" id="2_0kv3u"]
@@ -6,6 +6,42 @@
 [ext_resource type="FontFile" uid="uid://cw3qxsjau27xq" path="res://Ashington.ttf" id="4_pxu2b"]
 [ext_resource type="Texture2D" uid="uid://043k1xeqsq2i" path="res://Image/bouton_rose.png" id="5_urln4"]
 [ext_resource type="Texture2D" uid="uid://mwuaxj3bghta" path="res://Image/bouton_bleu.png" id="6_172o3"]
+
+[sub_resource type="Animation" id="Animation_37ker"]
+resource_name = "Slide_Jouer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Jouer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 320), Vector2(0, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_0kc4j"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Jouer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 320)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_00gk3"]
+_data = {
+"RESET": SubResource("Animation_0kc4j"),
+"Slide_Jouer": SubResource("Animation_37ker")
+}
 
 [node name="Menu" type="Control"]
 layout_mode = 3
@@ -22,17 +58,14 @@ grow_vertical = 2
 script = ExtResource("1_warpf")
 metadata/_edit_use_anchors_ = true
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(582.12, 539.296)
-
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -320.88
+offset_left = -315.88
 offset_top = 0.296
-offset_right = 519.12
+offset_right = 524.12
 offset_bottom = 0.296021
 grow_horizontal = 2
 grow_vertical = 2
@@ -58,26 +91,15 @@ grow_vertical = 2
 scale = Vector2(1.5, 1.5)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_pxu2b")
-theme_override_font_sizes/font_size = 230
+theme_override_font_sizes/font_size = 200
 text = "Ecdysis Disco"
 horizontal_alignment = 1
 
-[node name="Audio" type="Control" parent="SubViewportContainer/SubViewport/MenuDisqueFond"]
+[node name="Audio" type="Control" parent="SubViewportContainer"]
 visible = false
-layout_mode = 3
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -1667.52
-offset_top = -900.935
-offset_right = -1645.61
-offset_bottom = -891.623
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio"]
+[node name="HBoxContainer" type="HBoxContainer" parent="SubViewportContainer/Audio"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -91,142 +113,134 @@ offset_bottom = 38.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Slider" type="VBoxContainer" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer"]
+[node name="Slider" type="VBoxContainer" parent="SubViewportContainer/Audio/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Main music" type="HSlider" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Slider"]
+[node name="Main music" type="HSlider" parent="SubViewportContainer/Audio/HBoxContainer/Slider"]
 layout_mode = 2
 
-[node name="SFX" type="HSlider" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Slider"]
+[node name="SFX" type="HSlider" parent="SubViewportContainer/Audio/HBoxContainer/Slider"]
 layout_mode = 2
 
-[node name="Music" type="HSlider" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Slider"]
+[node name="Music" type="HSlider" parent="SubViewportContainer/Audio/HBoxContainer/Slider"]
 layout_mode = 2
 
-[node name="Label" type="VBoxContainer" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer"]
+[node name="Label" type="VBoxContainer" parent="SubViewportContainer/Audio/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 
-[node name="Music" type="Label" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Label"]
+[node name="Music" type="Label" parent="SubViewportContainer/Audio/HBoxContainer/Label"]
 layout_mode = 2
 text = "Music"
 
-[node name="Master" type="Label" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Label"]
+[node name="Master" type="Label" parent="SubViewportContainer/Audio/HBoxContainer/Label"]
 layout_mode = 2
 text = "Master"
 
-[node name="SFX" type="Label" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio/HBoxContainer/Label"]
+[node name="SFX" type="Label" parent="SubViewportContainer/Audio/HBoxContainer/Label"]
 layout_mode = 2
 text = "SFX"
 
-[node name="Button" type="Button" parent="SubViewportContainer/SubViewport/MenuDisqueFond/Audio"]
+[node name="Button" type="Button" parent="SubViewportContainer/Audio"]
 layout_mode = 0
 offset_left = 396.451
 offset_top = 239.656
 offset_right = 508.451
 offset_bottom = 281.656
 
-[node name="Video" type="Control" parent="SubViewportContainer/SubViewport/MenuDisqueFond"]
+[node name="Video" type="Control" parent="SubViewportContainer"]
 visible = false
-layout_mode = 3
-anchors_preset = 0
-offset_left = -943.381
-offset_top = -720.298
-offset_right = -903.381
-offset_bottom = -680.298
+layout_mode = 2
 
-[node name="Jouer" type="Button" parent="."]
-layout_mode = 0
-offset_left = -338.88
-offset_top = 301.296
-offset_right = 330.12
-offset_bottom = 492.296
-scale = Vector2(0.67, 0.6)
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -426.0
+offset_top = -3.0
+offset_right = 565.0
+offset_bottom = -3.29602
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+alignment = 2
+
+[node name="Jouer" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 icon = ExtResource("3_mq4y8")
 flat = true
 
-[node name="Label" type="Label" parent="Jouer"]
+[node name="Label" type="Label" parent="VBoxContainer/Jouer"]
 layout_mode = 0
-offset_left = 386.567
-offset_top = 33.3333
-offset_right = 612.567
-offset_bottom = 231.333
+offset_left = 417.65
+offset_top = 41.62
+offset_right = 605.65
+offset_bottom = 239.62
 theme_override_fonts/font = ExtResource("4_pxu2b")
-theme_override_font_sizes/font_size = 125
+theme_override_font_sizes/font_size = 100
 text = "Jouer"
 
-[node name="Options" type="Button" parent="."]
-layout_mode = 0
-offset_left = -331.88
-offset_top = 401.296
-offset_right = 332.12
-offset_bottom = 604.296
-scale = Vector2(0.67, 0.6)
-icon = ExtResource("5_urln4")
-flat = true
-
-[node name="Label" type="Label" parent="Options"]
-layout_mode = 0
-offset_left = 337.313
-offset_top = 30.0
-offset_right = 628.313
-offset_bottom = 196.0
-theme_override_fonts/font = ExtResource("4_pxu2b")
-theme_override_font_sizes/font_size = 125
-text = "Options"
-
-[node name="Credit" type="Button" parent="."]
-layout_mode = 0
-offset_left = -337.88
-offset_top = 506.296
-offset_right = 328.12
-offset_bottom = 690.296
-scale = Vector2(0.67, 0.6)
+[node name="Credit" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 icon = ExtResource("6_172o3")
 flat = true
 
-[node name="Label" type="Label" parent="Credit"]
+[node name="Label" type="Label" parent="VBoxContainer/Credit"]
 layout_mode = 0
-offset_left = 340.299
-offset_top = 33.3333
-offset_right = 623.299
-offset_bottom = 231.333
+offset_left = 398.9
+offset_top = 46.62
+offset_right = 681.9
+offset_bottom = 244.62
 theme_override_fonts/font = ExtResource("4_pxu2b")
-theme_override_font_sizes/font_size = 125
+theme_override_font_sizes/font_size = 100
 text = "Credits"
 
-[node name="quitter" type="Button" parent="."]
+[node name="Options" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+icon = ExtResource("5_urln4")
+flat = true
+
+[node name="Label" type="Label" parent="VBoxContainer/Options"]
 layout_mode = 0
-offset_left = -341.88
-offset_top = 604.296
-offset_right = 327.12
-offset_bottom = 795.296
-scale = Vector2(0.67, 0.6)
+offset_left = 410.15
+offset_top = 33.62
+offset_right = 701.15
+offset_bottom = 199.62
+theme_override_fonts/font = ExtResource("4_pxu2b")
+theme_override_font_sizes/font_size = 100
+text = "Options"
+
+[node name="quitter" type="Button" parent="VBoxContainer"]
+layout_mode = 2
 icon = ExtResource("3_mq4y8")
 flat = true
 
-[node name="Label" type="Label" parent="quitter"]
+[node name="Label" type="Label" parent="VBoxContainer/quitter"]
 layout_mode = 0
-offset_left = 355.224
-offset_top = 28.3334
-offset_right = 621.224
-offset_bottom = 194.333
+offset_left = 412.65
+offset_top = 56.12
+offset_right = 678.65
+offset_bottom = 222.12
 theme_override_fonts/font = ExtResource("4_pxu2b")
-theme_override_font_sizes/font_size = 125
+theme_override_font_sizes/font_size = 100
 text = "Quitter"
 
-[connection signal="mouse_entered" from="Jouer" to="." method="_on_jouer_mouse_entered"]
-[connection signal="mouse_exited" from="Jouer" to="." method="_on_jouer_mouse_exited"]
-[connection signal="pressed" from="Jouer" to="." method="_on_jouer_pressed"]
-[connection signal="mouse_entered" from="Options" to="." method="_on_options_mouse_entered"]
-[connection signal="mouse_exited" from="Options" to="." method="_on_options_mouse_exited"]
-[connection signal="pressed" from="Options" to="." method="_on_options_pressed"]
-[connection signal="mouse_entered" from="Credit" to="." method="_on_credit_mouse_entered"]
-[connection signal="mouse_exited" from="Credit" to="." method="_on_credit_mouse_exited"]
-[connection signal="pressed" from="Credit" to="." method="_on_credit_pressed"]
-[connection signal="mouse_entered" from="quitter" to="." method="_on_quitter_mouse_entered"]
-[connection signal="mouse_exited" from="quitter" to="." method="_on_quitter_mouse_exited"]
-[connection signal="pressed" from="quitter" to="." method="_on_quitter_pressed"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_00gk3")
+}
+
+[connection signal="mouse_entered" from="VBoxContainer/Jouer" to="." method="_on_jouer_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Jouer" to="." method="_on_jouer_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Jouer" to="." method="_on_jouer_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Credit" to="." method="_on_credit_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Credit" to="." method="_on_credit_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Credit" to="." method="_on_credit_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Options" to="." method="_on_options_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/Options" to="." method="_on_options_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/quitter" to="." method="_on_quitter_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/quitter" to="." method="_on_quitter_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/quitter" to="." method="_on_quitter_pressed"]

@@ -12,7 +12,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_raitf")
-narra = NodePath("Label")
+narra = NodePath("SubViewportContainer/SubViewport/Label")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
@@ -32,8 +32,7 @@ scale = Vector2(0.92, 0.92)
 texture = ExtResource("1_2cqiw")
 centered = false
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport"]
 offset_left = 1365.0
 offset_top = 880.0
 offset_right = 1920.0
