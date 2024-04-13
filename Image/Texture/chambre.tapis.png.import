@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b2e7sd30d5b4f"
-path.s3tc="res://.godot/imported/Affiche Charlie.png-4b6ae88c693d9201b7594411c74ec264.s3tc.ctex"
+uid="uid://cow3dm0c8ikg8"
+path.s3tc="res://.godot/imported/chambre.tapis.png-f1aa6606ba7a7a30b7a8e136aa7250ba.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Image/Texture/Affiche/Affiche Charlie.png"
-dest_files=["res://.godot/imported/Affiche Charlie.png-4b6ae88c693d9201b7594411c74ec264.s3tc.ctex"]
+source_file="res://Image/Texture/chambre.tapis.png"
+dest_files=["res://.godot/imported/chambre.tapis.png-f1aa6606ba7a7a30b7a8e136aa7250ba.s3tc.ctex"]
 
 [params]
 

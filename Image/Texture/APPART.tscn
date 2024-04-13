@@ -1,4 +1,4 @@
-[gd_scene load_steps=86 format=3 uid="uid://00v0pju4stml"]
+[gd_scene load_steps=133 format=3 uid="uid://00v0pju4stml"]
 
 [ext_resource type="PackedScene" uid="uid://dxw6xemjkoqlm" path="res://Image/AppartementCharlieLeVrai.fbx" id="1_cijdn"]
 [ext_resource type="Material" uid="uid://dfcfg3qxr1woc" path="res://Image/Texture/Bois_sombre.tres" id="2_kiam2"]
@@ -15,8 +15,28 @@
 [ext_resource type="Texture2D" uid="uid://bb40lyr53201e" path="res://Image/Texture/cuisine.salon.interieur cadre 4.jpg" id="10_xtta8"]
 [ext_resource type="Material" uid="uid://c5sx3kdf63clf" path="res://Image/Texture/Album2.tres" id="11_jey7e"]
 [ext_resource type="Texture2D" uid="uid://yq2jw58yuacg" path="res://Image/Texture/salon.grand cadre.jpg" id="11_slqew"]
+[ext_resource type="Texture2D" uid="uid://b2e7sd30d5b4f" path="res://Image/Texture/Affiche/Affiche Charlie.png" id="12_p1pcu"]
+[ext_resource type="Texture2D" uid="uid://bjna6d7b1hym4" path="res://Image/Texture/cuisine.mur papier fleur.png" id="12_w8a7y"]
+[ext_resource type="Texture2D" uid="uid://cr6y0sy3rnxem" path="res://Image/Texture/cuisine.sol.png" id="13_6he46"]
 [ext_resource type="Texture2D" uid="uid://e43xy2be4n3y" path="res://Image/Texture/studio.interieur cadre 1.jpg" id="13_b58lh"]
+[ext_resource type="Texture2D" uid="uid://syqn4hwrpey7" path="res://Image/Texture/chambre.interieur cadre 2.jpg" id="13_eu6y1"]
+[ext_resource type="Texture2D" uid="uid://b8011ku55diaj" path="res://Image/Texture/Affiche/Affiche 3.png" id="14_3omhh"]
 [ext_resource type="Texture2D" uid="uid://bug5m1iip4ic5" path="res://Image/Texture/studio.interieur cadre 2.png" id="15_20ico"]
+[ext_resource type="Texture2D" uid="uid://cow3dm0c8ikg8" path="res://Image/Texture/chambre.tapis.png" id="15_nsfx5"]
+[ext_resource type="Texture2D" uid="uid://dlln47fhq3e10" path="res://Image/Texture/cuisine.interieur cadre 2.jpg" id="15_tl72d"]
+[ext_resource type="Texture2D" uid="uid://c6hfoco81wisf" path="res://Image/Texture/cuisine.interieur cadre 3.jpg" id="16_oy77y"]
+[ext_resource type="Texture2D" uid="uid://binlxf60xn666" path="res://Image/Texture/chambre.interieur cadre 1.png" id="16_xentp"]
+[ext_resource type="Texture2D" uid="uid://c0fuvt32mjihk" path="res://Image/Texture/Affiche/Affiche Oie 2.png" id="17_3ao1m"]
+[ext_resource type="Texture2D" uid="uid://bl8f0gevjj1nx" path="res://Image/Texture/sdb.carreaux.png" id="28_pme0u"]
+[ext_resource type="Texture2D" uid="uid://r4hfgu4o2dwc" path="res://Image/Texture/sdb.rideaux douche.png" id="29_er6yr"]
+[ext_resource type="Texture2D" uid="uid://c6vuulnk2lov6" path="res://Image/Texture/sdb.tapis.png" id="30_6yi4j"]
+[ext_resource type="Texture2D" uid="uid://c5kyber32h3mv" path="res://Image/Texture/sdb.interieur cadre 4.jpg" id="31_2qyoo"]
+[ext_resource type="Texture2D" uid="uid://ddi3ne41xn6n" path="res://Image/Texture/sdb.interieur cadre 3.png" id="32_wypgt"]
+[ext_resource type="Texture2D" uid="uid://s1ivrih6nmrc" path="res://Image/Texture/sdb.interieur cadre 2.jpg" id="33_lgurk"]
+[ext_resource type="Texture2D" uid="uid://dg3xs5g8dxbsg" path="res://Image/Texture/sdb.interieur cadre 6.jpg" id="34_47xpi"]
+[ext_resource type="Texture2D" uid="uid://b34sj6qiudgj1" path="res://Image/Texture/sdb.interieur cadre 5.jpg" id="35_7dl8o"]
+[ext_resource type="Texture2D" uid="uid://b3fo12yless08" path="res://Image/Texture/sdb.affiche 2.jpg" id="36_6pvm5"]
+[ext_resource type="Texture2D" uid="uid://ra10g6hs2p6" path="res://Image/Texture/sdb.affiche 1.jpg" id="37_ox5sd"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kfpd"]
 albedo_texture = ExtResource("10_xtta8")
@@ -28,6 +48,42 @@ albedo_texture = ExtResource("11_slqew")
 albedo_color = Color(1, 1, 0.301961, 1)
 rim_enabled = true
 rim = 0.6
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qjpyr"]
+albedo_texture = ExtResource("12_p1pcu")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_itxii"]
+albedo_texture = ExtResource("13_eu6y1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sf57x"]
+albedo_texture = ExtResource("15_nsfx5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lqhby"]
+albedo_texture = ExtResource("16_xentp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hgo0"]
+albedo_texture = ExtResource("12_w8a7y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3gqt"]
+albedo_texture = ExtResource("12_w8a7y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p2og4"]
+albedo_texture = ExtResource("13_6he46")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgx64"]
+albedo_texture = ExtResource("14_3omhh")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_i0meh"]
+albedo_texture = ExtResource("15_tl72d")
+heightmap_enabled = true
+heightmap_scale = 1.0
+uv1_offset = Vector3(1, 0, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_up8un"]
+albedo_texture = ExtResource("16_oy77y")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1d5qm"]
+albedo_texture = ExtResource("17_3ao1m")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iji10"]
 albedo_color = Color(1, 1, 0.313726, 1)
@@ -46,6 +102,56 @@ albedo_color = Color(0.541176, 0.478431, 0.352941, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yrein"]
 albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_faygh"]
+albedo_texture = ExtResource("28_pme0u")
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_0irr6"]
+size = Vector2(0.02, 0.034)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y3djt"]
+albedo_texture = ExtResource("28_pme0u")
+uv1_scale = Vector3(0.5, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_8f7f3"]
+size = Vector2(2, 0.003)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xn14l"]
+albedo_texture = ExtResource("28_pme0u")
+uv1_scale = Vector3(0.3, 2, 2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3n1l"]
+albedo_texture = ExtResource("28_pme0u")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pv8ij"]
+albedo_texture = ExtResource("29_er6yr")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_02hwg"]
+albedo_texture = ExtResource("30_6yi4j")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qc527"]
+albedo_texture = ExtResource("31_2qyoo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j5bs5"]
+albedo_texture = ExtResource("32_wypgt")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yngbt"]
+albedo_texture = ExtResource("33_lgurk")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eelcs"]
+albedo_texture = ExtResource("34_47xpi")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4p33"]
+albedo_texture = ExtResource("35_7dl8o")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1fkjj"]
+albedo_texture = ExtResource("31_2qyoo")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e72oy"]
+albedo_texture = ExtResource("36_6pvm5")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o2htf"]
+albedo_texture = ExtResource("37_ox5sd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7w62d"]
 size = Vector3(21.7876, 0.419495, 21.5119)
@@ -279,6 +385,62 @@ surface_material_override/0 = SubResource("StandardMaterial3D_7al75")
 [node name="salon_lampe boule" parent="RootNode" index="48"]
 surface_material_override/0 = SubResource("StandardMaterial3D_ntwp7")
 
+[node name="chambre_cadre 3" parent="RootNode" index="58"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qjpyr")
+
+[node name="chambre_armoire" parent="RootNode" index="61"]
+surface_material_override/0 = ExtResource("2_kiam2")
+surface_material_override/1 = ExtResource("2_kiam2")
+
+[node name="chambre_cadre 2" parent="RootNode" index="72"]
+surface_material_override/0 = SubResource("StandardMaterial3D_itxii")
+
+[node name="chambre_table chevet" parent="RootNode" index="78"]
+surface_material_override/0 = ExtResource("9_ypn32")
+
+[node name="chambre_tapis" parent="RootNode" index="80"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sf57x")
+
+[node name="chambre_étagère cassé" parent="RootNode" index="81"]
+surface_material_override/0 = ExtResource("9_ypn32")
+
+[node name="chambre_cadre 1" parent="RootNode" index="82"]
+surface_material_override/0 = SubResource("StandardMaterial3D_lqhby")
+
+[node name="cuisine_mur papier fleur 1" parent="RootNode" index="83"]
+surface_material_override/0 = SubResource("StandardMaterial3D_6hgo0")
+
+[node name="cuisine_mur papier fleur 2" parent="RootNode" index="84"]
+surface_material_override/0 = SubResource("StandardMaterial3D_x3gqt")
+surface_material_override/1 = ExtResource("2_kiam2")
+
+[node name="cuisine_sol" parent="RootNode" index="87"]
+surface_material_override/0 = SubResource("StandardMaterial3D_p2og4")
+
+[node name="cuisine_table" parent="RootNode" index="93"]
+surface_material_override/0 = ExtResource("2_kiam2")
+
+[node name="cuisine_cadre 1" parent="RootNode" index="110"]
+surface_material_override/0 = SubResource("StandardMaterial3D_sgx64")
+
+[node name="cuisine_cadre 2" parent="RootNode" index="111"]
+surface_material_override/0 = SubResource("StandardMaterial3D_i0meh")
+
+[node name="cuisine_cadre 3" parent="RootNode" index="112"]
+surface_material_override/0 = SubResource("StandardMaterial3D_up8un")
+
+[node name="cuisine_rebord mur" parent="RootNode" index="113"]
+surface_material_override/0 = ExtResource("2_kiam2")
+
+[node name="cuisine_chaise 2" parent="RootNode" index="114"]
+surface_material_override/0 = ExtResource("2_kiam2")
+
+[node name="cuisine_chaise 1" parent="RootNode" index="115"]
+surface_material_override/0 = ExtResource("2_kiam2")
+
+[node name="cuisine_cadre 4" parent="RootNode" index="121"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1d5qm")
+
 [node name="studio_sol et mur incurvé" parent="RootNode" index="123"]
 surface_material_override/0 = ExtResource("2_kiam2")
 
@@ -313,6 +475,62 @@ surface_material_override/1 = ExtResource("11_jey7e")
 [node name="studio_guitare electrique_001" parent="RootNode" index="167"]
 surface_material_override/0 = SubResource("StandardMaterial3D_nma8f")
 surface_material_override/1 = SubResource("StandardMaterial3D_yrein")
+
+[node name="sdb_carelage plane_001" parent="RootNode" index="168"]
+surface_material_override/0 = SubResource("StandardMaterial3D_faygh")
+
+[node name="sdb_carelage plane_002" parent="RootNode" index="169"]
+transform = Transform3D(1.97249e-08, -340.281, 0.256447, 197.464, -5.25699e-13, -3.64978e-05, 2.35396e-05, 0.285036, 306.166, 1.08693, 1.53787, 25.1714)
+mesh = SubResource("PlaneMesh_0irr6")
+surface_material_override/0 = SubResource("StandardMaterial3D_y3djt")
+
+[node name="sdb_carelage plane_003" parent="RootNode" index="170"]
+transform = Transform3D(-1.52914e-09, 5.2604, -6794.2, 1.53114, 0.000112279, 1.4779e-10, 1.82519e-07, -627.885, -56.9215, -8.75953, 1.99405, 30.0129)
+mesh = SubResource("PlaneMesh_8f7f3")
+surface_material_override/0 = SubResource("StandardMaterial3D_xn14l")
+
+[node name="sdb_carelage plane_004" parent="RootNode" index="171"]
+surface_material_override/0 = SubResource("StandardMaterial3D_w3n1l")
+
+[node name="sdb_tabouret" parent="RootNode" index="180"]
+surface_material_override/0 = ExtResource("2_kiam2")
+
+[node name="sdb_rideaux douche" parent="RootNode" index="187"]
+surface_material_override/0 = SubResource("StandardMaterial3D_pv8ij")
+
+[node name="sdb_tapis" parent="RootNode" index="190"]
+surface_material_override/0 = SubResource("StandardMaterial3D_02hwg")
+
+[node name="sdb_meuble etagere 1" parent="RootNode" index="198"]
+surface_material_override/0 = ExtResource("2_kiam2")
+
+[node name="sdb_meuble etagere 2" parent="RootNode" index="200"]
+surface_material_override/0 = ExtResource("2_kiam2")
+
+[node name="sdb_cadre 4" parent="RootNode" index="203"]
+surface_material_override/0 = SubResource("StandardMaterial3D_qc527")
+
+[node name="sdb_cadre 3" parent="RootNode" index="204"]
+surface_material_override/0 = SubResource("StandardMaterial3D_j5bs5")
+
+[node name="sdb_cadre 2" parent="RootNode" index="205"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yngbt")
+
+[node name="sdb_cadre 6" parent="RootNode" index="206"]
+transform = Transform3D(2.89095e-05, 80.8368, -6.26148e-06, 80.8368, -2.89095e-05, 0, -4.02066e-12, -1.2206e-05, -41.4679, -3.5369, 4.5515, 30.1218)
+surface_material_override/0 = SubResource("StandardMaterial3D_eelcs")
+
+[node name="sdb_cadre 5" parent="RootNode" index="207"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o4p33")
+
+[node name="sdb_affiche 3" parent="RootNode" index="215"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1fkjj")
+
+[node name="sdb_affiche 2" parent="RootNode" index="216"]
+surface_material_override/0 = SubResource("StandardMaterial3D_e72oy")
+
+[node name="sdb_affiche 1" parent="RootNode" index="217"]
+surface_material_override/0 = SubResource("StandardMaterial3D_o2htf")
 
 [node name="Light" parent="RootNode" index="224"]
 light_energy = 3.222
