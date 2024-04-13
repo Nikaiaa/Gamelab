@@ -245,12 +245,12 @@ surface_material_override/0 = SubResource("StandardMaterial3D_to81a")
 surface_material_override/1 = SubResource("StandardMaterial3D_rrj6o")
 
 [node name="Area3D" type="Area3D" parent="." index="9"]
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0138658, 0.358588, -0.106884)
 shape = SubResource("BoxShape3D_64sc0")
 
-[connection signal="disableOutline" from="." to="." method="_on_disable_outline"]
-[connection signal="enableOutline" from="." to="." method="_on_enable_outline"]
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area3D" to="." method="_on_mouse_exited"]

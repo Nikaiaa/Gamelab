@@ -5,9 +5,9 @@ var score = 0
 
 func _input(event):
 	if event is InputEventMouseButton and event.is_action_pressed("left_click"):
-		print("Tu as trouvé une bribe !")
+		#print("Tu as trouvé une bribe !")
 		score += 1
-		update_score_label()
+		#update_score_label()
 
 func update_score_label():
 	$Bribe.text = str(score)

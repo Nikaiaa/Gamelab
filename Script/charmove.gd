@@ -22,7 +22,7 @@ func _ready():
 	camera = $Rotation_Helper/Camera3D
 	rotation_helper = $Rotation_Helper
 	#Le pointeur de la souris disparaît de l'affochage et ne peut plus quitter l'écran ou cliquer en dehors 
-	Input.set_mouse_mode(Input.MOUSE_MODE_CONFINED_HIDDEN)
+	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	#get_tree().set_input_as_handled()
 	#$".".connect("canMove",_on_can_move)
 	pass # Replace with function body.

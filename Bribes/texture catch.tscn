@@ -8,8 +8,6 @@ viewport_path = NodePath("SubViewport")
 
 [node name="texture catcher" type="Node3D"]
 script = ExtResource("1_rn3kx")
-mesh_to_snapshot = ExtResource("2_5p0gi")
-snapshot_name = "Metronome"
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("ViewportTexture_r5qfb")

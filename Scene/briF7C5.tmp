@@ -44,6 +44,3 @@ vertical_alignment = 1
 
 [node name="char" parent="." instance=ExtResource("5_66aq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.889482, 0)
-
-[connection signal="disableOutline" from="." to="." method="_on_disable_outline"]
-[connection signal="enableOutline" from="." to="." method="_on_enable_outline"]

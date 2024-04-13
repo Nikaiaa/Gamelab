@@ -145,6 +145,14 @@ surface_material_override/0 = SubResource("StandardMaterial3D_pasvm")
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Rotation_Helper"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.63344, 0)
+current = true
+
+[node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/Rotation_Helper/Camera3D"]
+exclude_parent = false
+collision_mask = 8
+collide_with_areas = true
+debug_shape_custom_color = Color(1, 1, 1, 1)
+debug_shape_thickness = 5
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D/Rotation_Helper/Camera3D"]
 follow_viewport_enabled = true

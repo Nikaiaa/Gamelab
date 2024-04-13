@@ -115,7 +115,5 @@ surface_material_override/0 = SubResource("StandardMaterial3D_q2tto")
 transform = Transform3D(0.999867, -0.0106867, 0.0122967, 0.0106301, 0.999933, 0.00466698, -0.0123458, -0.00453566, 0.999914, -0.259305, 0.0517653, -0.0763407)
 shape = SubResource("BoxShape3D_iiu2y")
 
-[connection signal="disableOutline" from="." to="." method="_on_disable_outline"]
-[connection signal="enableOutline" from="." to="." method="_on_enable_outline"]
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Area3D" to="." method="_on_mouse_exited"]
