@@ -11,9 +11,7 @@ var loadScene
 var resource_data  #: Dictionary = {}
 @onready var char = $char
 var animation
-<<<<<<< Updated upstream
 var anxieux : AudioStreamPlayer
-=======
 var rayCast
 var verifCollider
 signal recupData
@@ -24,7 +22,8 @@ signal enableOutline
 signal disableOutline
 var outline = false 
 var obj_col 
->>>>>>> Stashed changes
+
+
 
 func _ready():
 	anxieux = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
@@ -73,19 +72,6 @@ func _unhandled_input(event):
 func _on_grab_object(): #instanceBribe : bribe_instance
 	#var clicked_instance = collider
 	#var resource_data = instance.get_meta("resource_data") #on va chercher les données de la ressource
-<<<<<<< Updated upstream
-	resource_data = instanceBribe.bribe_data
-	if resource_data and resource_data.isImportant : #si l'objet cliqué est important
-		loadScene = resource_data.objetSpriteFixed.instantiate() #on load la version non pété de l'objet
-		loadScene.onSelfDestroy.connect(onSpriteFixedDestroyed)
-		add_child(loadScene)
-		char.activeShader(true)
-		animation.play("Anxiety")
-		anxieux.play()
-		instanceBribe.queue_free()
-		text.text = resource_data.dialogue
-		text.visible = true
-=======
 	#resource_data = instanceBribe.bribe_data
 	#if stock_data : 
 	loadScene = get_resource.objetSpriteFixed.instantiate() #on load la version non pété de l'objet
@@ -96,7 +82,7 @@ func _on_grab_object(): #instanceBribe : bribe_instance
 	#instanceBribe.queue_free()
 	text.text = get_resource.dialogue
 	text.visible = true
->>>>>>> Stashed changes
+
 		#clicked_instance.queue_free()
 		#text.visible = true
 		#text.text = resource_data.resource.dialogue
