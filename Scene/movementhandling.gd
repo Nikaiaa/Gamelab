@@ -44,4 +44,4 @@ func _on_timer_timeout():
 	pass # Replace with function body.
 
 func activeShader(b : bool):
-	Fisheye.material.set("shader_param/active",b)
+	Fisheye.material.set("shader_parameter/active",b)

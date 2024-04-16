@@ -7,21 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://043k1xeqsq2i" path="res://Image/bouton_rose.png" id="5_urln4"]
 [ext_resource type="Texture2D" uid="uid://mwuaxj3bghta" path="res://Image/bouton_bleu.png" id="6_172o3"]
 
-[sub_resource type="Animation" id="Animation_37ker"]
-resource_name = "Slide_Jouer"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("VBoxContainer/Jouer:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 320), Vector2(0, 320)]
-}
-
 [sub_resource type="Animation" id="Animation_0kc4j"]
 length = 0.001
 tracks/0/type = "value"
@@ -35,6 +20,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0, 320)]
+}
+
+[sub_resource type="Animation" id="Animation_37ker"]
+resource_name = "Slide_Jouer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("VBoxContainer/Jouer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 320), Vector2(0, 320)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_00gk3"]

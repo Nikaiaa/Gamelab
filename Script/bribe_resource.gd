@@ -7,8 +7,10 @@ class_name bribeResource
 @export var objetAudio : AudioStream
 @export var name : String
 @export var isImportant : bool
+@export var isActivated : bool
 @export_multiline var dialogue : String
 @export var emplacement : Vector3
+
 
 
 #var spriteObjet1 = load ("res://Image/2286300415a9ff54aada9ea75518021e.png")

@@ -11,6 +11,7 @@
 script = ExtResource("3_cuufd")
 name = ""
 isImportant = false
+isActivated = false
 dialogue = ""
 emplacement = Vector3(0, 0, 0)
 

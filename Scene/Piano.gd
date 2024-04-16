@@ -19,6 +19,7 @@ var textes_objets = {
 
 
 func _on_mouse_entered():
+	#on_piano_mouse_entered.emit()
 	print("jsusidanslazone")
 	for i in textes_objets:
 		print("aled aled")

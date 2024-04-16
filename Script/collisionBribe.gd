@@ -78,11 +78,11 @@ func _on_mouse_exited():
 
 func _on_enable_outline():
 	outline = true
-	print ("outline visible")
+	#print ("outline visible")
 	for child in get_children():
 		if child is MeshInstance3D:
 			for surface in range(0, child.get_surface_override_material_count() ):
-				child.get_surface_override_material(surface).next_pass.set("shader_param/enable", true)
+				child.get_surface_override_material(surface).next_pass.set("shader_parameter/enable", true)
 	#$".".get_child(0).get_surface_override_material(0).next_pass.set("shader_param/enable", true)
 	pass # Replace with function body.
 	
@@ -91,7 +91,7 @@ func _on_disable_outline():
 	for child in get_children():
 		if child is MeshInstance3D:
 			for surface in range(0, child.get_surface_override_material_count() ):
-				child.get_surface_override_material(surface).next_pass.set("shader_param/enable", false)
+				child.get_surface_override_material(surface).next_pass.set("shader_parameter/enable", false)
 	pass # Replace with function body.
 
 	

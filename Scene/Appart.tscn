@@ -62,7 +62,7 @@ script = ExtResource("1_bf123")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6854, 1.38192, -13.766)
 
 [node name="Piano" type="Area3D" parent="." node_paths=PackedStringArray("Texte", "meuble")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3457, 0, -11.9952)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3457, 0, -12.6731)
 script = ExtResource("2_fs0ee")
 Texte = NodePath("Label")
 meuble = NodePath("Piano")
