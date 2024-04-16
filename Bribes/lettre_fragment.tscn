@@ -10,8 +10,8 @@
 render_priority = 0
 shader = ExtResource("2_oyb5p")
 shader_parameter/enable = true
-shader_parameter/outline_thickness = 0.01
-shader_parameter/color = Color(0, 0, 0, 0)
+shader_parameter/outline_thickness = 0.02
+shader_parameter/color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rdao"]
 next_pass = SubResource("ShaderMaterial_c5sru")
@@ -21,8 +21,8 @@ albedo_texture = ExtResource("4_vmbk6")
 render_priority = 0
 shader = ExtResource("2_oyb5p")
 shader_parameter/enable = true
-shader_parameter/outline_thickness = 0.01
-shader_parameter/color = Color(0, 0, 0, 0)
+shader_parameter/outline_thickness = 0.02
+shader_parameter/color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_s1q71"]
 next_pass = SubResource("ShaderMaterial_0e03t")
@@ -32,8 +32,8 @@ albedo_texture = ExtResource("4_vmbk6")
 render_priority = 0
 shader = ExtResource("2_oyb5p")
 shader_parameter/enable = true
-shader_parameter/outline_thickness = 0.01
-shader_parameter/color = Color(0, 0, 0, 0)
+shader_parameter/outline_thickness = 0.02
+shader_parameter/color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_of0q8"]
 next_pass = SubResource("ShaderMaterial_10er6")
@@ -43,8 +43,8 @@ albedo_texture = ExtResource("4_vmbk6")
 render_priority = 0
 shader = ExtResource("2_oyb5p")
 shader_parameter/enable = true
-shader_parameter/outline_thickness = 0.01
-shader_parameter/color = Color(0, 0, 0, 0)
+shader_parameter/outline_thickness = 0.02
+shader_parameter/color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mpuao"]
 next_pass = SubResource("ShaderMaterial_i7tae")
@@ -54,8 +54,8 @@ albedo_texture = ExtResource("4_vmbk6")
 render_priority = 0
 shader = ExtResource("2_oyb5p")
 shader_parameter/enable = true
-shader_parameter/outline_thickness = 0.01
-shader_parameter/color = Color(0, 0, 0, 0)
+shader_parameter/outline_thickness = 0.02
+shader_parameter/color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tnoju"]
 next_pass = SubResource("ShaderMaterial_xfjs3")
@@ -65,15 +65,15 @@ albedo_texture = ExtResource("4_vmbk6")
 render_priority = 0
 shader = ExtResource("2_oyb5p")
 shader_parameter/enable = true
-shader_parameter/outline_thickness = 0.01
-shader_parameter/color = Color(0, 0, 0, 0)
+shader_parameter/outline_thickness = 0.02
+shader_parameter/color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2tto"]
 next_pass = SubResource("ShaderMaterial_tlmnn")
 albedo_texture = ExtResource("4_vmbk6")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iiu2y"]
-size = Vector3(1.51563, 0.0622559, 1.12805)
+size = Vector3(1.51563, 0.135132, 1.12805)
 
 [node name="Lettre Fragment" node_paths=PackedStringArray("audio_stream") instance=ExtResource("1_8sm18")]
 transform = Transform3D(0.756322, 0, 0.6542, 0, 1, 0, -0.6542, 0, 0.756322, 0, 0, 0)
@@ -110,9 +110,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.7, 0.061, -0.314)
 surface_material_override/0 = SubResource("StandardMaterial3D_q2tto")
 
 [node name="Area3D" type="Area3D" parent="." index="7"]
+transform = Transform3D(1.28106, 0, 1.78814e-07, 0, 8.99746, 0, -1.19209e-07, 0, 1.86094, 0, -0.266806, 0)
+collision_layer = 15
+collision_mask = 15
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" index="0"]
-transform = Transform3D(0.999867, -0.0106867, 0.0122967, 0.0106301, 0.999933, 0.00466698, -0.0123458, -0.00453566, 0.999914, -0.259305, 0.0517653, -0.0763407)
+transform = Transform3D(0.999867, -0.0106867, 0.0122968, 0.0106301, 0.999936, 0.00466698, -0.0123459, -0.00453566, 0.999914, -0.259694, 0.0882008, -0.076506)
 shape = SubResource("BoxShape3D_iiu2y")
 
 [connection signal="mouse_entered" from="Area3D" to="." method="_on_mouse_entered"]

@@ -157,7 +157,7 @@ albedo_texture = ExtResource("37_ox5sd")
 size = Vector3(21.7876, 0.419495, 21.5119)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vc0ff"]
-size = Vector3(6.50931, 1.54688, 2.46191)
+size = Vector3(6.50931, 1.38965, 2.46191)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_u25l2"]
 radius = 0.743868
@@ -567,7 +567,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15917, -0.18488, 8.3359)
 shape = SubResource("BoxShape3D_7w62d")
 
 [node name="Table basse" type="CollisionShape3D" parent="Salon" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30928, 0.541391, -0.443558)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.30928, 0.462776, -0.443558)
 shape = SubResource("BoxShape3D_vc0ff")
 
 [node name="Lampe" type="CollisionShape3D" parent="Salon" index="2"]

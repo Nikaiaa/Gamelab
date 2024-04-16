@@ -149,7 +149,9 @@ current = true
 
 [node name="RayCast3D" type="RayCast3D" parent="CharacterBody3D/Rotation_Helper/Camera3D"]
 exclude_parent = false
+target_position = Vector3(0, -220, 0)
 collision_mask = 8
+hit_from_inside = true
 collide_with_areas = true
 debug_shape_custom_color = Color(1, 1, 1, 1)
 debug_shape_thickness = 5

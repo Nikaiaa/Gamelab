@@ -20,9 +20,9 @@ var animation_player : AnimationPlayer
 #signal envoiData(instance2 : bribe_instance)
 
 func _ready():
-	#var bribe = ("/root/Bribe")
-	#bribe.enableOutline.connect(_on_enable_outline)
-	#bribe.disableOutline.connect(_on_disable_outline)
+	var bribe = $".".get_parent()
+	bribe.enableOutline.connect(_on_enable_outline)
+	bribe.disableOutline.connect(_on_disable_outline)
 	#scriptBribe.recupData.connect(_on_recup_data)
 	_on_mouse_exited()
 	print(self.name)
