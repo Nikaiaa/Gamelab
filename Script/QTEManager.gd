@@ -17,6 +17,7 @@ var note_instance
 @export var timer2 : Timer
 @export var timer3 : Timer
 @export var timer4 : Timer
+@export var finQTE : VideoStreamPlayer
 
 #Les timer sont responsables du spawn des notes 
 #_spawn_note prend un int "note" en argument : ceci servivra à déterminer quel type de QTE spawne
@@ -98,3 +99,6 @@ func _end_of_course(note : QTE): #Trigger quand l'objet de classe QTE arrive au 
 	note._play_animation_missed()
 	print (note.noteName + " missed")
 	print("_______")
+
+func _end_of_QTE():
+	finQTE.play()

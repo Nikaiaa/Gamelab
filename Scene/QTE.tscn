@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dp211osxqvffc" path="res://Image/Vertical-Line-PNG-High-Quality-Image.png" id="2_v2idl"]
 [ext_resource type="Texture2D" uid="uid://denbcml3nuojm" path="res://FOND_piano.png" id="6_t570g"]
 [ext_resource type="Texture2D" uid="uid://be3botqg0jc1l" path="res://Image/QTE/note_croche.png" id="8_hcwi4"]
-[ext_resource type="AudioStream" uid="uid://cebu1yj6gy6kh" path="res://Scene/QTE1.mp3" id="8_yg3yb"]
+[ext_resource type="VideoStream" path="res://Image/disque_annimfffff_1.ogv" id="8_r2il2"]
 [ext_resource type="Texture2D" uid="uid://bm0m138siejou" path="res://Image/QTE/note_double_croche.png" id="9_ytlli"]
 [ext_resource type="Texture2D" uid="uid://ctenpqhq1gpl7" path="res://Image/QTE/note_noire.png" id="10_pmg5w"]
 
@@ -15,7 +15,6 @@ size = Vector3(1.43115, 6.65891, 1.70905)
 [sub_resource type="Animation" id="Animation_dkqdn"]
 resource_name = "Musique"
 length = 10.0
-loop_mode = 1
 tracks/0/type = "method"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -63,6 +62,20 @@ tracks/1/keys = {
 }, {
 "args": [3],
 "method": &"_spawn_note"
+}]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(9.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_end_of_QTE"
 }]
 }
 
@@ -137,8 +150,18 @@ autoplay = "Musique"
 [node name="Timer" type="Timer" parent="."]
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Timer"]
-stream = ExtResource("8_yg3yb")
 autoplay = true
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1928.0
+offset_bottom = 1080.0
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control"]
+offset_right = 1920.0
+offset_bottom = 1088.0
+stream = ExtResource("8_r2il2")
 
 [connection signal="area_entered" from="AreaLimite" to="." method="_on_area_limite_area_entered"]
 [connection signal="area_exited" from="AreaLimite" to="." method="_on_area_limite_area_exited"]

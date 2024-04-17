@@ -12,5 +12,6 @@ objetSpriteFixed = ExtResource("2_3t8i6")
 objetAudio = ExtResource("1_5vec7")
 name = "Lettre"
 isImportant = true
+isActivated = false
 dialogue = "Je ne sais même pas pourquoi j'ai pris la peine de vouloir la lire.."
 emplacement = Vector3(7, 0.1, 13)
