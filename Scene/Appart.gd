@@ -15,7 +15,7 @@ var UIbribe = 0
 var piano_on = false
 var bribes1
 
-func ready():
+func ready(): #j'adore connecter des signaux
 	piano._on_piano_mouse_entered.connect(_on_piano_raycast)
 	piano._on_piano_mouse_exited.connect(_on_piano_raycast_out)
 	bribe.bribes_S1_all_get.connect(_status_bribes)
@@ -24,7 +24,7 @@ func ready():
 func _status_bribes():
 	bribes1 = true
 	print("on a toutes les bribes : " + str(bribes1))
-	$Animation_Notes_Piano.play("piano_notes_ui_jump")
+	$Animation_Notes_Piano.play("piano_notes_ui_jump") #petite animation de feedback sur le piano
 
 func _process(delta):
 	#debut porte de l'appart
@@ -38,13 +38,14 @@ func _on_piano_raycast():
 func _on_piano_raycast_out():
 	mouse_in_piano = false
 
-func _piano_notes_UI():
+func _piano_notes_UI(): #compter les bribes récoltées actualise l'UI du piano
 		UIbribe +=1
 		_UiUpdate()
 	
 
 func _unhandled_input(event):
-	if event is InputEventMouseButton && event.is_action_pressed("left_click") && mouse_in_piano == true && bribes1 == true:
+	#mouse_in_piano = est-ce que le raycast est dans le piano, bribes1 = est-ce qu'on a toutes les bribes de la section 1
+	if event is InputEventMouseButton && event.is_action_pressed("left_click") && mouse_in_piano == true && bribes1 == true: 
 			get_tree().change_scene_to_file("res://Scene/QTE.tscn")
 			
 

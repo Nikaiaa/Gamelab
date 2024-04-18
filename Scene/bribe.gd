@@ -66,13 +66,14 @@ func _ready():
 
 func _physics_process(delta):
 	var in_piano
-	if rayCast.is_colliding() && !object_grabbed:
+	if rayCast.is_colliding() && !object_grabbed: 
 		var collider = rayCast.get_collider()
-		if collider == piano:
+		if collider == piano: #si le raycast touche le piano, on émet le signal UNE FOIS sinon ça proc ttes les frames
 			if !in_piano:
 				_on_piano_mouse_entered.emit()
 				in_piano = true
-		else:
+				
+		else: # si le raycast touche pa le piano, on fait les trucs habituels
 			obj_col = collider.get_parent()
 			get_resource = obj_col.bribe_data
 			if !col_printed: #meilleur debug pour pas avoir 26 000 prints de la bribe qu'on regarde
@@ -86,7 +87,7 @@ func _physics_process(delta):
 		return (obj_col)
 	else : 
 		in_piano = false
-		_on_piano_mouse_exited.emit()
+		_on_piano_mouse_exited.emit() #on dit au code qu'on est plus dans le piano si on y était
 		col_printed = false
 		verifCollider = false
 		disableOutline.emit()
@@ -117,16 +118,16 @@ func _on_grab_object(): #instanceBribe : bribe_instance
 	text.text = get_resource.dialogue
 	text.visible = true
 	obj_col.queue_free() #On supprime l'objet brisé au moment où l'objet fixed est ramassé
-	if get_resource in bribesSection1:
+	if get_resource in bribesSection1: #on incrémente les bribes ramassées de 1
 		bribes_obtenues += 1
-		bribe_obtenue.emit()
+		bribe_obtenue.emit() #on envoie le signal pour dire à Appart qu'on a ramassé une bribe
 		print (bribes_obtenues)
 	_check_bribes_collected()
 
 func _check_bribes_collected():
 	print("bribes_obtenues = " + str(bribes_obtenues))
 	if bribes_obtenues == 2:
-		bribes_S1_all_get.emit()
+		bribes_S1_all_get.emit() #si on a toutes les bribes, on le dit à Appart
 	
 
 		#clicked_instance.queue_free()
