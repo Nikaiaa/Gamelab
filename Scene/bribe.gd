@@ -27,6 +27,11 @@ var col_printed #debug : affiche (une seule fois) quelle bribe déclenche le ray
 var old_bribe
 var object_grabbed
 var bribes_obtenues = 0
+@export var piano = Area3D
+signal _on_piano_mouse_entered
+signal _on_piano_mouse_exited
+signal bribes_S1_all_get
+signal bribe_obtenue
 
 
 
@@ -40,7 +45,7 @@ func _ready():
 	tableauNarra = ["je suis un téléphone dring dring", "je suis un chien bark bark"]
 	print (tableauObjets[0])
 	for resource in tableauObjets : 
-		print ("hbhb")		
+		print ("tableauObjets ressource +1")		
 		instance = resource.objetSpriteBroken.instantiate()
 		instance.position = resource.emplacement
 		instance.bribe_data = resource
@@ -60,20 +65,28 @@ func _ready():
 	#stock_data = instance2.bribe_data
 
 func _physics_process(delta):
+	var in_piano
 	if rayCast.is_colliding() && !object_grabbed:
 		var collider = rayCast.get_collider()
-		obj_col = collider.get_parent()
-		get_resource = obj_col.bribe_data
-		if !col_printed: #meilleur debug pour pas avoir 26 000 prints de la bribe qu'on regarde
-			print (obj_col.name)
-			col_printed = true
-		if get_resource.isActivated == true:
-			verifCollider = true
-			#recupData.emit()
-			enableOutline.emit()
+		if collider == piano:
+			if !in_piano:
+				_on_piano_mouse_entered.emit()
+				in_piano = true
+		else:
+			obj_col = collider.get_parent()
+			get_resource = obj_col.bribe_data
+			if !col_printed: #meilleur debug pour pas avoir 26 000 prints de la bribe qu'on regarde
+				print (obj_col.name)
+				col_printed = true
+			if get_resource.isActivated == true:
+				verifCollider = true
+				#recupData.emit()
+				enableOutline.emit()
 		return (get_resource)
 		return (obj_col)
 	else : 
+		in_piano = false
+		_on_piano_mouse_exited.emit()
 		col_printed = false
 		verifCollider = false
 		disableOutline.emit()
@@ -106,7 +119,14 @@ func _on_grab_object(): #instanceBribe : bribe_instance
 	obj_col.queue_free() #On supprime l'objet brisé au moment où l'objet fixed est ramassé
 	if get_resource in bribesSection1:
 		bribes_obtenues += 1
+		bribe_obtenue.emit()
 		print (bribes_obtenues)
+	_check_bribes_collected()
+
+func _check_bribes_collected():
+	print("bribes_obtenues = " + str(bribes_obtenues))
+	if bribes_obtenues == 2:
+		bribes_S1_all_get.emit()
 	
 
 		#clicked_instance.queue_free()
@@ -137,6 +157,7 @@ func _on_grab_object(): #instanceBribe : bribe_instance
 func onSpriteFixedDestroyed():
 	text.visible = false
 	object_grabbed = false #on tient plus rien dans les mains, si on met pas ça le raycast ne marche plus après la première bribe
+ 
 	
 
 

@@ -8,15 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://mwuaxj3bghta" path="res://Image/bouton_bleu.png" id="6_172o3"]
 [ext_resource type="AudioStream" uid="uid://dp3u1ogiawcqw" path="res://Menu.mp3" id="7_3ycnj"]
 
-[sub_resource type="Animation" id="Animation_7eub0"]
-resource_name = "JE_GLISSE1"
-
-[sub_resource type="Animation" id="Animation_crimw"]
-resource_name = "JAFFAR_LE_SOL_EST_GLISSANT2"
-
-[sub_resource type="Animation" id="Animation_hbiab"]
-resource_name = "JAFFAR_JE_COULE3"
-
 [sub_resource type="Animation" id="Animation_lij00"]
 resource_name = "Bon_4"
 tracks/0/type = "value"
@@ -31,6 +22,15 @@ tracks/0/keys = {
 "update": 0,
 "values": []
 }
+
+[sub_resource type="Animation" id="Animation_hbiab"]
+resource_name = "JAFFAR_JE_COULE3"
+
+[sub_resource type="Animation" id="Animation_7eub0"]
+resource_name = "JE_GLISSE1"
+
+[sub_resource type="Animation" id="Animation_crimw"]
+resource_name = "JAFFAR_LE_SOL_EST_GLISSANT2"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_k14ep"]
 _data = {

@@ -159,6 +159,7 @@ offset_right = 1928.0
 offset_bottom = 1080.0
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="Control"]
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1088.0
 stream = ExtResource("8_r2il2")

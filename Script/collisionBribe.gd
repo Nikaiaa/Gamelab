@@ -24,9 +24,9 @@ func _ready():
 	bribe.enableOutline.connect(_on_enable_outline)
 	bribe.disableOutline.connect(_on_disable_outline)
 	#scriptBribe.recupData.connect(_on_recup_data)
-	_on_mouse_exited()
-	print(self.name)
-	print($AudioStreamPlayer3D)
+	mouse_in_zone_true = false
+	print(self.name + " instantie.e correctement")
+	#print($AudioStreamPlayer3D)
 	audio_stream.play()
 
 #func _play_audio():
