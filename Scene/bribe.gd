@@ -4,6 +4,7 @@ extends Node
 #@export var bribeTelephone : Resource = load("res://Bribes/telephone.tres")
 @export var bribeMetronome : Resource = load("res://Bribes/metronome.tres")
 @export var bribeLettre : Resource = load("res://Bribes/lettre.tres")
+@export var bribeCahierDavid : Resource = load("res://Bribes/cahierDavid.tres")
 @export var tableauObjets : Array = []
 var loadScene
 @export var tableauNarra : Array = []
@@ -55,6 +56,7 @@ func _ready():
 	#le isActivated va permettre d'activer les bribes en fonction des sections de jeu
 	bribeMetronome.isActivated = true
 	bribeLettre.isActivated = true
+	bribeCahierDavid.isActivated = false
 		#instance.grabObject.connect(_on_grab_object)
 		#instance.envoiData.connect(_on_envoi_data)
 		#resource_data = {"resource": resource} #créer un dictionnaire pour stocker la référence à la resource

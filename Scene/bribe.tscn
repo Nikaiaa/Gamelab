@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://rnloud2x4hmt"]
+[gd_scene load_steps=9 format=3 uid="uid://rnloud2x4hmt"]
 
 [ext_resource type="Script" path="res://Scene/bribe.gd" id="1_voxes"]
 [ext_resource type="Script" path="res://Script/bribe_resource.gd" id="3_cuufd"]
@@ -6,6 +6,7 @@
 [ext_resource type="Resource" uid="uid://df5jym78qkvo5" path="res://Bribes/metronome.tres" id="4_jfyqh"]
 [ext_resource type="PackedScene" uid="uid://dgnlpclf740qk" path="res://Scene/char.tscn" id="5_66aq8"]
 [ext_resource type="FontFile" uid="uid://c65bekjtrp4pi" path="res://Luckybones-Bold.ttf" id="5_a67i2"]
+[ext_resource type="Resource" uid="uid://bdflsbyt4eev8" path="res://Bribes/cahierDavid.tres" id="5_dh7cs"]
 
 [sub_resource type="Resource" id="Resource_y3pco"]
 script = ExtResource("3_cuufd")
@@ -21,6 +22,7 @@ script = ExtResource("1_voxes")
 bribe_data = SubResource("Resource_y3pco")
 bribeMetronome = ExtResource("4_jfyqh")
 bribeLettre = ExtResource("4_0ssja")
+bribeCahierDavid = ExtResource("5_dh7cs")
 text = NodePath("Label")
 
 [node name="Label" type="Label" parent="."]

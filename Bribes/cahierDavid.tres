@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="bribeResource" load_steps=3 format=3 uid="uid://bdflsbyt4eev8"]
+
+[ext_resource type="PackedScene" uid="uid://crl5sp1w8d3ty" path="res://Bribes/cahier_david_fragment.tscn" id="1_klvm4"]
+[ext_resource type="Script" path="res://Script/bribe_resource.gd" id="1_un78c"]
+
+[resource]
+script = ExtResource("1_un78c")
+objetSpriteBroken = ExtResource("1_klvm4")
+name = "cahierDavid"
+isImportant = true
+isActivated = false
+dialogue = "Pas aujourd’hui…"
+emplacement = Vector3(0, 0, 0)

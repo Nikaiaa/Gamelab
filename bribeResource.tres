@@ -6,5 +6,6 @@
 script = ExtResource("1_k3aaf")
 name = ""
 isImportant = false
+isActivated = false
 dialogue = ""
 emplacement = Vector3(0, 0, 0)
