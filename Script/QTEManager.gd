@@ -18,24 +18,47 @@ var note_instance
 @export var timer3 : Timer
 @export var timer4 : Timer
 @export var finQTE : VideoStreamPlayer
+@export var appart : PackedScene
+@export var section : int
 
 #Les timer sont responsables du spawn des notes 
 #_spawn_note prend un int "note" en argument : ceci servivra à déterminer quel type de QTE spawne
 func _on_timer_spawn_note_2_timeout():
 	_spawn_note(2)
-	
+	#
 func _on_timer_spawn_note_3_timeout():
 	_spawn_note(3)
-
+#
 func _on_timer_spawn_note_4_timeout():
 	_spawn_note(4)  
 
-func _ready():
+
+func _ready(): #L'idee c'etait de check dans quelle section on est au lancement de la scene QTE, mais à chaque changement de scene les variables sont reset
+	print("section = " + str(section)) #tjrs 0
+	_section_check()
 	#On peut manipuler les timer pour spawner les notes selon des patterns réguliers
 	#timer2.start(0.8)
 	#timer3.start(1)
 	#timer4.start(3)
 	pass
+	
+func _section_check(): #match pour jouer la bonne pattern dans la bonne section 
+	if section == 0:
+		section = 1
+	#var section = appart.current_section
+	
+	match section:
+		1:
+			$MusiqueAP.play("Section_1")
+			pass
+		#2:
+			#pass
+		#3:
+			#pass
+		#4:
+			#pass
+		#5:
+			#pass
 
 func _spawn_note(note : int): 
 	note_instance = Note.instantiate() 
@@ -101,4 +124,6 @@ func _end_of_course(note : QTE): #Trigger quand l'objet de classe QTE arrive au 
 	print("_______")
 
 func _end_of_QTE():
-	finQTE.play()
+	section += 1 #ici en cas de réussite on incrémente la section de 1 (mm si ça sert à rien du coup mdr)
+	get_tree().change_scene_to_file("res://Scene/Appart.tscn")
+	

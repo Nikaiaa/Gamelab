@@ -14,6 +14,8 @@ var UIbribe = 0
 @export var bribe = Node3D
 var piano_on = false
 var bribes1
+var current_section
+signal QTE_on_wake #marche pas
 
 func ready(): #j'adore connecter des signaux
 	piano._on_piano_mouse_entered.connect(_on_piano_raycast)
@@ -24,6 +26,7 @@ func ready(): #j'adore connecter des signaux
 func _status_bribes():
 	bribes1 = true
 	print("on a toutes les bribes : " + str(bribes1))
+	current_section = 1 #ça ça marche pa
 	$Animation_Notes_Piano.play("piano_notes_ui_jump") #petite animation de feedback sur le piano
 
 func _process(delta):
@@ -47,6 +50,8 @@ func _unhandled_input(event):
 	#mouse_in_piano = est-ce que le raycast est dans le piano, bribes1 = est-ce qu'on a toutes les bribes de la section 1
 	if event is InputEventMouseButton && event.is_action_pressed("left_click") && mouse_in_piano == true && bribes1 == true: 
 			get_tree().change_scene_to_file("res://Scene/QTE.tscn")
+			QTE_on_wake.emit() #vrmt g juré ça marche pas
+			
 			
 
 func _UiUpdate():

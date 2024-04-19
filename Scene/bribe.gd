@@ -69,6 +69,7 @@ func _ready():
 func _physics_process(delta):
 	var in_piano
 	if rayCast.is_colliding() && !object_grabbed: 
+		
 		var collider = rayCast.get_collider()
 		if collider == piano: #si le raycast touche le piano, on émet le signal UNE FOIS sinon ça proc ttes les frames
 			if !in_piano:
