@@ -34,12 +34,13 @@ func _on_timer_spawn_note_4_timeout():
 
 
 func _ready(): #L'idee c'etait de check dans quelle section on est au lancement de la scene QTE, mais à chaque changement de scene les variables sont reset
+	finQTE = $Control/VideoStreamPlayer
 	print("section = " + str(section)) #tjrs 0
 	_section_check()
 	#On peut manipuler les timer pour spawner les notes selon des patterns réguliers
 	#timer2.start(0.8)
 	#timer3.start(1)
-	#timer4.start(3)
+	#timer4.start(3)x
 	pass
 	
 func _section_check(): #match pour jouer la bonne pattern dans la bonne section 
@@ -125,5 +126,6 @@ func _end_of_course(note : QTE): #Trigger quand l'objet de classe QTE arrive au 
 
 func _end_of_QTE():
 	section += 1 #ici en cas de réussite on incrémente la section de 1 (mm si ça sert à rien du coup mdr)
+	finQTE.play()
 	get_tree().change_scene_to_file("res://Scene/Appart.tscn")
 	

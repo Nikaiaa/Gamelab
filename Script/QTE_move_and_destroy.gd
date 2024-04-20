@@ -4,7 +4,7 @@ class_name QTE #QTE est une classe
 
 signal end_of_course (me : QTE) #signal propre à la classe QTE. Emis quand le QTE atteint son point de destination
 
-var move_speed
+@export var move_speed : int
 var moving
 @export var hit = false
 
@@ -30,7 +30,7 @@ func assign_texture(text):
 	#(qui sera choisie dans le QTEManager)
 
 func _ready():
-	move_speed = 10
+	move_speed = 12
 	moving = true
 	
 func _process(delta):
