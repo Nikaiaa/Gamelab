@@ -11,7 +11,7 @@ var loadScene
 @export var bribesSection1 : Array = []
 @export var text : Label
 var resource_data  #: Dictionary = {}
-@onready var char = $char
+@onready var char 
 var animation
 var anxieux : AudioStreamPlayer
 var rayCast
@@ -37,6 +37,7 @@ signal bribe_obtenue
 
 
 func _ready():
+	char = $char
 	anxieux = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
 	animation = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
 	rayCast = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/RayCast3D")

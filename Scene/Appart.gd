@@ -16,6 +16,7 @@ var piano_on = false
 var bribes1
 var current_section
 signal QTE_on_wake #marche pas
+@export var character : PackedScene
 
 func ready(): #j'adore connecter des signaux
 	piano._on_piano_mouse_entered.connect(_on_piano_raycast)
@@ -47,9 +48,25 @@ func _piano_notes_UI(): #compter les bribes récoltées actualise l'UI du piano
 	
 
 func _unhandled_input(event):
+	var new_pos = Vector3(0,1,0)
+	var character_instance
+	var old_char = $Bribe.char
 	#mouse_in_piano = est-ce que le raycast est dans le piano, bribes1 = est-ce qu'on a toutes les bribes de la section 1
 	if event is InputEventMouseButton && event.is_action_pressed("left_click") && mouse_in_piano == true && bribes1 == true: 
-			get_tree().change_scene_to_file("res://Scene/QTE.tscn")
+			
+			#TENTATIVE DE TELEPORTATION DU PERSONNAGE JOUABLE
+			#POUR RETABLIR LES QTE DECOMMENTER L'AVANT DERNIERE LIGNE ET COMMENTER TOUT LE RESTE
+			
+			old_char.queue_free() #on vire l'ancien char
+			$Bribe.position = new_pos #on set la position de bribe comme référentiel (pourra être n'importe quel node au final) 
+			character_instance = character.instantiate() #spawn un nouveau char (aled)
+			$Bribe.add_child(character_instance) #on le met en enfant de bribe 
+			#on ré-instancie les variables de Bribe liées au char sinon il est paumé
+			$Bribe.anxieux = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
+			$Bribe.animation = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
+			$Bribe.rayCast = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/RayCast3D")
+			character_instance.position = new_pos #on set la position (future position de la scène qte)
+			#get_tree().change_scene_to_file("res://Scene/QTE.tscn")
 			QTE_on_wake.emit() #vrmt g juré ça marche pas
 			
 			

@@ -1,7 +1,8 @@
-[gd_scene load_steps=26 format=3 uid="uid://c8w6epx6u3mn5"]
+[gd_scene load_steps=29 format=3 uid="uid://c8w6epx6u3mn5"]
 
 [ext_resource type="Script" path="res://Scene/Appart.gd" id="1_bf123"]
 [ext_resource type="Script" path="res://Scene/Piano.gd" id="2_fs0ee"]
+[ext_resource type="PackedScene" uid="uid://dgnlpclf740qk" path="res://Scene/char.tscn" id="2_fy28m"]
 [ext_resource type="Script" path="res://Scene/TV.gd" id="2_iqgsv"]
 [ext_resource type="Script" path="res://Scene/Rideau.gd" id="2_k0ue5"]
 [ext_resource type="PackedScene" uid="uid://rnloud2x4hmt" path="res://Scene/bribe.tscn" id="2_qsogw"]
@@ -15,6 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://ygmrcmsrfh6d" path="res://Scene/UI.tscn" id="15_p7052"]
 [ext_resource type="Texture2D" uid="uid://d38c5oj0l0xiw" path="res://Musique/Bribes/Locked_UI2.png" id="16_g7xmd"]
 [ext_resource type="Texture2D" uid="uid://c0jbeumov7htr" path="res://Musique/Bribes/Locked_UI.png" id="17_0upfx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_5m05c"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jtm6o"]
+albedo_color = Color(0, 1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_evdtl"]
 size = Vector3(1.46069, 2.90771, 6.69037)
@@ -111,10 +117,15 @@ _data = {
 script = ExtResource("1_bf123")
 piano = NodePath("Piano")
 bribe = NodePath("Bribe")
+character = ExtResource("2_fy28m")
 
 [node name="Bribe" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("2_qsogw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6854, 1.38192, -13.766)
 piano = NodePath("../Piano")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Bribe"]
+mesh = SubResource("BoxMesh_5m05c")
+surface_material_override/0 = SubResource("StandardMaterial3D_jtm6o")
 
 [node name="Piano" type="Area3D" parent="." node_paths=PackedStringArray("Texte", "meuble")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.3457, 0, -12.6731)
