@@ -124,8 +124,9 @@ func _end_of_course(note : QTE): #Trigger quand l'objet de classe QTE arrive au 
 	print (note.noteName + " missed")
 	print("_______")
 
+func _avance():
+	finQTE.play()
 func _end_of_QTE():
 	section += 1 #ici en cas de réussite on incrémente la section de 1 (mm si ça sert à rien du coup mdr)
-	finQTE.play()
 	get_tree().change_scene_to_file("res://Scene/Appart.tscn")
 	

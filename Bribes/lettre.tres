@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="bribeResource" load_steps=5 format=3 uid="uid://dqnd1tr5vol84"]
 
-[ext_resource type="AudioStream" uid="uid://b4xa6vqrl8eoh" path="res://Musique/Bribes/Bribe_cursed3.wav" id="1_5vec7"]
+[ext_resource type="AudioStream" uid="uid://dysf4fauhxgt3" path="res://Musique/Bribes/Cursed1.mp3" id="1_1uolf"]
 [ext_resource type="PackedScene" uid="uid://c7by7bpugrwbw" path="res://Bribes/lettre_fragment.tscn" id="1_cgu8i"]
 [ext_resource type="Script" path="res://Script/bribe_resource.gd" id="1_pxuvt"]
 [ext_resource type="PackedScene" uid="uid://bjb7d5aouiutt" path="res://Bribes/lettreFixed.tscn" id="2_3t8i6"]
@@ -9,7 +9,7 @@
 script = ExtResource("1_pxuvt")
 objetSpriteBroken = ExtResource("1_cgu8i")
 objetSpriteFixed = ExtResource("2_3t8i6")
-objetAudio = ExtResource("1_5vec7")
+objetAudio = ExtResource("1_1uolf")
 name = "Lettre"
 isImportant = true
 isActivated = false

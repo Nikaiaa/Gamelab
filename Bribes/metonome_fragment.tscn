@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://d3tshua8i36rw" path="res://Bribes/Metonome Fragment.blend" id="1_7cupm"]
 [ext_resource type="Script" path="res://Script/collisionBribe.gd" id="2_klqu5"]
 [ext_resource type="Shader" path="res://Scene/porte_2.gdshader" id="2_qmx83"]
-[ext_resource type="AudioStream" uid="uid://btadde4vaf4um" path="res://Musique/Bribes/Bribe_cursed4.wav" id="3_boisj"]
+[ext_resource type="AudioStream" uid="uid://bbx6iybgt5gp6" path="res://Musique/Bribes/cursed_2.mp3" id="3_ab6ps"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1bios"]
 render_priority = 0
@@ -199,7 +199,7 @@ script = ExtResource("2_klqu5")
 audio_stream = NodePath("AudioStreamPlayer3D")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="0"]
-stream = ExtResource("3_boisj")
+stream = ExtResource("3_ab6ps")
 autoplay = true
 max_distance = 10.0
 emission_angle_enabled = true

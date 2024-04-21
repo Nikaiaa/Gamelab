@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://caqt8kjf8e0rv" path="res://Bribes/Lettre Fragment.blend" id="1_8sm18"]
 [ext_resource type="Script" path="res://Script/collisionBribe.gd" id="2_j5l7v"]
 [ext_resource type="Shader" path="res://Scene/porte_2.gdshader" id="2_oyb5p"]
-[ext_resource type="AudioStream" uid="uid://b4xa6vqrl8eoh" path="res://Musique/Bribes/Bribe_cursed3.wav" id="3_sxp8l"]
+[ext_resource type="AudioStream" uid="uid://dysf4fauhxgt3" path="res://Musique/Bribes/Cursed1.mp3" id="3_k6bmv"]
 [ext_resource type="Texture2D" uid="uid://8fuu35wb3u0q" path="res://Bribes/Dossier-Magazine-Lettre.png" id="4_vmbk6"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_c5sru"]
@@ -81,7 +81,7 @@ script = ExtResource("2_j5l7v")
 audio_stream = NodePath("AudioStreamPlayer3D")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="0"]
-stream = ExtResource("3_sxp8l")
+stream = ExtResource("3_k6bmv")
 autoplay = true
 max_distance = 10.0
 emission_angle_enabled = true
