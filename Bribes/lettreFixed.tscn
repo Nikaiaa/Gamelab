@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://bjb7d5aouiutt"]
+[gd_scene load_steps=6 format=3 uid="uid://bjb7d5aouiutt"]
 
 [ext_resource type="Script" path="res://Scene/boutonUI.gd" id="1_u4glp"]
 [ext_resource type="Texture2D" uid="uid://dqo8vq0afyv2u" path="res://Bribes/bribesUI/lettre 2d.png" id="2_tl1cv"]
+[ext_resource type="FontFile" uid="uid://c65bekjtrp4pi" path="res://Luckybones-Bold.ttf" id="3_2d111"]
+[ext_resource type="Texture2D" uid="uid://ctenpqhq1gpl7" path="res://Image/QTE/note_noire.png" id="4_a6dek"]
+[ext_resource type="Texture2D" uid="uid://bgsoiegff3r2f" path="res://Image/INPUT2.png" id="5_k2cmx"]
 
 [node name="Control" type="Control" node_paths=PackedStringArray("narra")]
 layout_mode = 3
@@ -32,13 +35,26 @@ scale = Vector2(0.92, 0.92)
 texture = ExtResource("2_tl1cv")
 centered = false
 
+[node name="note" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
+position = Vector2(3, 749)
+scale = Vector2(0.4175, 0.4175)
+texture = ExtResource("4_a6dek")
+centered = false
+
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_left = 1365.0
-offset_top = 880.0
+offset_top = 12.0
 offset_right = 1920.0
-offset_bottom = 1060.0
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("3_2d111")
 theme_override_font_sizes/font_size = 20
 text = "Appuyez sur Echap"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="INPUT" type="Sprite2D" parent="."]
+position = Vector2(102, 644)
+scale = Vector2(0.0604897, 0.0604897)
+texture = ExtResource("5_k2cmx")
+centered = false

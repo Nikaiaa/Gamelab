@@ -57,17 +57,17 @@ func _unhandled_input(event):
 			#TENTATIVE DE TELEPORTATION DU PERSONNAGE JOUABLE
 			#POUR RETABLIR LES QTE DECOMMENTER L'AVANT DERNIERE LIGNE ET COMMENTER TOUT LE RESTE
 			
-			old_char.queue_free() #on vire l'ancien char
-			$Bribe.position = new_pos #on set la position de bribe comme référentiel (pourra être n'importe quel node au final) 
-			character_instance = character.instantiate() #spawn un nouveau char (aled)
-			$Bribe.add_child(character_instance) #on le met en enfant de bribe 
-			#on ré-instancie les variables de Bribe liées au char sinon il est paumé
-			$Bribe.anxieux = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
-			$Bribe.animation = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
-			$Bribe.rayCast = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/RayCast3D")
-			character_instance.position = new_pos #on set la position (future position de la scène qte)
-			#get_tree().change_scene_to_file("res://Scene/QTE.tscn")
-			QTE_on_wake.emit() #vrmt g juré ça marche pas
+			#old_char.queue_free() #on vire l'ancien char
+			#$Bribe.position = new_pos #on set la position de bribe comme référentiel (pourra être n'importe quel node au final) 
+			#character_instance = character.instantiate() #spawn un nouveau char (aled)
+			#$Bribe.add_child(character_instance) #on le met en enfant de bribe 
+			##on ré-instancie les variables de Bribe liées au char sinon il est paumé
+			#$Bribe.anxieux = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
+			#$Bribe.animation = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
+			#$Bribe.rayCast = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/RayCast3D")
+			#character_instance.position = new_pos #on set la position (future position de la scène qte)
+			get_tree().change_scene_to_file("res://Scene/QTE.tscn")
+			#QTE_on_wake.emit() #vrmt g juré ça marche pas
 			
 			
 
