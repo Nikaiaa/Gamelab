@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://rnloud2x4hmt"]
+[gd_scene load_steps=9 format=3 uid="uid://rnloud2x4hmt"]
 
 [ext_resource type="Script" path="res://Scene/bribe.gd" id="1_voxes"]
 [ext_resource type="Script" path="res://Script/bribe_resource.gd" id="3_cuufd"]
@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dgnlpclf740qk" path="res://Scene/char.tscn" id="5_66aq8"]
 [ext_resource type="FontFile" uid="uid://c65bekjtrp4pi" path="res://Luckybones-Bold.ttf" id="5_a67i2"]
 [ext_resource type="Resource" uid="uid://bdflsbyt4eev8" path="res://Bribes/cahierDavid.tres" id="5_dh7cs"]
-[ext_resource type="Texture2D" uid="uid://ctenpqhq1gpl7" path="res://Image/QTE/note_noire.png" id="8_rmndh"]
-[ext_resource type="Texture2D" uid="uid://be3botqg0jc1l" path="res://Image/QTE/note_croche.png" id="9_h0f6g"]
 
 [sub_resource type="Resource" id="Resource_y3pco"]
 script = ExtResource("3_cuufd")
@@ -17,68 +15,6 @@ isImportant = false
 isActivated = false
 dialogue = ""
 emplacement = Vector3(0, 0, 0)
-
-[sub_resource type="Animation" id="Animation_txwgs"]
-resource_name = "Just_moving"
-length = 0.5
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Metro:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0.0143619, 0), Vector3(0, 2.80703, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Lettre:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(0, 2.89493, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_8jb2l"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimationPlayer/Metro:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 2.80703, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimationPlayer/Lettre:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8y2a"]
-_data = {
-"Just_moving": SubResource("Animation_txwgs"),
-"RESET": SubResource("Animation_8jb2l")
-}
 
 [node name="Bribe" type="Node3D" node_paths=PackedStringArray("text")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.685, 1.382, -13.766)
@@ -111,19 +47,6 @@ vertical_alignment = 1
 
 [node name="char" parent="." instance=ExtResource("5_66aq8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.889482, 0)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_r8y2a")
-}
-
-[node name="Lettre" type="Sprite3D" parent="AnimationPlayer"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
-texture = ExtResource("8_rmndh")
-
-[node name="Metro" type="Sprite3D" parent="AnimationPlayer"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 2.80703, 0)
-texture = ExtResource("9_h0f6g")
 
 [connection signal="disableOutline" from="." to="." method="_on_disable_outline"]
 [connection signal="enableOutline" from="." to="." method="_on_enable_outline"]

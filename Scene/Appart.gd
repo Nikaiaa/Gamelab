@@ -31,10 +31,11 @@ func _status_bribes():
 	$Animation_Notes_Piano.play("piano_notes_ui_jump") #petite animation de feedback sur le piano
 
 func _process(delta):
-	#debut porte de l'appart
-	$AnimationPlayer.play("Note mouving")
-	#if Tuto == true:
-	#_ouvrir_bureau()
+	##debut porte de l'appart
+	#$AnimationPlayer.play("Note mouving")
+	$Animation_note_bribe.play("just_moving")
+	##if Tuto == true:
+	##_ouvrir_bureau()
 
 func _on_piano_raycast():
 	mouse_in_piano = true

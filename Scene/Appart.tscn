@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://c8w6epx6u3mn5"]
+[gd_scene load_steps=30 format=3 uid="uid://c8w6epx6u3mn5"]
 
 [ext_resource type="Script" path="res://Scene/Appart.gd" id="1_bf123"]
 [ext_resource type="Script" path="res://Scene/Piano.gd" id="2_fs0ee"]
@@ -36,30 +36,6 @@ size = Vector3(0.710936, 8.32617, 1.68072)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x6pbt"]
 size = Vector3(0.864746, 0.823242, 0.76416)
-
-[sub_resource type="Animation" id="Animation_dcn4o"]
-resource_name = "Note mouving"
-length = 3.0
-loop_mode = 1
-tracks/0/type = "position_3d"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = PackedFloat32Array(0, 1, 3.83843, 3.21536, 4.38911, 1.5, 1, 3.83843, 3.56815, 4.38911)
-tracks/1/type = "position_3d"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Note3")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = PackedFloat32Array(0, 1, 8.93304, 1.72935, -9.99781, 1.5, 1, 8.93304, 2.31173, -9.99781)
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_heapa"]
-_data = {
-"Note mouving": SubResource("Animation_dcn4o")
-}
 
 [sub_resource type="Animation" id="Animation_ypaxx"]
 length = 0.001
@@ -113,7 +89,69 @@ _data = {
 "piano_notes_ui_jump": SubResource("Animation_7e7ev")
 }
 
+[sub_resource type="Animation" id="Animation_txwgs"]
+resource_name = "Just_moving"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation_note_bribe/Metro:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.8, 1.3, 1.5),
+"transitions": PackedFloat32Array(1, 1.03526, 0.482968, 0.366021, 1),
+"update": 0,
+"values": [Vector3(-23.37, 2.492, -4.632), Vector3(-23, 3.128, -4.632), Vector3(-23.37, 3.958, -4.632), Vector3(-23.37, 2.638, -4.632), Vector3(-23.37, 2.981, -4.632)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animation_note_bribe/Lettre:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.2, 0.4, 0.8, 1.3, 1.5),
+"transitions": PackedFloat32Array(1.23114, 1.03527, 0.535887, 0.435275, 1),
+"update": 0,
+"values": [Vector3(0, -0.39, 0), Vector3(0, 0.345, 0), Vector3(0, 1.24845, 0), Vector3(0, 0.008, 0), Vector3(0, 0.212, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8jb2l"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Animation_note_bribe/Metro:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 2.80703, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Animation_note_bribe/Lettre:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_r8y2a"]
+_data = {
+"Just_moving": SubResource("Animation_txwgs"),
+"RESET": SubResource("Animation_8jb2l")
+}
+
 [node name="Appart" type="Node3D" node_paths=PackedStringArray("piano", "bribe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -24.935, 2.769, -9.877)
 script = ExtResource("1_bf123")
 piano = NodePath("Piano")
 bribe = NodePath("Bribe")
@@ -248,12 +286,6 @@ transform = Transform3D(-0.999989, 0, 0.00462502, 0, 1, 0, -0.00462502, 0, -0.99
 [node name="Porte_Chambre" parent="." instance=ExtResource("3_hsuc1")]
 transform = Transform3D(0.03005, 0, -0.999548, 0, 1, 0, 0.999548, 0, 0.03005, -17.9302, 0.0412481, 0.4518)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-root_node = NodePath("")
-libraries = {
-"": SubResource("AnimationLibrary_heapa")
-}
-
 [node name="Porte_bureau" parent="." instance=ExtResource("3_hsuc1")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -18.1465, 0.0456421, -8.35048)
 
@@ -265,12 +297,10 @@ visible = false
 
 [node name="UpdatedSprite1" type="Sprite3D" parent="."]
 transform = Transform3D(-0.0005074, 0, -0.0898047, 0, 0.129315, 0, 0.108478, 0, -0.000420056, -24.935, 2.769, -9.877)
-visible = false
 texture = ExtResource("8_bkm6m")
 
 [node name="UpdatedSprite2" type="Sprite3D" parent="."]
-transform = Transform3D(-0.000662607, 0, -0.0897173, 0, 0.144355, 0, 0.14166, 0, -0.000419647, -24.8, 2.931, -9)
-visible = false
+transform = Transform3D(-0.000662607, 0, -0.0897173, 0, 0.144355, 0, 0.14166, 0, -0.000419647, -24.8, 2.8155, -9)
 texture = ExtResource("7_wag77")
 
 [node name="UI_Bribe" type="Sprite3D" parent="."]
@@ -285,6 +315,20 @@ texture = ExtResource("17_0upfx")
 root_node = NodePath("../UpdatedSprite1")
 libraries = {
 "": SubResource("AnimationLibrary_0onf8")
+}
+
+[node name="Metro" type="Sprite3D" parent="."]
+transform = Transform3D(0.174984, -0.00234565, 0, 0.00234565, 0.174984, 0, 0, 0, 0.175, -23.3703, 2.30579, -4.63231)
+texture = ExtResource("8_bkm6m")
+
+[node name="Lettre" type="Sprite3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 24.935, -2.987, 9.877)
+texture = ExtResource("7_wag77")
+
+[node name="Animation_note_bribe" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Metro")
+libraries = {
+"": SubResource("AnimationLibrary_r8y2a")
 }
 
 [connection signal="_on_piano_mouse_entered" from="Bribe" to="." method="_on_piano_raycast"]

@@ -38,6 +38,7 @@ signal bribe_obtenue
 
 func _ready():
 	char = $char
+	#$AnimationPlayer.play ("just_moving")
 	anxieux = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
 	animation = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
 	rayCast = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/RayCast3D")
