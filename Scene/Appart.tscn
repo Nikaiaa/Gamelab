@@ -162,6 +162,12 @@ scene_QTE = ExtResource("3_loihi")
 
 [node name="Bribe" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("2_qsogw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6854, 1.38192, -13.766)
+allBribesArray = []
+bribesSection1 = []
+bribesSection2 = []
+bribesSection3 = []
+bribesSection4 = []
+bribesSection5 = []
 piano = NodePath("../Piano")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bribe"]
@@ -193,7 +199,9 @@ metadata/_edit_use_anchors_ = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.817017, 0.953857, 3.25333)
 shape = SubResource("BoxShape3D_evdtl")
 
-[node name="Guitare" type="Area3D" parent="." node_paths=PackedStringArray("Texte", "meuble")]
+[node name="Guitare" type="Area3D" parent="." node_paths=PackedStringArray("Texte", "meuble") groups=["nonbribe"]]
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("3_0qw2m")
 Texte = NodePath("Label")
 meuble = NodePath("Guitar")
@@ -215,7 +223,9 @@ horizontal_alignment = 1
 vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="TV" type="Area3D" parent="." node_paths=PackedStringArray("Texte", "meuble")]
+[node name="TV" type="Area3D" parent="." node_paths=PackedStringArray("Texte", "meuble") groups=["nonbribe"]]
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("2_iqgsv")
 Texte = NodePath("Label")
 meuble = NodePath("Tele")
@@ -237,7 +247,9 @@ horizontal_alignment = 1
 vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Rideau" type="Area3D" parent="." node_paths=PackedStringArray("Texte", "meuble")]
+[node name="Rideau" type="Area3D" parent="." node_paths=PackedStringArray("Texte", "meuble") groups=["nonbribe"]]
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("2_k0ue5")
 Texte = NodePath("Label")
 meuble = NodePath("Rido")
@@ -258,8 +270,10 @@ horizontal_alignment = 1
 vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Cadre_entree" type="Area3D" parent="." node_paths=PackedStringArray("Texte", "meuble")]
+[node name="Cadre_entree" type="Area3D" parent="." node_paths=PackedStringArray("Texte", "meuble") groups=["nonbribe"]]
 transform = Transform3D(0.999993, 0, -0.003735, 0, 1, 0, 0.003735, 0, 0.999993, -12.4948, 3.07664, -5.78725)
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("3_4nw1w")
 Texte = NodePath("Label")
 meuble = NodePath("Cadre")
@@ -339,7 +353,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32.82, 0)
 
 [node name="qte_origin" type="Node3D" parent="Scene_QTE_spawn"]
 
-[node name="QTE" parent="Scene_QTE_spawn/qte_origin" node_paths=PackedStringArray("appart") instance=ExtResource("3_loihi")]
+[node name="QTE" parent="Scene_QTE_spawn/qte_origin" node_paths=PackedStringArray("arrayStartPos", "appart") instance=ExtResource("3_loihi")]
+arrayStartPos = [null, null, NodePath("SPN2"), NodePath("SPN3"), NodePath("SPN4")]
 appart = NodePath("../../..")
 
 [node name="Piano_spawn" type="Node3D" parent="."]

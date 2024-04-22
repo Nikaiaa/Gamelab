@@ -40,6 +40,9 @@ signal _on_piano_mouse_entered
 signal _on_piano_mouse_exited
 signal bribes_S1_all_get
 signal bribe_obtenue
+var verifBribe = false 
+var collider
+var texte_non_bribe = false
 
 
 func _ready():
@@ -95,7 +98,7 @@ func _bribe_activator():
 func _physics_process(delta):
 	var in_piano
 	if rayCast.is_colliding() && !object_grabbed: 
-		var collider = rayCast.get_collider()
+		collider = rayCast.get_collider()
 		
 		if collider == piano: #si le raycast touche le piano, on émet le signal UNE FOIS sinon ça proc ttes les frames
 			if !in_piano:
@@ -103,24 +106,40 @@ func _physics_process(delta):
 				in_piano = true
 				
 		else: # si le raycast touche pa le piano, on fait les trucs habituels
-			obj_col = collider.get_parent()
-			get_resource = obj_col.bribe_data
+			if collider.is_in_group("nonbribe"): #on vérifie si l'objet détecté est une non bribe
+				texte_non_bribe = true 
+				#var label = collider.get_node("Label") 
+				var textes_objets = collider.textes_objets
+				var Narration = collider.Narration
+				collider.Texte.show()
+				collider.Texte.text = textes_objets[Narration]
+				
+		
+			else : 
+				obj_col = collider.get_parent()
+				get_resource = obj_col.bribe_data
+				verifBribe = true #pour être sur que les fonctions liées au bribe ne se déclenchent que si c'en est
 			
-			if !col_printed: #meilleur debug pour pas avoir 26 000 prints de la bribe qu'on regarde
+			if !col_printed and verifBribe: #meilleur debug pour pas avoir 26 000 prints de la bribe qu'on regarde
 				print (obj_col.name)
 				col_printed = true
 				
-			if get_resource.isActivated == true: #on dit au char de lancer l'anxiété sur les bribes
-				char.activeShader(true)
-				start_anxiete.play("Start_Anxiete")
-				animation.play("Anxiety")
-				textes_intrusif.play("Pensees_Intrusives_1")
-				verifCollider = true
-				#recupData.emit()
-				enableOutline.emit()
+			if get_resource and verifBribe:
+				if get_resource.isActivated == true: #on dit au char de lancer l'anxiété sur les bribes
+					char.activeShader(true)
+					start_anxiete.play("Start_Anxiete")
+					animation.play("Anxiety")
+					textes_intrusif.play("Pensees_Intrusives_1")
+					verifCollider = true
+					#recupData.emit()
+					enableOutline.emit()
 		return (get_resource)
 		return (obj_col)
 	else : 
+		if texte_non_bribe == true:
+			print ("AAAAAAAAAAAAAAAAAAAAA")
+			collider.Texte.hide()
+			texte_non_bribe = false
 		if char != null: #si y a un char on arrête l'anxiété si on regarde pas une bribe
 			start_anxiete.stop()
 			animation.stop()
