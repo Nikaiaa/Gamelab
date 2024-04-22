@@ -14,19 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_raitf")
-narra = NodePath("Label")
-
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1365.0
-offset_top = 1.0
-offset_right = 1920.0
-offset_bottom = 181.0
-theme_override_fonts/font = ExtResource("3_w6dww")
-theme_override_font_sizes/font_size = 20
-text = "Appuyez sur Echap"
-horizontal_alignment = 1
-vertical_alignment = 1
+narra = NodePath("SubViewportContainer/SubViewport/Label")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
@@ -40,19 +28,35 @@ handle_input_locally = false
 size = Vector2i(1920, 1080)
 render_target_update_mode = 4
 
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -555.0
+offset_top = -180.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("3_w6dww")
+theme_override_font_sizes/font_size = 20
+text = "Appuyez sur Echap"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Sprite2D" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(150, 0)
 scale = Vector2(0.815, 0.815)
 texture = ExtResource("1_2cqiw")
 centered = false
 
-[node name="note" type="Sprite2D" parent="."]
+[node name="note" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(3, 749)
 scale = Vector2(0.4175, 0.4175)
 texture = ExtResource("4_8akab")
 centered = false
 
-[node name="INPUT" type="Sprite2D" parent="."]
+[node name="INPUT" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(102, 644)
 scale = Vector2(0.0604897, 0.0604897)
 texture = ExtResource("5_ai5cu")

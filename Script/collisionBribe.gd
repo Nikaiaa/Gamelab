@@ -21,6 +21,7 @@ var animation_player : AnimationPlayer
 
 func _ready():
 	var bribe = $".".get_parent()
+	
 	bribe.enableOutline.connect(_on_enable_outline)
 	bribe.disableOutline.connect(_on_disable_outline)
 	#scriptBribe.recupData.connect(_on_recup_data)

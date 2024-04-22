@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_u4glp")
-narra = NodePath("Label")
+narra = NodePath("SubViewportContainer/SubViewport/Label")
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
@@ -41,19 +41,23 @@ scale = Vector2(0.4175, 0.4175)
 texture = ExtResource("4_a6dek")
 centered = false
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 1365.0
-offset_top = 12.0
-offset_right = 1920.0
-offset_bottom = 192.0
+[node name="Label" type="Label" parent="SubViewportContainer/SubViewport"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -555.0
+offset_top = -180.0
+grow_horizontal = 0
+grow_vertical = 0
 theme_override_fonts/font = ExtResource("3_2d111")
 theme_override_font_sizes/font_size = 20
 text = "Appuyez sur Echap"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="INPUT" type="Sprite2D" parent="."]
+[node name="INPUT" type="Sprite2D" parent="SubViewportContainer/SubViewport"]
 position = Vector2(102, 644)
 scale = Vector2(0.0604897, 0.0604897)
 texture = ExtResource("5_k2cmx")

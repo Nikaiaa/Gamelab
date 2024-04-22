@@ -14,6 +14,8 @@ var resource_data  #: Dictionary = {}
 @onready var char 
 var animation
 var anxieux : AudioStreamPlayer
+var start_anxiete
+var textes_intrusif
 var rayCast
 var verifCollider
 signal recupData
@@ -39,8 +41,10 @@ signal bribe_obtenue
 func _ready():
 	char = $char
 	#$AnimationPlayer.play ("just_moving")
+	textes_intrusif = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer/Texte_intrusif")
+	start_anxiete = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
 	anxieux = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
-	animation = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
+	animation = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer2")
 	rayCast = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/RayCast3D")
 	text.visible = false 
 	#tableau avec toutes les bribes
@@ -71,7 +75,10 @@ func _ready():
 func _physics_process(delta):
 	var in_piano
 	if rayCast.is_colliding() && !object_grabbed: 
-		
+		char.activeShader(true)
+		start_anxiete.play("Start_Anxiete")
+		animation.play("Anxiety")
+		textes_intrusif.play("Pensees_Intrusives_1")
 		var collider = rayCast.get_collider()
 		if collider == piano: #si le raycast touche le piano, on émet le signal UNE FOIS sinon ça proc ttes les frames
 			if !in_piano:
@@ -117,8 +124,6 @@ func _on_grab_object(): #instanceBribe : bribe_instance
 	loadScene = get_resource.objetSpriteFixed.instantiate() #on load la version non pété de l'objet
 	loadScene.onSelfDestroy.connect(onSpriteFixedDestroyed)
 	add_child(loadScene)
-	char.activeShader(true)
-	animation.play("Anxiety")
 	#instanceBribe.queue_free()
 	text.text = get_resource.dialogue
 	text.visible = true

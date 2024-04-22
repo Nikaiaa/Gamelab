@@ -91,30 +91,31 @@ _data = {
 
 [sub_resource type="Animation" id="Animation_txwgs"]
 resource_name = "Just_moving"
-length = 2.0
+length = 0.7
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Animation_note_bribe/Metro:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.2, 0.4, 0.8, 1.3, 1.5),
-"transitions": PackedFloat32Array(1, 1.03526, 0.482968, 0.366021, 1),
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(-23.37, 2.492, -4.632), Vector3(-23, 3.128, -4.632), Vector3(-23.37, 3.958, -4.632), Vector3(-23.37, 2.638, -4.632), Vector3(-23.37, 2.981, -4.632)]
+"values": [Vector3(-23.3703, 2.30579, -4.63231), Vector3(-23.3703, 2.71508, -4.63231)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Animation_note_bribe/Lettre:position")
+tracks/1/path = NodePath("../Lettre:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.2, 0.4, 0.8, 1.3, 1.5),
-"transitions": PackedFloat32Array(1.23114, 1.03527, 0.535887, 0.435275, 1),
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector3(0, -0.39, 0), Vector3(0, 0.345, 0), Vector3(0, 1.24845, 0), Vector3(0, 0.008, 0), Vector3(0, 0.212, 0)]
+"values": [Vector3(-11.0052, 2.38755, 0.735207), Vector3(-11.0052, 2.93996, 0.735207)]
 }
 
 [sub_resource type="Animation" id="Animation_8jb2l"]
@@ -122,26 +123,26 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Animation_note_bribe/Metro:position")
+tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 2.80703, 0)]
+"values": [Vector3(-23.3703, 2.30579, -4.63231)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Animation_note_bribe/Lettre:position")
+tracks/1/path = NodePath("../Lettre:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Vector3(0, 0, 0)]
+"values": [Vector3(-11.0052, 2.38755, 0.735207)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r8y2a"]
@@ -322,7 +323,7 @@ transform = Transform3D(0.174984, -0.00234565, 0, 0.00234565, 0.174984, 0, 0, 0,
 texture = ExtResource("8_bkm6m")
 
 [node name="Lettre" type="Sprite3D" parent="."]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 24.935, -2.987, 9.877)
+transform = Transform3D(-0.00935705, 0, -0.17475, 0, 0.175, 0, 0.17475, 0, -0.00935705, -11.0052, 2.38755, 0.735207)
 texture = ExtResource("7_wag77")
 
 [node name="Animation_note_bribe" type="AnimationPlayer" parent="."]
