@@ -63,7 +63,7 @@ func _physics_process(delta):
 func _input(event):
 
 	#si la souris bouge et qu'elle est capturée
-	if event is InputEventMouseMotion : #and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: 
+	if event is InputEventMouseMotion && movement == true : #and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED: 
 		rotation_helper.rotate_x(deg_to_rad(event.relative.y * -MOUSE_SENSITIVITY))#rotate la caméra en y d'abord
 		self.rotate_y(deg_to_rad(event.relative.x * MOUSE_SENSITIVITY * -1))#puis en x
 				

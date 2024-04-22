@@ -23,6 +23,9 @@ func _ready():
 			#print ("object cliqué")
 			#_on_cant_move(event)
 			#cantMove.emit()
+#func process():
+	#if can_move == false:
+		#$CharacterBody3D.movement = false
 
 func _on_cant_move(_event):
 	instance = %frag1.instance

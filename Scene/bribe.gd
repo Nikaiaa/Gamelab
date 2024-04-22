@@ -5,10 +5,15 @@ extends Node
 @export var bribeMetronome : Resource = load("res://Bribes/metronome.tres")
 @export var bribeLettre : Resource = load("res://Bribes/lettre.tres")
 @export var bribeCahierDavid : Resource = load("res://Bribes/cahierDavid.tres")
-@export var tableauObjets : Array = []
-var loadScene
-@export var tableauNarra : Array = []
+@export var allBribesArray : Array = []
 @export var bribesSection1 : Array = []
+@export var bribesSection2 : Array = []
+@export var bribesSection3 : Array = []
+@export var bribesSection4 : Array = []
+@export var bribesSection5 : Array = []
+
+var loadScene
+
 @export var text : Label
 var resource_data  #: Dictionary = {}
 @onready var char 
@@ -37,7 +42,6 @@ signal bribes_S1_all_get
 signal bribe_obtenue
 
 
-
 func _ready():
 	char = $char
 	#$AnimationPlayer.play ("just_moving")
@@ -47,39 +51,52 @@ func _ready():
 	animation = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer2")
 	rayCast = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/RayCast3D")
 	text.visible = false 
+	
 	#tableau avec toutes les bribes
-	tableauObjets = [bribeMetronome, bribeLettre]
-	tableauNarra = ["je suis un téléphone dring dring", "je suis un chien bark bark"]
-	print (tableauObjets[0])
-	for resource in tableauObjets : 
-		print ("tableauObjets ressource +1")		
+	allBribesArray = [bribeMetronome, bribeLettre, bribeCahierDavid]
+	for resource in allBribesArray : 
+		print ("allBribesArray ressource +1")
 		instance = resource.objetSpriteBroken.instantiate()
 		instance.position = resource.emplacement
 		instance.bribe_data = resource
 		add_child (instance)
+		
 	#tout assigner manuellement
 	bribesSection1 = [bribeMetronome, bribeLettre]
+	bribesSection2 = [bribeCahierDavid]
+	$"..".current_section = 1
+	_bribe_activator()
 	#le isActivated va permettre d'activer les bribes en fonction des sections de jeu
-	bribeMetronome.isActivated = true
-	bribeLettre.isActivated = true
-	bribeCahierDavid.isActivated = false
-		#instance.grabObject.connect(_on_grab_object)
-		#instance.envoiData.connect(_on_envoi_data)
-		#resource_data = {"resource": resource} #créer un dictionnaire pour stocker la référence à la resource
-		#instance.set_meta("resource_data", resource_data) #stocker le dictionnaire dans l'instance
 
+func _bribe_activator():
+	print("appart section =" + str($"..".current_section))
+	for bribe in allBribesArray: #on les passe ttes en false au début pour éviter que d'autres restent true ou qu'il y ait des bribes null après supression qui cassent le code
+		if bribe != null:
+			bribe.isActivated = false
+	match $"..".current_section:
+		1:
+			for bribe in bribesSection1:
+				bribe.isActivated = true
+		2:
+			for bribe in bribesSection2:
+				bribe.isActivated = true
+		3:
+			for bribe in bribesSection3:
+				bribe.isActivated = true
+		4:
+			for bribe in bribesSection4:
+				bribe.isActivated = true
+		5:
+			for bribe in bribesSection5:
+				bribe.isActivated = true
+	pass # Replace with function body.
 
-#func _on_envoi_data(instance2 : bribe_instance):
-	#stock_data = instance2.bribe_data
 
 func _physics_process(delta):
 	var in_piano
 	if rayCast.is_colliding() && !object_grabbed: 
-		char.activeShader(true)
-		start_anxiete.play("Start_Anxiete")
-		animation.play("Anxiety")
-		textes_intrusif.play("Pensees_Intrusives_1")
 		var collider = rayCast.get_collider()
+		
 		if collider == piano: #si le raycast touche le piano, on émet le signal UNE FOIS sinon ça proc ttes les frames
 			if !in_piano:
 				_on_piano_mouse_entered.emit()
@@ -88,26 +105,37 @@ func _physics_process(delta):
 		else: # si le raycast touche pa le piano, on fait les trucs habituels
 			obj_col = collider.get_parent()
 			get_resource = obj_col.bribe_data
+			
 			if !col_printed: #meilleur debug pour pas avoir 26 000 prints de la bribe qu'on regarde
 				print (obj_col.name)
 				col_printed = true
-			if get_resource.isActivated == true:
+				
+			if get_resource.isActivated == true: #on dit au char de lancer l'anxiété sur les bribes
+				char.activeShader(true)
+				start_anxiete.play("Start_Anxiete")
+				animation.play("Anxiety")
+				textes_intrusif.play("Pensees_Intrusives_1")
 				verifCollider = true
 				#recupData.emit()
 				enableOutline.emit()
 		return (get_resource)
 		return (obj_col)
 	else : 
+		if char != null: #si y a un char on arrête l'anxiété si on regarde pas une bribe
+			start_anxiete.stop()
+			animation.stop()
+			textes_intrusif.stop()
+			char.activeShader(false)
 		in_piano = false
 		_on_piano_mouse_exited.emit() #on dit au code qu'on est plus dans le piano si on y était
 		col_printed = false
 		verifCollider = false
 		disableOutline.emit()
 
-func _unhandled_input(event):
-	if Input.is_action_just_pressed("left_click") and verifCollider:
-		print ("SAUTER DU PONT")
-		_on_grab_object()
+func _input(event):
+	if Input.is_action_just_pressed("left_click") && verifCollider == true:
+			print ("SAUTER DU PONT")
+			_on_grab_object()
 
 #func brouillon mental de Poire():
 	#le QTE envoie un signal à bribe pour dire quelle section est terminée
@@ -170,5 +198,7 @@ func onSpriteFixedDestroyed():
 	object_grabbed = false #on tient plus rien dans les mains, si on met pas ça le raycast ne marche plus après la première bribe
  
 	
+
+
 
 

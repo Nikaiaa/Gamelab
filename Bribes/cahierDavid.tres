@@ -10,4 +10,4 @@ name = "cahierDavid"
 isImportant = true
 isActivated = false
 dialogue = "Pas aujourd’hui…"
-emplacement = Vector3(0, 0, 0)
+emplacement = Vector3(0, 0.5, 0)

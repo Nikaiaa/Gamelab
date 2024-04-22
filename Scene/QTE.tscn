@@ -1,9 +1,8 @@
-[gd_scene load_steps=16 format=3 uid="uid://d3s6dc4jav1bq"]
+[gd_scene load_steps=17 format=3 uid="uid://d3s6dc4jav1bq"]
 
 [ext_resource type="Script" path="res://Script/QTEManager.gd" id="1_4uevv"]
 [ext_resource type="PackedScene" uid="uid://d3aqhkaunfsg8" path="res://Scene/QTE_note.tscn" id="2_cp4ls"]
 [ext_resource type="Texture2D" uid="uid://dp211osxqvffc" path="res://Image/Vertical-Line-PNG-High-Quality-Image.png" id="2_v2idl"]
-[ext_resource type="PackedScene" uid="uid://c8w6epx6u3mn5" path="res://Scene/Appart.tscn" id="6_gllug"]
 [ext_resource type="Texture2D" uid="uid://denbcml3nuojm" path="res://FOND_piano.png" id="6_t570g"]
 [ext_resource type="Texture2D" uid="uid://be3botqg0jc1l" path="res://Image/QTE/note_croche.png" id="8_hcwi4"]
 [ext_resource type="VideoStream" path="res://Image/disque_annimfffff_1.ogv" id="8_r2il2"]
@@ -268,7 +267,12 @@ _data = {
 "Section_1": SubResource("Animation_yn626")
 }
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_eiv1r"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_hdnnf"]
+
 [node name="Node3D" type="Node3D" node_paths=PackedStringArray("arrayStartPos", "timer2", "timer3", "timer4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.6006, -12.4054)
 script = ExtResource("1_4uevv")
 Note = ExtResource("2_cp4ls")
 arrayTextures = Array[CompressedTexture2D]([null, null, ExtResource("10_pmg5w"), ExtResource("8_hcwi4"), ExtResource("9_ytlli")])
@@ -276,18 +280,17 @@ arrayStartPos = [null, null, NodePath("SPN2"), NodePath("SPN3"), NodePath("SPN4"
 timer2 = NodePath("AreaLimite/TimerSpawnNote2")
 timer3 = NodePath("AreaLimite/TimerSpawnNote3")
 timer4 = NodePath("AreaLimite/TimerSpawnNote4")
-appart = ExtResource("6_gllug")
 
 [node name="AreaLimite" type="Area3D" parent="."]
 transform = Transform3D(2.275, 0, 0, 0, 2.275, 0, 0, 0, 2.275, 7.44162, -0.209693, 2.33698)
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaLimite"]
-transform = Transform3D(0.999928, -3.55264e-15, 0, 3.55264e-15, 0.999928, 0, 0, 0, 0.999928, 0.0196455, 0.0627431, -0.149771)
+transform = Transform3D(1, -3.5529e-15, 0, 3.5529e-15, 1, 0, 0, 0, 1, 0.0974984, 0.0627432, -0.149771)
 shape = SubResource("BoxShape3D_lhlmc")
 
 [node name="Limite" type="Sprite3D" parent="AreaLimite/CollisionShape3D"]
-transform = Transform3D(1.44586, 4.23516e-22, 0, 0, 1, 0, 0, 0, 1, -0.087, -0.142, 0)
+transform = Transform3D(2, 0, 0, 0, 1.383, 0, 0, 0, 1.383, -0.087, -0.142, 0)
 texture = ExtResource("2_v2idl")
 
 [node name="TimerSpawnNote2" type="Timer" parent="AreaLimite"]
@@ -299,7 +302,7 @@ texture = ExtResource("2_v2idl")
 [node name="Fond" type="Sprite3D" parent="."]
 transform = Transform3D(2.36293, 0, 0, 0, 2.56921, 0, 0, 0, 1, 0, 0, 0)
 layers = 512
-modulate = Color(1, 1, 1, 0.384314)
+modulate = Color(1, 1, 1, 0.784314)
 texture = ExtResource("6_t570g")
 
 [node name="Camera3D" type="Camera3D" parent="."]
@@ -335,7 +338,6 @@ libraries = {
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Timer"]
 stream = ExtResource("9_hrm15")
-autoplay = true
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -348,6 +350,16 @@ layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1088.0
 stream = ExtResource("8_r2il2")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.44769, 16.9303)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, -8.25461, 0)
+shape = SubResource("BoxShape3D_eiv1r")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D/CollisionShape3D"]
+mesh = SubResource("BoxMesh_hdnnf")
 
 [connection signal="area_entered" from="AreaLimite" to="." method="_on_area_limite_area_entered"]
 [connection signal="area_exited" from="AreaLimite" to="." method="_on_area_limite_area_exited"]

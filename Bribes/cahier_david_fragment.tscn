@@ -1,19 +1,107 @@
-[gd_scene load_steps=6 format=3 uid="uid://crl5sp1w8d3ty"]
+[gd_scene load_steps=23 format=3 uid="uid://crl5sp1w8d3ty"]
 
 [ext_resource type="PackedScene" uid="uid://g5ty02oxpgxq" path="res://Bribes/CahierDavid Fragment.blend" id="1_hbxt5"]
 [ext_resource type="Script" path="res://Script/collisionBribe.gd" id="2_7o687"]
-[ext_resource type="AudioStream" uid="uid://b4xa6vqrl8eoh" path="res://Musique/Bribes/Bribe_cursed3.wav" id="3_auoht"]
+[ext_resource type="Shader" path="res://Scene/porte_2.gdshader" id="3_o44rs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xv8yi"]
+render_priority = 0
+shader = ExtResource("3_o44rs")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6hy7u"]
+next_pass = SubResource("ShaderMaterial_xv8yi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_67t16"]
+render_priority = 0
+shader = ExtResource("3_o44rs")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3vmoo"]
+next_pass = SubResource("ShaderMaterial_67t16")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wdnvq"]
+render_priority = 0
+shader = ExtResource("3_o44rs")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6d8w"]
+next_pass = SubResource("ShaderMaterial_wdnvq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_84sn0"]
+render_priority = 0
+shader = ExtResource("3_o44rs")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kppm1"]
+next_pass = SubResource("ShaderMaterial_84sn0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6jssd"]
+render_priority = 0
+shader = ExtResource("3_o44rs")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qu6iw"]
+next_pass = SubResource("ShaderMaterial_6jssd")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dryro"]
+render_priority = 0
+shader = ExtResource("3_o44rs")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_liowt"]
+next_pass = SubResource("ShaderMaterial_dryro")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_poeun"]
+render_priority = 0
+shader = ExtResource("3_o44rs")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1hkbd"]
+next_pass = SubResource("ShaderMaterial_poeun")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8re0"]
+render_priority = 0
+shader = ExtResource("3_o44rs")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_lxroi"]
+next_pass = SubResource("ShaderMaterial_d8re0")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_utm8n"]
+render_priority = 0
+shader = ExtResource("3_o44rs")
+shader_parameter/enable = true
+shader_parameter/outline_thickness = 0.01
+shader_parameter/color = Color(1, 1, 1, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nkm61"]
+next_pass = SubResource("ShaderMaterial_utm8n")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5tcc"]
 size = Vector3(0.793945, 0.171051, 1.18384)
 
-[node name="CahierDavid Fragment" instance=ExtResource("1_hbxt5")]
+[node name="CahierDavid Fragment" node_paths=PackedStringArray("audio_stream") instance=ExtResource("1_hbxt5")]
 script = ExtResource("2_7o687")
+audio_stream = NodePath("AudioStreamPlayer3D")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="0"]
-stream = ExtResource("3_auoht")
 autoplay = true
 max_distance = 10.0
 emission_angle_enabled = true
@@ -21,15 +109,25 @@ emission_angle_enabled = true
 [node name="Cahier_cell_004" parent="." index="1"]
 transform = Transform3D(0.90036, 0, 0, 0, 0.90036, 0, 0, 0, 0.90036, -0.623632, 0.0669262, -0.0022493)
 surface_material_override/0 = SubResource("StandardMaterial3D_6hy7u")
+surface_material_override/1 = SubResource("StandardMaterial3D_3vmoo")
 
 [node name="Cahier_cell_003" parent="." index="2"]
 transform = Transform3D(0.90036, 0, 0, 0, 0.90036, 0, 0, 0, 0.90036, 0.0634017, 0.0663484, 0.476744)
+surface_material_override/0 = SubResource("StandardMaterial3D_w6d8w")
+surface_material_override/1 = SubResource("StandardMaterial3D_kppm1")
 
 [node name="Cahier_cell_002" parent="." index="3"]
 transform = Transform3D(0.90036, 0, 0, 0, 0.90036, 0, 0, 0, 0.90036, 0.557356, 0.064351, 0.18154)
+surface_material_override/0 = SubResource("StandardMaterial3D_qu6iw")
+surface_material_override/1 = SubResource("StandardMaterial3D_liowt")
+
+[node name="Cahier_cell_001" parent="." index="4"]
+surface_material_override/0 = SubResource("StandardMaterial3D_1hkbd")
 
 [node name="Cahier_cell" parent="." index="5"]
 transform = Transform3D(0.884274, 0, -0.169436, 0, 0.90036, 0, 0.169436, 0, 0.884274, -0.247091, 0.0717875, -0.459977)
+surface_material_override/0 = SubResource("StandardMaterial3D_lxroi")
+surface_material_override/1 = SubResource("StandardMaterial3D_nkm61")
 
 [node name="Area3D" type="Area3D" parent="." index="6"]
 collision_layer = 15
