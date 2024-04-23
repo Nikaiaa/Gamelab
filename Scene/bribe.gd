@@ -109,10 +109,11 @@ func _physics_process(delta):
 			if collider.is_in_group("nonbribe"): #on vérifie si l'objet détecté est une non bribe
 				texte_non_bribe = true 
 				#var label = collider.get_node("Label") 
-				var textes_objets = collider.textes_objets
-				var Narration = collider.Narration
-				collider.Texte.show()
-				collider.Texte.text = textes_objets[Narration]
+				if collider.Texte:
+					var textes_objets = collider.textes_objets
+					var Narration = collider.Narration
+					collider.Texte.show()
+					collider.Texte.text = textes_objets[Narration]
 				
 		
 			else : 
@@ -150,6 +151,7 @@ func _physics_process(delta):
 		col_printed = false
 		verifCollider = false
 		disableOutline.emit()
+		verifBribe = false
 
 func _input(event):
 	if Input.is_action_just_pressed("left_click") && verifCollider == true:

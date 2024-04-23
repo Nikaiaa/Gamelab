@@ -162,12 +162,6 @@ scene_QTE = ExtResource("3_loihi")
 
 [node name="Bribe" parent="." node_paths=PackedStringArray("piano") instance=ExtResource("2_qsogw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.6854, 1.38192, -13.766)
-allBribesArray = []
-bribesSection1 = []
-bribesSection2 = []
-bribesSection3 = []
-bribesSection4 = []
-bribesSection5 = []
 piano = NodePath("../Piano")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Bribe"]
