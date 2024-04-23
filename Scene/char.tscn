@@ -197,7 +197,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible")
+tracks/0/path = NodePath("Control/SubViewportContainer/SubViewport/Label:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -209,7 +209,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Label2:visible")
+tracks/1/path = NodePath("Control/SubViewportContainer/SubViewport/Label2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -224,7 +224,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Label:visible")
+tracks/0/path = NodePath("Control/SubViewportContainer/SubViewport/Label:visible")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -236,7 +236,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Label2:visible")
+tracks/1/path = NodePath("Control/SubViewportContainer/SubViewport/Label2:visible")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -311,12 +311,39 @@ mouse_filter = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer"]
 
-[node name="Texte_intrusif" type="AnimationPlayer" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer"]
-libraries = {
-"": SubResource("AnimationLibrary_3k1os")
-}
+[node name="Control" type="Control" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
-[node name="Label" type="Label" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -5.0
+offset_bottom = -5.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SubViewport" type="SubViewport" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer/Control/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1920, 1080)
+render_target_update_mode = 4
+
+[node name="Label2" type="Label" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer/Control/SubViewportContainer/SubViewport"]
+visible = false
+offset_left = 458.0
+offset_top = 319.0
+offset_right = 618.0
+offset_bottom = 342.0
+rotation = 0.256115
+text = "Je ne me sens pas bien "
+
+[node name="Label" type="Label" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer/Control/SubViewportContainer/SubViewport"]
 visible = false
 offset_left = 311.0
 offset_top = 268.0
@@ -325,14 +352,10 @@ offset_bottom = 305.0
 rotation = -0.349689
 text = "A laide"
 
-[node name="Label2" type="Label" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer"]
-visible = false
-offset_left = 458.0
-offset_top = 319.0
-offset_right = 618.0
-offset_bottom = 342.0
-rotation = 0.256115
-text = "Olala j'ai de l'anxiété"
+[node name="Texte_intrusif" type="AnimationPlayer" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer"]
+libraries = {
+"": SubResource("AnimationLibrary_3k1os")
+}
 
 [node name="Button" type="Sprite2D" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer"]
 visible = false

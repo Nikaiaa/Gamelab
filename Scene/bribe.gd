@@ -141,10 +141,11 @@ func _physics_process(delta):
 			print ("AAAAAAAAAAAAAAAAAAAAA")
 			collider.Texte.hide()
 			texte_non_bribe = false
+			#en gros il faudrait que si j'appuie au bon moment lors d'une crise d'anxiete qu'elle s'enlève puis qu'elle montre la bribe donc la fin devrait être avant
 		if char != null: #si y a un char on arrête l'anxiété si on regarde pas une bribe
-			start_anxiete.stop()
-			animation.stop()
-			textes_intrusif.stop()
+			start_anxiete.play_backwards("Start_Anxiete")
+			animation.stop("Anxiety")
+			textes_intrusif.play_backwards("Pensees_Intrusives_1")
 			char.activeShader(false)
 		in_piano = false
 		_on_piano_mouse_exited.emit() #on dit au code qu'on est plus dans le piano si on y était
