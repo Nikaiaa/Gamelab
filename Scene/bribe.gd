@@ -144,7 +144,7 @@ func _physics_process(delta):
 			#en gros il faudrait que si j'appuie au bon moment lors d'une crise d'anxiete qu'elle s'enlève puis qu'elle montre la bribe donc la fin devrait être avant
 		if char != null: #si y a un char on arrête l'anxiété si on regarde pas une bribe
 			start_anxiete.play_backwards("Start_Anxiete")
-			animation.stop("Anxiety")
+			animation.stop()
 			textes_intrusif.play_backwards("Pensees_Intrusives_1")
 			char.activeShader(false)
 		in_piano = false

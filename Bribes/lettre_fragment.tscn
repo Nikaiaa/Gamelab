@@ -16,6 +16,7 @@ shader_parameter/color = Color(1, 1, 1, 0)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0rdao"]
 next_pass = SubResource("ShaderMaterial_c5sru")
 albedo_texture = ExtResource("4_vmbk6")
+uv1_scale = Vector3(1, 1, 0.96)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0e03t"]
 render_priority = 0
@@ -87,7 +88,7 @@ max_distance = 10.0
 emission_angle_enabled = true
 
 [node name="Lettre_cell_005" parent="." index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.062, -0.011)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6, 0.062, -0.0109999)
 surface_material_override/0 = SubResource("StandardMaterial3D_0rdao")
 
 [node name="Lettre_cell_004" parent="." index="2"]

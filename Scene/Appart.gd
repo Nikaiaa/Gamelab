@@ -38,6 +38,7 @@ func _process(delta):
 	##debut porte de l'appart
 	#$AnimationPlayer.play("Note mouving")
 	$Animation_note_bribe.play("Just_moving")
+	$AudioStreamPlayer.play()
 	##if Tuto == true:
 	##_ouvrir_bureau()
 
