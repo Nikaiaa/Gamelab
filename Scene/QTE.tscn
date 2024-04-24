@@ -6,8 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://denbcml3nuojm" path="res://FOND_piano.png" id="6_t570g"]
 [ext_resource type="Texture2D" uid="uid://be3botqg0jc1l" path="res://Image/QTE/note_croche.png" id="8_hcwi4"]
 [ext_resource type="AudioStream" uid="uid://dtolm65c0lu7o" path="res://Musique/Updated_disco.mp3" id="9_hrm15"]
-[ext_resource type="VideoStream" path="res://Scene/anim_disque_final.ogv" id="9_uge6n"]
 [ext_resource type="Texture2D" uid="uid://bm0m138siejou" path="res://Image/QTE/note_double_croche.png" id="9_ytlli"]
+[ext_resource type="VideoStream" path="res://Scene/anim_disque_vert.ogv" id="10_agpnb"]
 [ext_resource type="Texture2D" uid="uid://ctenpqhq1gpl7" path="res://Image/QTE/note_noire.png" id="10_pmg5w"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lhlmc"]
@@ -349,7 +349,7 @@ offset_bottom = 1080.0
 layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1088.0
-stream = ExtResource("9_uge6n")
+stream = ExtResource("10_agpnb")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.44769, 16.9303)

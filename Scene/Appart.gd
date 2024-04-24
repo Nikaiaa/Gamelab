@@ -62,9 +62,9 @@ func _input(event):
 			character_instance = character.instantiate() #spawn un nouveau char 
 			$".".add_child(character_instance) #on le met en enfant de appart et pas bribe le démon
 			#on ré-initialise les variables de Bribe liées au char sinon il est paumé
-			$Bribe.textes_intrusif = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer/Texte_intrusif")
+			$Bribe.textes_intrusif = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/texteIntrusif/Texte_intrusif")
 			$Bribe.start_anxiete = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
-			#$Bribe.anxieux = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
+			$Bribe.anxieux_QTE = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/inputA")
 			$Bribe.animation = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
 			$Bribe.rayCast = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/RayCast3D")
 			character_instance.position = new_pos #on reset l'offset du character

@@ -2,7 +2,7 @@ extends CharacterBody3D
 
 
 var movement
-const SPEED = 10.0
+const SPEED = 9
 const JUMP_VELOCITY = 4.5
 var camera
 var rotation_helper
