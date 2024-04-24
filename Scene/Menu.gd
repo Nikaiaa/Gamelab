@@ -1,5 +1,8 @@
 extends Control
 
+func _ready():
+	$AudioStreamPlayer.play()
+
 func _on_jouer_pressed():
 	get_tree().change_scene_to_file("res://Scene/Appart.tscn")
 

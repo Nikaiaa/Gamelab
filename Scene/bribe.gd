@@ -18,7 +18,7 @@ var loadScene
 var resource_data  #: Dictionary = {}
 @onready var char 
 var animation
-var anxieux : AudioStreamPlayer
+var anxieux_QTE : VideoStreamPlayer
 var start_anxiete
 var textes_intrusif
 var rayCast
@@ -49,9 +49,10 @@ var lastCollider = null
 func _ready():
 	char = $char
 	#$AnimationPlayer.play ("just_moving")
+	#QTE_anxiete = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/VideoStreamPlayer")
 	textes_intrusif = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer/Texte_intrusif")
 	start_anxiete = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
-	anxieux = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
+	#anxieux_QTE = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/VideoStreamPlayer")
 	animation = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer2")
 	rayCast = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/RayCast3D")
 	text.visible = false 
@@ -133,8 +134,8 @@ func _physics_process(delta):
 				if get_resource.isActivated == true: #on dit au char de lancer l'anxiété sur les bribes
 					char.activeShader(true)
 					start_anxiete.play("Start_Anxiete")
-					animation.play("Anxiety")
 					textes_intrusif.play("Pensees_Intrusives_1")
+					#anxieux_QTE.play()
 					verifCollider = true
 					#recupData.emit()
 					enableOutline.emit()
@@ -148,7 +149,7 @@ func _physics_process(delta):
 			texte_non_bribe = false
 		if char != null: #si y a un char on arrête l'anxiété si on regarde pas une bribe
 			start_anxiete.stop()
-			animation.stop()
+			#anxieux_QTE.stop()
 			textes_intrusif.stop()
 			char.activeShader(false)
 		in_piano = false

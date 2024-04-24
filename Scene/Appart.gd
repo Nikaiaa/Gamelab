@@ -64,7 +64,7 @@ func _input(event):
 			#on ré-initialise les variables de Bribe liées au char sinon il est paumé
 			$Bribe.textes_intrusif = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer/Texte_intrusif")
 			$Bribe.start_anxiete = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
-			$Bribe.anxieux = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
+			#$Bribe.anxieux = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AudioStreamPlayer")
 			$Bribe.animation = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
 			$Bribe.rayCast = character_instance.get_node("CharacterBody3D/Rotation_Helper/Camera3D/RayCast3D")
 			character_instance.position = new_pos #on reset l'offset du character
