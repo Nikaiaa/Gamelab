@@ -154,7 +154,7 @@ albedo_texture = ExtResource("36_6pvm5")
 albedo_texture = ExtResource("37_ox5sd")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7w62d"]
-size = Vector3(21.7876, 0.419495, 21.5119)
+size = Vector3(21.7876, 0.419495, 21.5083)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vc0ff"]
 size = Vector3(6.50931, 1.38965, 2.46191)
@@ -556,6 +556,7 @@ light_energy = 1.889
 [node name="porte" parent="RootNode" index="231"]
 transform = Transform3D(1.25633e-05, -152.854, -9.50805e-06, 6.28167e-06, 0, 319.037, -210.778, -4.55539e-06, 1.90161e-05, -17.9739, 3.27608, -6.82244)
 visible = false
+layers = 9
 
 [node name="porte entrée" parent="RootNode" index="232"]
 transform = Transform3D(-173.997, -2.73324e-05, 4.81733e-05, 2.62728e-05, 2.73324e-05, 319.037, -3.11131e-05, 152.854, -3.80322e-05, -14.992, 3.13187, -16.9533)
@@ -563,7 +564,7 @@ transform = Transform3D(-173.997, -2.73324e-05, 4.81733e-05, 2.62728e-05, 2.7332
 [node name="Salon" type="StaticBody3D" parent="." index="1"]
 
 [node name="Sol" type="CollisionShape3D" parent="Salon" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.15917, -0.18488, 8.3359)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.087, -0.26264, 8.213)
 shape = SubResource("BoxShape3D_7w62d")
 
 [node name="Table basse" type="CollisionShape3D" parent="Salon" index="1"]
@@ -691,7 +692,7 @@ shape = SubResource("BoxShape3D_kr78w")
 [node name="Entree" type="StaticBody3D" parent="." index="4"]
 
 [node name="Sol" type="CollisionShape3D" parent="Entree" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.813, -0.0981689, -9.841)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.813, -0.143412, -9.841)
 shape = SubResource("BoxShape3D_loc4w")
 
 [node name="Commode" type="CollisionShape3D" parent="Entree" index="1"]
@@ -749,7 +750,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.5399, 3.41765, -3.48991)
 shape = SubResource("CapsuleShape3D_gadxu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Bureau" index="9"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.8528, -0.474379, -10.3168)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -23.853, -0.282414, -10.317)
 shape = SubResource("BoxShape3D_4nxgw")
 
 [node name="SDB" type="StaticBody3D" parent="." index="6"]
