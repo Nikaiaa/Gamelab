@@ -98,13 +98,14 @@ func _appart_qte_finished(): #appelee depuis QTE quand on a fini un QTE
 
 func _UiUpdate():
 	if UIbribe == 1:
-		$UI_Bribe.hide()
-		$UpdatedSprite1.show()
+		$UI_Bribe2.hide()
+		$UpdatedSprite2.show()
+		$Animation_Notes_Piano.play("piano_notes_ui_jump")
 		var axis = Vector3(0, 1, 0).normalized()
 		var rotation_angle = deg_to_rad(90)
 		Porte.rotate(axis, rotation_angle)
 	if UIbribe == 2:
-		$UI_Bribe2.hide()
-		$UpdatedSprite2.show()
+		$UI_Bribe.hide()
+		$UpdatedSprite1.show()
 
 
