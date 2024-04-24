@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c8w6epx6u3mn5"]
+[gd_scene load_steps=30 format=3 uid="uid://c8w6epx6u3mn5"]
 
 [ext_resource type="Script" path="res://Scene/Appart.gd" id="1_bf123"]
 [ext_resource type="Script" path="res://Scene/Piano.gd" id="2_fs0ee"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://Scene/TV.gd" id="2_iqgsv"]
 [ext_resource type="Script" path="res://Scene/Rideau.gd" id="2_k0ue5"]
 [ext_resource type="PackedScene" uid="uid://rnloud2x4hmt" path="res://Scene/bribe.tscn" id="2_qsogw"]
-[ext_resource type="Script" path="res://Scene/Guitare.gd" id="3_0qw2m"]
 [ext_resource type="Script" path="res://Scene/Area3D.gd" id="3_4nw1w"]
 [ext_resource type="PackedScene" uid="uid://bdf82ktaumgq1" path="res://untitled.glb" id="3_hsuc1"]
 [ext_resource type="PackedScene" uid="uid://d3s6dc4jav1bq" path="res://Scene/QTE.tscn" id="3_loihi"]
@@ -26,9 +25,6 @@ albedo_color = Color(0, 1, 1, 1)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_evdtl"]
 size = Vector3(1.46069, 2.90771, 6.69037)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_p4jc8"]
-size = Vector3(1, 4.35742, 1.68066)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_i8hb1"]
 size = Vector3(3.58806, 2.2262, 2.4906)
@@ -178,38 +174,18 @@ Texte = NodePath("Label")
 meuble = NodePath("Piano")
 Narration = "Piano"
 
-[node name="Label" type="Label" parent="Piano"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/font = ExtResource("5_5v4c4")
-theme_override_font_sizes/font_size = 50
-horizontal_alignment = 1
-vertical_alignment = 2
-metadata/_edit_use_anchors_ = true
-
 [node name="Piano" type="CollisionShape3D" parent="Piano"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.817017, 0.953857, 3.25333)
 shape = SubResource("BoxShape3D_evdtl")
 
-[node name="Guitare" type="Area3D" parent="." node_paths=PackedStringArray("Texte", "meuble") groups=["nonbribe"]]
-collision_layer = 15
-collision_mask = 15
-script = ExtResource("3_0qw2m")
-Texte = NodePath("Label")
-meuble = NodePath("Guitar")
-Narration = "Guitare"
-
-[node name="Guitar" type="CollisionShape3D" parent="Guitare"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.1893, 4.5735, -6.19449)
-shape = SubResource("BoxShape3D_p4jc8")
-
-[node name="Label" type="Label" parent="Guitare"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+[node name="Label" type="Label" parent="Piano"]
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.005
+anchor_bottom = 1.005
+offset_right = -73.6
+offset_bottom = -51.4
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_5v4c4")
@@ -231,9 +207,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.31792, 2.31827, -0.682214)
 shape = SubResource("BoxShape3D_i8hb1")
 
 [node name="Label" type="Label" parent="TV"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.005
+anchor_bottom = 1.005
+offset_right = -73.6
+offset_bottom = -51.4
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_5v4c4")
@@ -255,9 +235,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.27383, 3.40618, 5.02176)
 shape = SubResource("BoxShape3D_1hkyr")
 
 [node name="Label" type="Label" parent="Rideau"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.005
+anchor_bottom = 1.005
+offset_right = -73.6
+offset_bottom = -51.4
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_5v4c4")
@@ -280,13 +264,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.76837e-07)
 shape = SubResource("BoxShape3D_x6pbt")
 
 [node name="Label" type="Label" parent="Cadre_entree"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 1.005
+anchor_bottom = 1.005
+offset_right = -73.6
+offset_bottom = -51.4
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("5_5v4c4")
-theme_override_font_sizes/font_size = 50
+theme_override_font_sizes/font_size = 45
 horizontal_alignment = 1
 vertical_alignment = 2
 metadata/_edit_use_anchors_ = true
@@ -352,7 +340,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32.82, 0)
 
 [node name="qte_origin" type="Node3D" parent="Scene_QTE_spawn"]
 
-[node name="QTE" parent="Scene_QTE_spawn/qte_origin" node_paths=PackedStringArray("appart") instance=ExtResource("3_loihi")]
+[node name="QTE" parent="Scene_QTE_spawn/qte_origin" node_paths=PackedStringArray("arrayStartPos", "appart") instance=ExtResource("3_loihi")]
+arrayStartPos = [null, null, NodePath("SPN2"), NodePath("SPN3"), NodePath("SPN4")]
 appart = NodePath("../../..")
 
 [node name="Piano_spawn" type="Node3D" parent="."]
@@ -374,8 +363,6 @@ autoplay = true
 [connection signal="mouse_entered" from="Piano" to="." method="_on_piano_mouse_entered"]
 [connection signal="mouse_entered" from="Piano" to="Piano" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="Piano" to="Piano" method="_on_mouse_exited"]
-[connection signal="mouse_entered" from="Guitare" to="Guitare" method="_on_mouse_entered"]
-[connection signal="mouse_exited" from="Guitare" to="Guitare" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="TV" to="TV" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="TV" to="TV" method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="Rideau" to="Rideau" method="_on_mouse_entered"]

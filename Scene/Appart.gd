@@ -73,8 +73,9 @@ func _input(event):
 			QTE_on_wake.emit() #vrmt g juré mtnt ca marche la vie est belle
 			
 			
-	print("current_section = " + str(current_section))
+
 func _appart_qte_finished(): #appelee depuis QTE quand on a fini un QTE
+	print("current_section = " + str(current_section))
 	var axis = Vector3(0, 1, 0).normalized()
 	var rotation_angle = deg_to_rad(90)
 	character_instance.position = $Piano_spawn.position

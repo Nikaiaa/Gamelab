@@ -4,7 +4,7 @@ extends Area3D
 @export var Narration: String
 
 var textes_objets = {
-	"TV": "De toute façon je me serais occupé de son cas si elle n'avait pas rendu l'âme la première",
+	"TV": "Heureusement que cette TV a choisi le silence d’elle-même. \n Ma mère devrait suivre son exemple.",
 }
 
 
