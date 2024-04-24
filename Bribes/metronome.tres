@@ -13,5 +13,5 @@ objetAudio = ExtResource("1_u65h5")
 name = "Métronome"
 isImportant = true
 isActivated = false
-dialogue = "J'aurais dû me douter que c'était impossible de changer le rythme."
+dialogue = "J'aurais dû me douter que c'était impossible de changer de rythme."
 emplacement = Vector3(-7.546, 1.382, 10)
