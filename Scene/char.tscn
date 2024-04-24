@@ -310,6 +310,7 @@ offset_bottom = 9.0
 mouse_filter = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer"]
+visible = false
 
 [node name="Label2" type="Label" parent="CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/CanvasLayer"]
 visible = false
