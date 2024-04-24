@@ -27,6 +27,7 @@ func ready(): #j'adore connecter des signaux
 	piano._on_piano_mouse_exited.connect(_on_piano_raycast_out)
 	bribe.bribes_S1_all_get.connect(_status_bribes)
 	bribe.bribe_obtenue.connect(_piano_notes_UI)
+	$AudioStreamPlayer.play()
 	
 func _status_bribes():
 	bribes1 = true
@@ -38,7 +39,6 @@ func _process(delta):
 	##debut porte de l'appart
 	#$AnimationPlayer.play("Note mouving")
 	$Animation_note_bribe.play("Just_moving")
-	$AudioStreamPlayer.play()
 	##if Tuto == true:
 	##_ouvrir_bureau()
 
