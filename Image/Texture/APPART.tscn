@@ -245,7 +245,7 @@ size = Vector3(1.54926, 2.98871, 4.84479)
 size = Vector3(13.2168, 0.272583, 18.0474)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_loc4w"]
-size = Vector3(7.19254, 0.203613, 14.7008)
+size = Vector3(7.19254, 0.203613, 14.6659)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_yx70f"]
 size = Vector3(1.32202, 2.75378, 4.78752)
@@ -564,7 +564,7 @@ transform = Transform3D(-173.997, -2.73324e-05, 4.81733e-05, 2.62728e-05, 2.7332
 [node name="Salon" type="StaticBody3D" parent="." index="1"]
 
 [node name="Sol" type="CollisionShape3D" parent="Salon" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.087, -0.26264, 8.213)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.087, -0.143, 8.213)
 shape = SubResource("BoxShape3D_7w62d")
 
 [node name="Table basse" type="CollisionShape3D" parent="Salon" index="1"]
@@ -692,7 +692,7 @@ shape = SubResource("BoxShape3D_kr78w")
 [node name="Entree" type="StaticBody3D" parent="." index="4"]
 
 [node name="Sol" type="CollisionShape3D" parent="Entree" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -13.813, -0.143412, -9.841)
+transform = Transform3D(0.999998, 0.00219911, 0, -0.00219911, 0.999998, 0, 0, 0, 1, -13.813, -0.04, -10.035)
 shape = SubResource("BoxShape3D_loc4w")
 
 [node name="Commode" type="CollisionShape3D" parent="Entree" index="1"]
