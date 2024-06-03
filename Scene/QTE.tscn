@@ -282,7 +282,7 @@ timer3 = NodePath("AreaLimite/TimerSpawnNote3")
 timer4 = NodePath("AreaLimite/TimerSpawnNote4")
 
 [node name="AreaLimite" type="Area3D" parent="."]
-transform = Transform3D(2.275, 0, 0, 0, 2.275, 0, 0, 0, 2.275, 7.44162, -0.209693, 2.33698)
+transform = Transform3D(2.275, 0, 0, 0, 2.275, 0, 0, 0, 2.275, 7.44162, -0.209693, 0.35374)
 collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AreaLimite"]
@@ -291,6 +291,7 @@ shape = SubResource("BoxShape3D_lhlmc")
 
 [node name="Limite" type="Sprite3D" parent="AreaLimite/CollisionShape3D"]
 transform = Transform3D(2, 0, 0, 0, 1.383, 0, 0, 0, 1.383, -0.087, -0.142, 0)
+sorting_offset = 2.0
 texture = ExtResource("2_v2idl")
 
 [node name="TimerSpawnNote2" type="Timer" parent="AreaLimite"]
@@ -302,28 +303,29 @@ texture = ExtResource("2_v2idl")
 [node name="Fond" type="Sprite3D" parent="."]
 transform = Transform3D(2.36293, 0, 0, 0, 2.56921, 0, 0, 0, 1, 0, 0, 0)
 layers = 512
-modulate = Color(1, 1, 1, 0.784314)
+modulate = Color(1, 1, 1, 0.490196)
+transparent = false
 texture = ExtResource("6_t570g")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 12.3964)
 
 [node name="SPN2" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.73146, 4.36866, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.653, 4.369, 0.986927)
 
 [node name="SpawnPosNote2" type="Sprite3D" parent="SPN2"]
 transform = Transform3D(0.43985, 0, 0, 0, 0.407252, 0, 0, 0, 0.854334, 0, 0, 0)
 texture = ExtResource("10_pmg5w")
 
 [node name="SPN3" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.65263, 2.20735, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.65263, 2.20735, 0.987383)
 
 [node name="SpawnPosNote3" type="Sprite3D" parent="SPN3"]
 transform = Transform3D(0.310268, 0, 0, 0, 0.329534, 0, 0, 0, 1, -0.112485, 0.196848, 0)
 texture = ExtResource("8_hcwi4")
 
 [node name="SPN4" type="Node3D" parent="."]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.70992, 0.290017, 0)
+transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, -8.653, 0.29, 0.986927)
 
 [node name="SpawnPosNote4" type="Sprite3D" parent="SPN4"]
 transform = Transform3D(1.24547, 0, 0, 0, 1.29227, 0, 0, 0, 3.35209, 0, 0, 0)

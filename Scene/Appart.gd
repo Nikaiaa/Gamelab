@@ -38,9 +38,9 @@ func _status_bribes():
 func _process(delta):
 	##debut porte de l'appart
 	#$AnimationPlayer.play("Note mouving")
-	$Animation_note_bribe.play("Just_moving")
 	##if Tuto == true:
 	##_ouvrir_bureau()
+	pass
 
 func _on_piano_raycast():
 	mouse_in_piano = true

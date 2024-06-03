@@ -176,6 +176,7 @@ shape = SubResource("SphereShape3D_mpv4d")
 
 [node name="Sprite3D" type="Sprite3D" parent="QTE_note_area/CollisionShape3D"]
 transform = Transform3D(0.449632, 0, 0, 0, 0.476293, 0, 0, 0, 1, 0, 0, 0)
+sorting_offset = 5.0
 texture = ExtResource("2_r6h5h")
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="QTE_note_area"]

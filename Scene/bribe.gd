@@ -48,7 +48,6 @@ var lastCollider = null
 
 func _ready():
 	char = $char
-	#$AnimationPlayer.play ("just_moving")
 	#QTE_anxiete = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/VideoStreamPlayer")
 	textes_intrusif = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/texteIntrusif/Texte_intrusif")
 	start_anxiete = char.get_node("CharacterBody3D/Rotation_Helper/Camera3D/CanvasLayer/AnimationPlayer")
@@ -70,6 +69,7 @@ func _ready():
 	bribesSection1 = [bribeMetronome, bribeLettre]
 	bribesSection2 = [bribeCahierDavid]
 	$"..".current_section = 1
+	$"../Animation_note_bribe".play("Just_moving")
 	_bribe_activator()
 	#le isActivated va permettre d'activer les bribes en fonction des sections de jeu
 
@@ -184,6 +184,10 @@ func _on_grab_object(): #instanceBribe : bribe_instance
 	text.visible = true
 	obj_col.queue_free() #On supprime l'objet brisé au moment où l'objet fixed est ramassé
 	if get_resource in bribesSection1: #on incrémente les bribes ramassées de 1
+		if get_resource == bribeLettre:
+			$"../Lettre".queue_free()
+		if get_resource == bribeMetronome:
+			$"../Metro".queue_free()
 		bribes_obtenues += 1
 		bribe_obtenue.emit() #on envoie le signal pour dire à Appart qu'on a ramassé une bribe
 		print (bribes_obtenues)
