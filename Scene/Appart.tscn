@@ -374,8 +374,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 32.82, 0)
 
 [node name="qte_origin" type="Node3D" parent="Scene_QTE_spawn"]
 
-[node name="QTE" parent="Scene_QTE_spawn/qte_origin" node_paths=PackedStringArray("arrayStartPos", "appart") instance=ExtResource("3_loihi")]
-arrayStartPos = [null, null, NodePath("SPN2"), NodePath("SPN3"), NodePath("SPN4")]
+[node name="QTE" parent="Scene_QTE_spawn/qte_origin" node_paths=PackedStringArray("appart") instance=ExtResource("3_loihi")]
 appart = NodePath("../../..")
 
 [node name="Piano_spawn" type="Node3D" parent="."]

@@ -70,6 +70,7 @@ func _input(event):
 			character_instance.position = new_pos #on reset l'offset du character
 			character_instance.position = $Scene_QTE_spawn.position #on le met à l'emplacement de la scène QTE
 			character_instance.can_move = false #on lui dit assis toutou
+			$AudioStreamPlayer.stop()
 			QTE_on_wake.emit() #vrmt g juré mtnt ca marche la vie est belle
 			
 			
